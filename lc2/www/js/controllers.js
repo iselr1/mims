@@ -21,6 +21,17 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
+.controller('LoginCtrl', function($scope, I4MIMidataService) {
+
+  // Use for testing the development environment
+  $scope.user = {
+    server: 'https://test.midata.coop:9000'
+  }
+
+  // Connect with MIDATA
+  $scope.loggedIn = I4MIMidataService.loggedIn();
+})
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

@@ -1,0 +1,17 @@
+<body ng-app="MsApp" ng-controller="HomeCtrl">
+<ion-header-bar align-title="center" class="bar-positive">
+  <h1 class="title">MS App 1.0</h1>
+  <!-- New Task button-->
+  <button class="button button-calm" ng-click="logout()">
+    Logout
+  </button>
+</ion-header-bar>
+<ion-content>
+  <ion-list>
+    <ion-item ng-repeat="item in items"
+   href="#/{{item.id}}"
+   class="item item-thumbnail-left">
+  <img ng-src="{{ item.image }}">
+  <h2>{{ item.title }}</h2>
+  </ion-item>
+</ion-content>
