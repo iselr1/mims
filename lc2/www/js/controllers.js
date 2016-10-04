@@ -1,6 +1,21 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, I4MIMidataService) {
+
+
+  console.info("Hello");
+
+  $scope.user = {
+    server: 'https://test.midata.coop:9000'
+  }
+
+  $scope.loggedIn = I4MIMidataService.loggedIn();
+
+  $scope.showModalLogin = function() {
+    I4MIMidataService.login();
+  }
+
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -21,15 +36,19 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('LoginCtrl', function($scope, I4MIMidataService) {
+.controller('loginCtrl', function($scope, I4MIMidataService) {
 
-  // Use for testing the development environment
+  console.info("Hello");
+
   $scope.user = {
     server: 'https://test.midata.coop:9000'
   }
 
-  // Connect with MIDATA
   $scope.loggedIn = I4MIMidataService.loggedIn();
+
+  $scope.showModalLogin = function() {
+    I4MIMidataService.login();
+  }
 })
 
 .controller('AccountCtrl', function($scope) {
