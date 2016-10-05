@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, I4MIMidataService) {
+.controller('DashCtrl', function($scope, $translate, I4MIMidataService) {
   // Use for testing the development environment
   $scope.user = {
     server: 'https://test.midata.coop:9000'
@@ -9,6 +9,11 @@ angular.module('starter.controllers', [])
   // Connect with MIDATA
   $scope.loggedIn = I4MIMidataService.loggedIn();
 
+  //Change the language
+  $scope.switchLanguage = function(key) {
+    console.log(test);
+    $translate.use(key);
+  };
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

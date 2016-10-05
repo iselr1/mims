@@ -1,7 +1,14 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="Login">
+  <ion-nav-buttons side="right">
+    <button class="button button clear" ng-click="switchLanguage('de')" translate="LANG_DE"></button>
+    <button class="button button clear" ng-click="switchLanguage('fr')" translate="LANG_FR"></button>
+    <button class="button button clear" ng-click="switchLanguage('en')" translate="LANG_EN"></button>
+  </ion-nav-buttons>
   <ion-content class="padding">
-    <h2>Welcome to Ionic</h2>
-    <i4mi-midata-login user="user" controller-name="I4MIMidataLoginController"></i4mi-midata-login>
-
+    <img src="img/MitrendS.png" class="center" height="200px">
+      <i4mi-midata-login user="user" controller-name="I4MIMidataLoginController"></i4mi-midata-login>
+    <img src="img/usz.png" height="100px">
+    <img src="img/bfh.png" height="150px">
+    <p translate="test"></p>
   </ion-content>
 </ion-view>

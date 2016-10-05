@@ -24,7 +24,12 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     });
   })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+  $translateProvider.useStaticFilesLoader({
+    prefix: 'locale-',
+    suffix: '.json'
+  });
+  $translateProvider.use('en');
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
