@@ -1,19 +1,13 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, I4MIMidataService) {
-
-
-  console.info("Hello");
-
+  // Use for testing the development environment
   $scope.user = {
     server: 'https://test.midata.coop:9000'
   }
 
+  // Connect with MIDATA
   $scope.loggedIn = I4MIMidataService.loggedIn();
-
-  $scope.showModalLogin = function() {
-    I4MIMidataService.login();
-  }
 
 })
 
@@ -36,19 +30,15 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('loginCtrl', function($scope, I4MIMidataService) {
+.controller('LoginCtrl', function($scope, I4MIMidataService) {
 
-  console.info("Hello");
-
+  // Use for testing the development environment
   $scope.user = {
     server: 'https://test.midata.coop:9000'
   }
 
+  // Connect with MIDATA
   $scope.loggedIn = I4MIMidataService.loggedIn();
-
-  $scope.showModalLogin = function() {
-    I4MIMidataService.login();
-  }
 })
 
 .controller('AccountCtrl', function($scope) {
