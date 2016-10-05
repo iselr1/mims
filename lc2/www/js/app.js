@@ -26,7 +26,7 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
 
 .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
   $translateProvider.useStaticFilesLoader({
-    prefix: 'locale-',
+    prefix: 'js/locale-',
     suffix: '.json'
   });
   $translateProvider.use('en');

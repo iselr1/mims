@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
 
   //Change the language
   $scope.switchLanguage = function(key) {
-    console.log(test);
+    console.log("test");
     $translate.use(key);
   };
 })
