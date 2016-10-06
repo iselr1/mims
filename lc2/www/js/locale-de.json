@@ -2,5 +2,13 @@
  "HEADLINE": "Hello da!",
  "LANG_DE": "Sprache: Deutsch",
  "LANG_EN": "Sprache: Englisch",
- "test": "abc"
+  "LANG_FR": "Sprache: Franzöisch",
+ "Impressum": "Impressum",
+ "Übersicht": "Übersicht",
+ "KSym_Erf": "Kernsymtome erfassen",
+ "Frageb": "Fragebögen",
+ "Uebung_Durchf": "Übungen durchführen",
+ "Route": "Route",
+ "Z-S": "Zahlen-Symbol",
+ "Motorik": "Motorik"
 }

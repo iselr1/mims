@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $translate, I4MIMidataService) {
+.controller('LoginCtrl', function($scope, $translate, I4MIMidataService) {
   // Use for testing the development environment
   $scope.user = {
     server: 'https://test.midata.coop:9000'
@@ -11,43 +11,45 @@ angular.module('starter.controllers', [])
 
   //Change the language
   $scope.switchLanguage = function(key) {
-    console.log("test");
     $translate.use(key);
   };
+
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+.controller('HomeCtrl', function($scope, $stateParams, $location) {
+  $scope.goKSym_Erf = function() {
+    $location.path('kernsymptome');
   };
-})
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('LoginCtrl', function($scope, I4MIMidataService) {
-
-  // Use for testing the development environment
-  $scope.user = {
-    server: 'https://test.midata.coop:9000'
-  }
-
-  // Connect with MIDATA
-  $scope.loggedIn = I4MIMidataService.loggedIn();
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+  $scope.goAu_Frageb = function() {
+    $location.path('auswahl_fragebogen');
   };
+
+  $scope.goAu_Uebungen = function() {
+    $location.path('auswahl_uebungen');
+  };
+
+})
+
+.controller('A_UebCtrl', function($scope, $stateParams, $location) {
+  $scope.goHome = function() {
+    $location.path('home');
+  };
+  $scope.goRoute = function() {
+    $location.path('route');
+  };
+
+  $scope.goZS = function() {
+    $location.path('zahlsymbol');
+  };
+
+  $scope.goMotrik = function() {
+    $location.path('motrik');
+  };
+
+})
+
+.controller('A_FragCtrl', function($scope, $stateParams) {
+
+
 });

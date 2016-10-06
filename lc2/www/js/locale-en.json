@@ -1,5 +1,8 @@
 {
  "HEADLINE": "Hello there!",
  "LANG_DE": "Lang: German",
- "LANG_EN": "Lang: English"
+ "LANG_EN": "Lang: English",
+ "LANG_FR": "Lang: French",
+ "Impressum": "Imprint",
+ "KSym_Erf": "Catch main symtoms"
 }

@@ -29,7 +29,7 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     prefix: 'js/locale-',
     suffix: '.json'
   });
-  $translateProvider.use('en');
+  $translateProvider.use('de');
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -37,60 +37,46 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    .state('index', {
-    url: '/',
-    templateUrl: 'templates/login.html'
+    .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html',
+    controller: 'HomeCtrl'
   })
 
-  // setup an abstract state for the tabs directive
-  .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
   })
 
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
+  .state('auswahl_uebungen', {
+    url: '/auswahl_uebungen',
+    templateUrl: 'templates/auswahl_uebungen.html',
+    controller: 'A_UebCtrl'
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
+  .state('auswahl_fragebogen', {
+    url: '/auswahl_fragebogen',
+    templateUrl: 'templates/auswahl_fragebogen.html',
+    controller: 'A_FragCtrl'
+  })
+
+  .state('route', {
+      url: '/route',
+      templateUrl: 'templates/route.html',
+      controller: 'A_FragCtrl'
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
+    .state('zahlsymbol', {
+      url: '/zahlsymbol',
+      templateUrl: 'templates/zahlsymbol.html',
+      controller: 'ZSCtrl'
+    })
+    .state('motrik', {
+      url: '/motrik',
+      templateUrl: 'templates/motrik.html',
+      controller: 'MotrikCtrl'
     })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'LoginCtrl'
-      }
-    }
-  });
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/home')
 
 });

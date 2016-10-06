@@ -1,17 +1,14 @@
-
-<ion-view view-title="Login" name="login-view">
+<ion-view view-title="Login">
+  <ion-nav-buttons side="right">
+    <button class="button button clear" ng-click="switchLanguage('de')" translate="LANG_DE"></button>
+    <button class="button button clear" ng-click="switchLanguage('fr')" translate="LANG_FR"></button>
+    <button class="button button clear" ng-click="switchLanguage('en')" translate="LANG_EN"></button>
+  </ion-nav-buttons>
   <ion-content class="padding">
-    <i4mi-midata-login user="user" controller-name="I4MIMidataLoginController"></i4mi-midata-login>
-      <div class="list list-inset">
-          <label class="item item-input">
-              <input type="text" placeholder="Username" ng-model="data.username" name="login.user">
-          </label>
-          <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="data.password" name="login.password">
-          </label>
-      </div>
-      <button class="button button-block button-calm" ng-click="login()">Login</button>
-  </ion-content>
-</ion-view>
+    <img src="img/MitrendS.png" class="center" height="200px">
+      <i4mi-midata-login user="user" controller-name="I4MIMidataLoginController"></i4mi-midata-login>
+    <img src="img/usz.png" height="100px">
+    <img src="img/bfh.png" height="150px">
+    <p translate="test"></p>
   </ion-content>
 </ion-view>
