@@ -43,13 +43,18 @@ angular.module('starter.controllers', [])
     $location.path('zahlsymbol');
   };
 
-  $scope.goMotrik = function() {
-    $location.path('motrik');
+  $scope.goMotorik = function() {
+    $location.path('motorik');
   };
 
 })
 
 .controller('A_FragCtrl', function($scope, $stateParams) {
+
+
+})
+
+.controller('KernsympCtrl', function($scope, $stateParams) {
 
 
 });

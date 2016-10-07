@@ -6,8 +6,8 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'formlyIonic', 'nvd3', 'i4mi', 'starter.controllers', 'starter.services', 'jsonFormatter', 'pascalprecht.translate'])
-  .constant('APPNAME', 'HelloI4MI')
-  .constant('APPSECRET', '8385bee7542099b10315dcb7b803b61a')
+  .constant('APPNAME', 'MitrendS')
+  .constant('APPSECRET', 'Mi3636trend9696S000')
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -71,10 +71,15 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       templateUrl: 'templates/zahlsymbol.html',
       controller: 'ZSCtrl'
     })
-    .state('motrik', {
-      url: '/motrik',
-      templateUrl: 'templates/motrik.html',
-      controller: 'MotrikCtrl'
+    .state('motorik', {
+      url: '/motorik',
+      templateUrl: 'templates/motorik.html',
+      controller: 'MotorikCtrl'
+    })
+    .state('kernsymptome', {
+      url: '/kernsymptome',
+      templateUrl: 'templates/kernsymptome.html',
+      controller: 'KernsympCtrl'
     })
 
   $urlRouterProvider.otherwise('/home')
