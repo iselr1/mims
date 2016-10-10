@@ -49,12 +49,65 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('A_FragCtrl', function($scope, $stateParams) {
-
+.controller('A_FragCtrl', function($scope, $stateParams, $location) {
+  $scope.goMsis = function() {
+    $location.path('msis');
+  };
 
 })
 
 .controller('KernsympCtrl', function($scope, $stateParams) {
 
 
-});
+  })
+  .controller('MsisCtrl', function($scope, $stateParams) {
+    $scope.msisTexts1 = [{
+      text: '1. körperlich anstrengende Dinge zu tun?',
+      id: 'msis1'
+    }, {
+      text: '2. Dinge fest anzufassen (z.B. Hahn aufdrehen)?',
+      id: 'msis2'
+    }, {
+      text: '3. Dinge zu tragen?',
+      id: 'msis3'
+    }];
+    $scope.msisTexts2 = [{
+      text: '4. Probleme mit dem Gleichgewicht?',
+      id: 'msis4'
+    }, {
+      text: '5. Schwierigkeiten, sich in der Wohnung zu bewegen?',
+      id: 'msis5'
+    }, {
+      text: '6. ungeschickt zu sein?',
+      id: 'msis6'
+    }, {
+      text: '7. steif zu sein?',
+      id: 'msis7'
+    }, {
+      text: '8. schwere Arme und/oder Beine zu haben?',
+      id: 'msis8'
+    }];
+    $scope.msisTexts3 = [{
+      text: '9. Probleme mit dem Gleichgewicht?',
+      id: 'msis4'
+    }, {
+      text: '10. Schwierigkeiten, sich in der Wohnung zu bewegen?',
+      id: 'msis5'
+    }, {
+      text: '11. ungeschickt zu sein?',
+      id: 'msis6'
+    }, {
+      text: '12. steif zu sein?',
+      id: 'msis7'
+    }, {
+      text: '13. schwere Arme und/oder Beine zu haben?',
+      id: 'msis8'
+    }];
+    $scope.radioButtonsCounter = [{
+      id: '1',
+      label: 'test'
+    }, {
+      id: '2',
+      label: 'test2'
+    }];
+  });

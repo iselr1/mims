@@ -9,6 +9,63 @@
     </button>
   </ion-nav-buttons>
   <ion-content>
-    <p> This site is under construction</p>
+    <form name="form" novalidate class="css-form">
+       <div ng-show="form.$submitted">
+         <div class="error" ng-repeat="text in msisTexts1" ng-show="form[text.id].$error.required">Please rate <span ng-bind-html="text.text"></span></div>
+         <div class="error" ng-repeat="text in msisTexts2" ng-show="form[text.id].$error.required">Please rate <span ng-bind-html="text.text"></span></div>
+       </div>
+       <table>
+         <tr>
+           <th></th>
+           <th ng-repeat="buttons in radioButtonsCounter">{{buttons.label}}</th>
+         </tr>
+         <tr>
+           <th>
+           Wie sehr waren sie in den letzen 2 Wochen eingeschränkt…
+           </th>
+         </tr>
+       	<tr ng-repeat="text in msisTexts1">
+         	<td><span ng-bind-html="text.text"></span></td>
+         	<td align="center" ng-repeat = "buttons in radioButtonsCounter">
+             <input type=radio ng-model="text.value" value="{{buttons.id}}" name="{{text.id}}" required/>
+           </td>
+       	</tr>
+       	<tr>
+       	  <th>
+       	    Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...
+       	  </th>
+       	</tr>
+       	<tr ng-repeat="text in msisTexts2">
+         	<td><span ng-bind-html="text.text"></span></td>
+         	<td align="center" ng-repeat = "buttons in radioButtonsCounter">
+             <input type=radio ng-model="text.value" value="{{buttons.id}}" name="{{text.id}}" required/>
+           </td>
+       	</tr>
+ 	    </table>
+ 	    <input type="submit" value="Weiter" />
+ 	  </form>
+    <form>
+      <table>
+        <div ng-show="form.$submitted">
+          <div class="error" ng-repeat="text in msisTexts1" ng-show="form[text.id].$error.required">Please rate <span ng-bind-html="text.text"></span></div>
+          <div class="error" ng-repeat="text in msisTexts2" ng-show="form[text.id].$error.required">Please rate <span ng-bind-html="text.text"></span></div>
+        </div>
+        <tr>
+          <th></th>
+          <th ng-repeat="buttons in radioButtonsCounter">{{buttons.label}}</th>
+        </tr>
+        <tr>
+       	  <th>
+       	    Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...
+       	  </th>
+       	</tr>
+        <tr ng-repeat="text in msisTexts2">
+          <td><span ng-bind-html="text.text"></span></td>
+          <td align="center" ng-repeat = "buttons in radioButtonsCounter">
+            <input type=radio ng-model="text.value" value="{{buttons.id}}" name="{{text.id}}" required/>
+          </td>
+        </tr>
+      </table>
+    </form>
   </ion-content>
   </ion-view>

@@ -30,6 +30,7 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     suffix: '.json'
   });
   $translateProvider.use('de');
+  $translateProvider.useSanitizeValueStrategy('sanitize');
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -80,6 +81,11 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       url: '/kernsymptome',
       templateUrl: 'templates/kernsymptome.html',
       controller: 'KernsympCtrl'
+    })
+    .state('msis', {
+      url: '/msis',
+      templateUrl: 'templates/msis.html',
+      controller: 'MsisCtrl'
     })
 
   $urlRouterProvider.otherwise('/home')
