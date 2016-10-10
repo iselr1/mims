@@ -3,11 +3,101 @@
     <button class="button icon-left ion-log-out" ng-click="doLogout()">Logout</button>
   </ion-nav-buttons>
   <ion-nav-buttons side="left">
-    <button class="button icon-left ion-home" ng-click="goHome()" translate="Home"></button>
+    <button class="button icon-left ion-home" ng-click="goHome()" translate="Übersicht"></button>
   </ion-nav-buttons>
   <ion-content class="padding">
-    <p> This site is under construction
-      <img src="img/max.png" class="center" height="200px">
-    </p>
+    <form>
+      <table width=50%>
+        <tr>
+          <td colspan="2" translate="Q1core"></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" name="YNrighthanded" value="y"><label for="y" translate="yes"></label>
+          </td>
+          <td>
+            <input type="radio" name="YNrighthanded" value="n"><label for="n" translate="no"></label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" translate="Q2core"></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" name="YNmovehand" value="y"><label for="y" translate="yes"></label>
+          </td>
+          <td>
+            <input type="radio" name="YNmovehand" value="n"><label for="n" translate="no"></label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" translate="Q3core"></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" name="YNfeelhand" value="y"><label for="y" translate="yes"></label>
+          </td>
+          <td>
+            <input type="radio" name="YNfeelhand" value="n"><label for="n" translate="no"></label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" translate="Q4core"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <ion-item><ion-range min="0" max="10" step="100" snaps="true"></ion-range></ion-item>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" translate="Q5core"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <ion-item><ion-range min="0" max="4" step="100" snaps="true"></ion-range></ion-item>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" translate="Q6core"></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" name="YNthrust" value="y"><label for="y" translate="yes"></label>
+          </td>
+          <td>
+            <input type="radio" name="YNthrust" value="n"><label for="n" translate="no"></label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" translate="Q7core"></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" name="YNsymp" value="y"><label for="y" translate="yes"></label>
+          </td>
+          <td>
+            <input type="radio" name="YNsymp" value="n"><label for="n" translate="no"></label>
+          </td>
+        </tr>
+      </table>
+    </form>
   </ion-content>
 </ion-view>
