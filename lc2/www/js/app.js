@@ -50,6 +50,12 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     controller: 'LoginCtrl'
   })
 
+  .state('impressum', {
+    url: '/impressum',
+    templateUrl: 'templates/impressum.html',
+    controller: 'ImpCtrl'
+  })
+
   .state('auswahl_uebungen', {
     url: '/auswahl_uebungen',
     templateUrl: 'templates/auswahl_uebungen.html',

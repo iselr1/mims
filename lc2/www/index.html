@@ -54,13 +54,17 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
   </head>
-  <body ng-app="starter">
+  <body ng-app="starter" ng-controller="NavCtrl">
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
     <ion-nav-bar class="bar-dark">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+      <ion-nav-buttons side="right">
+        <button class="button icon-left ion-log-out" ng-click="doLogout()" ng-show="showHomeButton">Logout</button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="left">
+        <button class="button icon-left ion-home" ng-click="goHome()" ng-show="showLogoutButton" translate="Übersicht"></button>
+      </ion-nav-buttons>
     </ion-nav-bar>
     <!--
       The views will be rendered in the <ion-nav-view> directive below

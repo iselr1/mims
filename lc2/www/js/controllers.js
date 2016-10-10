@@ -1,5 +1,22 @@
 angular.module('starter.controllers', [])
 
+.controller('NavCtrl', function($scope, $location) {
+  if ($location.path() != 'home' ||
+    'motorik' ||
+    'route' ||
+    'zahlsymbol') {
+    $scope.showHomeButton = true;
+    $scope.showLogoutButton = true;
+  }
+
+  $scope.goHome = function() {
+    $location.path('home');
+  };
+  $scope.doLogout = function() {
+    $location.path('login');
+  };
+})
+
 .controller('LoginCtrl', function($scope, $translate, I4MIMidataService) {
   // Use for testing the development environment
   $scope.user = {
@@ -29,6 +46,17 @@ angular.module('starter.controllers', [])
     $location.path('auswahl_uebungen');
   };
 
+  $scope.doLogout = function() {
+    $location.path('login');
+  };
+
+  $scope.goImpressum = function() {
+    $location.path('impressum');
+  };
+})
+
+.controller('ImpCtrl', function($scope, $stateParams) {
+
 })
 
 .controller('A_UebCtrl', function($scope, $stateParams, $location) {
@@ -57,7 +85,16 @@ angular.module('starter.controllers', [])
 })
 
 .controller('KernsympCtrl', function($scope, $stateParams) {
-
+    $scope.user1 = {
+      min: '0',
+      max: '10',
+      value: '5'
+    }
+    $scope.user2 = {
+      min: '0',
+      max: '4',
+      value: '2'
+    }
 
   })
   .controller('MsisCtrl', function($scope, $stateParams) {
@@ -110,4 +147,12 @@ angular.module('starter.controllers', [])
       id: '2',
       label: 'test2'
     }];
-  });
+  })
+
+.controller('MotorikCtrl', function($scope, $stateParams) {
+
+})
+
+.controller('ZSCtrl', function($scope, $stateParams) {
+
+});

@@ -1,10 +1,4 @@
 <ion-view view-title="Kernsymptome">
-  <ion-nav-buttons side="right">
-    <button class="button icon-left ion-log-out" ng-click="doLogout()">Logout</button>
-  </ion-nav-buttons>
-  <ion-nav-buttons side="left">
-    <button class="button icon-left ion-home" ng-click="goHome()" translate="Übersicht"></button>
-  </ion-nav-buttons>
   <ion-content class="padding">
     <form>
       <table width=70%>
@@ -55,7 +49,11 @@
         </tr>
         <tr>
           <td colspan="2">
-            <ion-item><ion-range min="0" max="10" step="1" snaps="true" [(ngModel)]="test" color="blue"></ion-range></ion-item>
+            <div class="range range-assertive" >
+              <input type="range" min="0" max="10" value="user.value" step="1" snaps="true" ng-model="user1.value">
+                        {{user1.value}}
+                        /{{user1.max}}
+            </div>
           </td>
         </tr>
         <tr>
@@ -66,7 +64,11 @@
         </tr>
         <tr>
           <td colspan="2">
-            <ion-item><ion-range min="0" max="4" step="1" snaps="true"></ion-range></ion-item>
+            <div class="range range-assertive" >
+              <input type="range" min="0" max="4" value="user.value" step="1" snaps="true" ng-model="user2.value">
+                        {{user2.value}}
+                        /{{user2.max}}
+            </div>
           </td>
         </tr>
         <tr>
