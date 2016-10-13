@@ -3,3 +3,17 @@
     margin-right: auto;
     display: block;
 }
+.fill-vertical-space{
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.fill-vertical-space > div, .fill-vertical-space > .row{
+    -webkit-flex: 1;
+    flex: 1;
+}
+.scroll{
+    height: 100%;
+}

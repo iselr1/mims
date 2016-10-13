@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('NavCtrl', function($scope, $location) {
+.controller('NavCtrl', function($scope, $location, I4MIMidataService) {
   if ($location.path() != 'home' ||
     'motorik' ||
     'route' ||
@@ -15,9 +15,14 @@ angular.module('starter.controllers', [])
   $scope.doLogout = function() {
     $location.path('login');
   };
+  $scope.doLogout = function() {
+    //Logout function
+    I4MIMidataService.logout();
+    $location.path('login');
+  };
 })
 
-.controller('LoginCtrl', function($scope, $translate, I4MIMidataService) {
+.controller('LoginCtrl', function($scope, $translate, I4MIMidataService, $timeout, $http, $state) {
   // Use for testing the development environment
   $scope.user = {
     server: 'https://test.midata.coop:9000'
@@ -26,11 +31,22 @@ angular.module('starter.controllers', [])
   // Connect with MIDATA
   $scope.loggedIn = I4MIMidataService.loggedIn();
 
+  // Call every second
+  var timer = $timeout(function refresh() {
+    if ((I4MIMidataService.loggedIn()) && ($state.$current.name = 'login')) {
+      $state.go('home');
+    }
+    timer = $timeout(refresh, 1000);
+  }, 1000);
+
   //Change the language
   $scope.switchLanguage = function(key) {
     $translate.use(key);
   };
 
+  $scope.showModalLogin = function(){
+    I4MIMidataService.login();
+  }
 })
 
 .controller('HomeCtrl', function($scope, $stateParams, $location) {
@@ -142,10 +158,19 @@ angular.module('starter.controllers', [])
     }];
     $scope.radioButtonsCounter = [{
       id: '1',
-      label: 'test'
+      label: 'garnicht'
     }, {
       id: '2',
-      label: 'test2'
+      label: 'ein bisschen'
+    }, {
+      id: '3',
+      label: 'mässig'
+    }, {
+      id: '4',
+      label: 'ziemlich'
+    }, {
+      id: '5',
+      label: 'sehr'
     }];
   })
 

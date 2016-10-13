@@ -1,16 +1,22 @@
 <ion-view view-title="Übersicht Fragebogen">
-  <ion-content>
-    <table width=100%>
-      <tr height="150">
-        <td width="100">
-          <button class="button button-clear" ng-click="goMsis()">
-          <img src="img/frag.png" width="100" height="100" alt=" "/>
+  <ion-content scroll="false">
+    <div class="fill-vertical-space">
+      <div class = "row">
+        <div class= "col col-40">
+          <button class="button button-clear button-block" ng-click="goMsis()">
+            <img src="img/frag.png" height="100" alt=" "/>
           </button>
-        </td>
-        <td align="left">
-          <button class="button button-large button-light" ng-click="goMsis()" translate="MSIS-29"/>
-        </td>
-      </tr>
-    </table>
+        </div>
+      <div class="col col-60">
+        <button class="button button-large button-light" ng-click="goMsis()" translate="MSIS-29"/>
+      </div>
+    </div>
+    <div class = "row">
+      <div class= "col"></div>
+    </div>
+    <div class = "row">
+      <div class= "col"></div>
+    </div>
+  </div>
   </ion-content>
 </ion-view>
