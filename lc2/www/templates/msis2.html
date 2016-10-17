@@ -7,7 +7,7 @@
        </div>
 <div class="fill-vertical space">
   <div class="row">
-    <div class="col col-60" translate="MsisQs1"></div>
+    <div class="col col-60">Wie sehr waren sie in den letzen 2 Wochen eingeschränkt…</div>
     <div class="col" ng-repeat="buttons in radioButtonsCounter">{{buttons.label}}</div>
   </div>
   <div class="row" ng-repeat="text in msisTexts1">
@@ -15,20 +15,17 @@
       <div class="col" ng-repeat="buttons in radioButtonsCounter">
         <input type="radio" ng-model="text.value" value="{{buttons.id}}" name="{{text.id}}" required="yes"/>
       </div>
-  </div>
+    </div>
 
-  <div class="row">
-      <div class="col col-60" translate="MsisQs1"></div>
-  </div>
-  <div class="row" ng-repeat="text in msisTexts2">
+    <div class="row">
+      <div class="col col-60">Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...</div>
+    </div>
+    <div class="row" ng-repeat="text in msisTexts2">
       <div class="col col-60"><span ng-bind-html="text.text"></span></div>
         <div class="col" ng-repeat="buttons in radioButtonsCounter">
           <input type="radio" ng-model="text.value" value="{{buttons.id}}" name="{{text.id}}" required="yes"/>
         </div>
-  </div>
-  <div class="row">
-    <input type="submit" value="Weiter" ng-click="goMsis2" />
-  </div>
+      </div>
 
     </form>
   </ion-content>

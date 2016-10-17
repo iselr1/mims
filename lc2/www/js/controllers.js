@@ -1,12 +1,16 @@
 angular.module('starter.controllers', [])
 
-.controller('NavCtrl', function($scope, $location, I4MIMidataService) {
+.controller('NavCtrl', function($scope, $location, $state, I4MIMidataService) {
   if ($location.path() != 'home' ||
     'motorik' ||
     'route' ||
     'zahlsymbol') {
     $scope.showHomeButton = true;
     $scope.showLogoutButton = true;
+  }
+  else if($state.$current.name = 'login'){
+    $scope.showHomeButton = false;
+    $scope.showLogoutButton = false;
   }
 
   $scope.goHome = function() {
@@ -23,7 +27,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function($scope, $translate, I4MIMidataService, $timeout, $http, $state) {
-  // Use for testing the development environment
+    // Use for testing the development environment
   $scope.user = {
     server: 'https://test.midata.coop:9000'
   }
@@ -32,13 +36,13 @@ angular.module('starter.controllers', [])
   $scope.loggedIn = I4MIMidataService.loggedIn();
 
   // Call every second
-  var timer = $timeout(function refresh() {
+/*  var timer = $timeout(function refresh() {
     if ((I4MIMidataService.loggedIn()) && ($state.$current.name = 'login')) {
       $state.go('home');
     }
     timer = $timeout(refresh, 1000);
   }, 1000);
-
+*/
   //Change the language
   $scope.switchLanguage = function(key) {
     $translate.use(key);
@@ -113,7 +117,11 @@ angular.module('starter.controllers', [])
     }
 
   })
-  .controller('MsisCtrl', function($scope, $stateParams) {
+.controller('MsisCtrl', function($scope, $stateParams) {
+    $scope.goMsis2 = function() {
+      $location.path('msis2');
+    };
+    // Fragen des Fragebogens
     $scope.msisTexts1 = [{
       text: '1. körperlich anstrengende Dinge zu tun?',
       id: 'msis1'
@@ -172,7 +180,14 @@ angular.module('starter.controllers', [])
       id: '5',
       label: 'sehr'
     }];
-  })
+})
+
+.controller('Msis2Ctrl', function($scope, $stateParams, $location) {
+    $scope.goMsis3 = function() {
+      $location.path('msis3');
+  };
+
+})
 
 .controller('MotorikCtrl', function($scope, $stateParams) {
 

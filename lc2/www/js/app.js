@@ -93,7 +93,12 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       templateUrl: 'templates/msis.html',
       controller: 'MsisCtrl'
     })
+    .state('msis2', {
+      url: '/msis2',
+      templateUrl: 'templates/msis2.html',
+      controller: 'Msis2Ctrl'
+    })
 
-  $urlRouterProvider.otherwise('/login')
+  $urlRouterProvider.otherwise('/home')
 
 });

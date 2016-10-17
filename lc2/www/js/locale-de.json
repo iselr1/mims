@@ -19,5 +19,51 @@
  "Q6core": "Hatten Sie seit der letzen Übung einen Schub?",
  "Q7core": "Haben Ihre MS Symptome seit der letzten Übung zugenommen?",
  "yes":"Ja",
- "no":"Nein"
+ "no":"Nein",
+ "MsisQs1" : "Wie sehr waren sie in den letzen 2 Wochen eingeschränkt…",
+ "MsisQs2" : "Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...",
+ "Msis":{
+   "Radios":{
+     "MR1" : "gar nicht",
+     "MR2" : "ein bisschen",
+     "MR3" : "mässig",
+     "MR4" : "ziemlich",
+     "MR5" : "sehr"
+   },
+   "Questions1":{
+     "MQ1" : "körperlich anstrengende Dinge zu tun?",
+     "MQ2" : "Dinge fest anzufassen (z.B. Hahn aufdrehen)?",
+     "MQ3" : "Dinge zu tragen?"
+   },
+   "Questions2":{
+     "MsisQ4" : "Probleme mit dem Gleichgewicht?",
+     "MsisQ5" : "Schwierigkeiten, sich in der Wohnung zu bewegen?",
+     "MsisQ6" : "ungeschickt zu sein?",
+     "MsisQ7" : "steif zu sein?",
+     "MsisQ8" : "schwere Arme und/oder Beine zu haben?"
+   },
+ "Questions3":{
+     "MsisQ9" : "Zittern der Arme oder Beine zu haben?",
+     "MsisQ10" : "Krämpfe der Extremitäten zu haben?",
+     "MsisQ11" : "dass ihr Körper nicht tat, was sie wollten?",
+     "MsisQ12" : "dass sie davon abhingen, dass Andere Dinge für sie erledigten?",
+     "MsisQ13" : "Beeinträchtigung im sozialen und Freizeitleben zu Hause?",
+     "MsisQ14" : "gezwungen zu sein, zu Hause zu bleiben?",
+     "MsisQ15" : "Probleme der Hände bei Alltagstätigkeiten?",
+     "MsisQ16" : "die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?",
+     "MsisQ17" : "Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?",
+     "MsisQ18" : "länger für Dinge zu brauchen?",
+     "MsisQ19" : "Schwierigkeiten, Dinge spontan zu machen?",
+     "MsisQ20" : "ganz schnell zur Toilette zu müssen?",
+     "MsisQ21" : "sich allgemein unwohl zu fühlen?",
+     "MsisQ22" : "Schlafprobleme zu haben?",
+     "MsisQ23" : "sich geistig/mental müde zu fühlen?",
+     "MsisQ24" : "Sorgen bezogen auf MS zu haben?",
+     "MsisQ25" : "sich angespannt und ängstlich zu fühlen?",
+     "MsisQ26" : "sich störbar, ungeduldig und aufbrausend zu fühlen?",
+     "MsisQ27" : "Konzentrationsprobleme zu haben?",
+     "MsisQ28" : "keine Zuversicht zu haben?",
+     "MsisQ29" : "sich traurig/depressiv zu fühlen?"
+   }
+ }
 }
