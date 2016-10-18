@@ -99,6 +99,6 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       controller: 'Msis2Ctrl'
     })
 
-  $urlRouterProvider.otherwise('/home')
+  $urlRouterProvider.otherwise('/login')
 
 });

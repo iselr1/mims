@@ -35,14 +35,16 @@ angular.module('starter.controllers', [])
   // Connect with MIDATA
   $scope.loggedIn = I4MIMidataService.loggedIn();
 
-  // Call every second
-/*  var timer = $timeout(function refresh() {
-    if ((I4MIMidataService.loggedIn()) && ($state.$current.name = 'login')) {
-      $state.go('home');
-    }
-    timer = $timeout(refresh, 1000);
-  }, 1000);
-*/
+
+  // Call every Second
+    var timer = $timeout( function refresh(){
+      if (I4MIMidataService.loggedIn()){
+        $state.go('home');
+      }else{
+      timer = $timeout(refresh, 1000);
+      }
+    }, 1000);
+
   //Change the language
   $scope.switchLanguage = function(key) {
     $translate.use(key);
