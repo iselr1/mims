@@ -104,17 +104,20 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('KernsympCtrl', function($scope, $stateParams) {
+.controller('KernsympCtrl', function($scope, $stateParams, $location) {
     $scope.user1 = {
       min: '0',
       max: '10',
       value: '5'
-    }
+    };
     $scope.user2 = {
       min: '0',
       max: '4',
       value: '2'
-    }
+    };
+    $scope.goHome = function() {
+      $location.path('home');
+    };
 
   })
 .controller('MsisCtrl', function($scope, $stateParams) {

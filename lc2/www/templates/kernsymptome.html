@@ -1,105 +1,86 @@
 <ion-view view-title="Kernsymptome">
   <ion-content class="padding">
     <form>
-      <table width=70%>
-        <tr>
-          <td colspan="2" translate="Q1core"></td>
-        </tr>
-        <tr>
-          <td>
-            <input type="radio" name="YNrighthanded" value="y"><label for="y" translate="yes"></label>
-          </td>
-          <td>
-            <input type="radio" name="YNrighthanded" value="n"><label for="n" translate="no"></label>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-          <td colspan="2" translate="Q2core"></td>
-        </tr>
-        <tr>
-          <td>
-            <input type="radio" name="YNmovehand" value="y"><label for="y" translate="yes"></label>
-          </td>
-          <td>
-            <input type="radio" name="YNmovehand" value="n"><label for="n" translate="no"></label>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-          <td colspan="2" translate="Q3core"></td>
-        </tr>
-        <tr>
-          <td>
-            <input type="radio" name="YNfeelhand" value="y"><label for="y" translate="yes"></label>
-          </td>
-          <td>
-            <input type="radio" name="YNfeelhand" value="n"><label for="n" translate="no"></label>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-          <td colspan="2" translate="Q4core"></td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <div class="range" >
+      <div class = "row">
+        <div class = "col col-100" translate="Q1core"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-10"><input type="radio" name="YNrighthanded" value="y"><label for="y" translate="yes"></label></div>
+        <div class = "col col-10"><input type="radio" name="YNrighthanded" value="n"><label for="n" translate="no"></label></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100" translate="Q2core"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-10"><input type="radio" name="YNmovehand" value="y"><label for="y" translate="yes"></label></div>
+        <div class = "col col-10"><input type="radio" name="YNmovehand" value="n"><label for="n" translate="no"></label></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100" translate="Q3core"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-10"><input type="radio" name="YNfeelhand" value="y"><label for="y" translate="yes"></label></div>
+        <div class = "col col-10"><input type="radio" name="YNfeelhand" value="n"><label for="n" translate="no"></label></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100" translate="Q4core"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-50">
+          <div class="range" >
               <input type="range" min="0" max="10" value="user.value" step="1" snaps="true" ng-model="user1.value">
                         {{user1.value}}
                         /{{user1.max}}
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-          <td colspan="2" translate="Q5core"></td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <div class="range" >
+          </div>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100" translate="Q5core"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-50">
+          <div class="range" >
               <input type="range" min="0" max="4" value="user.value" step="1" snaps="true" ng-model="user2.value">
                         {{user2.value}}
                         /{{user2.max}}
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-          <td colspan="2" translate="Q6core"></td>
-        </tr>
-        <tr>
-          <td>
-            <input type="radio" name="YNthrust" value="y"><label for="y" translate="yes"></label>
-          </td>
-          <td>
-            <input type="radio" name="YNthrust" value="n"><label for="n" translate="no"></label>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-          <td colspan="2" translate="Q7core"></td>
-        </tr>
-        <tr>
-          <td>
-            <input type="radio" name="YNsymp" value="y"><label for="y" translate="yes"></label>
-          </td>
-          <td>
-            <input type="radio" name="YNsymp" value="n"><label for="n" translate="no"></label>
-          </td>
-        </tr>
-      </table>
+          </div>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100" translate="Q6core"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-10"><input type="radio" name="YNthrust" value="y"><label for="y" translate="yes"></label></div>
+        <div class = "col col-10"><input type="radio" name="YNthrust" value="n"><label for="n" translate="no"></label></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-100" translate="Q7core"></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-10"><input type="radio" name="YNsymp" value="y"><label for="y" translate="yes"></label></div>
+        <div class = "col col-10"><input type="radio" name="YNsymp" value="n"><label for="n" translate="no"></label></div>
+      </div>
+      <div class = "row">
+        <div class = "col col-offset-50"><input type="submit" ng-click="goHome()" translate="save"/></div>
+      </div>
     </form>
   </ion-content>
 </ion-view>
