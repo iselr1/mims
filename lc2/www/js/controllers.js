@@ -85,8 +85,8 @@ angular.module('starter.controllers', [])
   $scope.goHome = function() {
     $location.path('home');
   };
-  $scope.goRoute = function() {
-    $location.path('route');
+  $scope.goRouteAnl = function() {
+    $location.path('routeanl');
   };
 
   $scope.goZS = function() {
@@ -200,4 +200,17 @@ angular.module('starter.controllers', [])
 
 .controller('ZSCtrl', function($scope, $stateParams) {
 
-});
+})
+
+.controller('RouteCtrl', function($scope, $stateParams) {
+
+})
+
+.controller('RouteAnlCtrl', function($scope, $stateParams) {
+
+})
+
+.controller('ZahlsymbolAnlCtrl', function($scope, $stateParams) {
+
+})
+;

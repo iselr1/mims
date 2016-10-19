@@ -71,7 +71,7 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
   .state('route', {
       url: '/route',
       templateUrl: 'templates/route.html',
-      controller: 'A_FragCtrl'
+      controller: 'RouteCtrl'
     })
     .state('zahlsymbol', {
       url: '/zahlsymbol',
@@ -97,6 +97,16 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       url: '/msis2',
       templateUrl: 'templates/msis2.html',
       controller: 'Msis2Ctrl'
+    })
+    .state('routeanl', {
+      url: '/routeanl',
+      templateUrl: 'templates/routeanl.html',
+      controller: 'RouteAnlCtrl'
+    })
+    .state('zahlsymbolanl', {
+      url: '/zahlsymbolanl',
+      templateUrl: 'templates/zahlsymbolanl.html',
+      controller: 'ZahlsymbolAnlCtrl'
     })
 
   $urlRouterProvider.otherwise('/login')
