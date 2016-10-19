@@ -17,3 +17,9 @@
 .scroll{
     height: 100%;
 }
+
+
+.zs-col{
+  border: 2px solid black;
+  text-align:center;
+}

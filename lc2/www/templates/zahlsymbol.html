@@ -1,5 +1,34 @@
 <ion-view view-title="Zahl-Symbol">
   <ion-content>
-    <p> This site is under construction</p>
+    <div class="row responsive-lg">
+      <div class="col">
+        <h4 align="center">Zahl</h4>
+      </br>
+      </br>
+        <h4 algin="center">Symbol</h4>
+      </div>
+      <div class="col zs-col" ng-repeat="img in images">
+        <img src="{{img.numSrc}}" height="80px"/>
+        <img src="{{img.imgSrc}}" width="60px"/>
+      </div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">empty</div>
+    <div class="row responsive-lg">
+      <div class="col zs-col" ng-repeat="img in images2">
+        <img src="{{img.numSrc}}" height="80px"/>
+        <img src="img/empty.png" width="80px"/>
+        <p>{{img.imgSrc}}</p>
+      </div>
+    </div>
+    <div class="row">
+      empty
+    </div>
+    <div class="row responsive-lg">
+      <div class="col zs-col" ng-repeat="img in images3">
+        <img src="{{img.imgSrc}}" width="80px"/ ng-click="controlZS({{img.imgSrc}})">
+      </div>
+    </div>
   </ion-content>
 </ion-view>
