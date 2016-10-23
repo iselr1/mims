@@ -99,13 +99,13 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       controller: 'Msis2Ctrl'
     })
     .state('routeanl', {
-      url: '/routeanl',
-      templateUrl: 'templates/routeanl.html',
+      url: '/route_anl',
+      templateUrl: 'templates/route_anl.html',
       controller: 'RouteAnlCtrl'
     })
     .state('zahlsymbolanl', {
-      url: '/zahlsymbolanl',
-      templateUrl: 'templates/zahlsymbolanl.html',
+      url: '/zahlsymbol_anl',
+      templateUrl: 'templates/zahlsymbol_anl.html',
       controller: 'ZahlsymbolAnlCtrl'
     })
 

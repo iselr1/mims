@@ -1,12 +1,14 @@
 {
  "HEADLINE": "Hello there!",
- "LANG_DE": "Lang: German",
- "LANG_EN": "Lang: English",
- "LANG_FR": "Lang: French",
+ "LANG_DE": "Deutsch",
+ "LANG_EN": "English",
+ "LANG_FR": "Français",
  "Impressum": "Imprint",
- "KSym_Erf": "Catch main symtoms",
  "Übersicht": "Home",
+ "KSym_Erf": "Catch main symtoms",
+ "Frageb": "Questionnaires",
+ "Uebung_Durchf": "Make excercices",
  "yes":"yes",
  "no":"no",
- "save":"Save",
+ "save":"Save"
 }

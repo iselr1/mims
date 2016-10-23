@@ -1,16 +1,22 @@
 angular.module('starter.controllers', [])
 
 .controller('NavCtrl', function($scope, $location, $state, I4MIMidataService) {
-  if ($location.path() != 'home' ||
-    'motorik' ||
+  if ($location.path() != 'login' || 'home' || 'motorik' ||
     'route' ||
     'zahlsymbol') {
     $scope.showHomeButton = true;
     $scope.showLogoutButton = true;
   }
-  else if($state.$current.name = 'login'){
+  else if($location.path() == 'login'){
     $scope.showHomeButton = false;
     $scope.showLogoutButton = false;
+  }
+  else if($location.path() == 'home'){
+    $scope.showHomeButton = false;
+    $scope.showLogoutButton = true;
+  }
+  else{
+
   }
 
   $scope.goHome = function() {
@@ -23,7 +29,7 @@ angular.module('starter.controllers', [])
     //Logout function
     I4MIMidataService.logout();
     $location.path('login');
-  };
+  }
 })
 
 .controller('LoginCtrl', function($scope, $translate, I4MIMidataService, $timeout, $http, $state) {
@@ -49,11 +55,11 @@ angular.module('starter.controllers', [])
   $scope.switchLanguage = function(key) {
     $translate.use(key);
 
-    var prefix: 'js/locale-';
-    var suffix: '.json'
+    var prefix = 'js/locale-';
+    var suffix = '.json';
 
-    $http.get(prefix+'key'+suffix).then(function(loadJson){
-      $scope.translateVariables =
+    $http.get(prefix + key + suffix).then(function(loadJson){
+      $scope.translateVariables = loadJson.data;
     })
   };
 
