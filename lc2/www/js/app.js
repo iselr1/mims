@@ -73,36 +73,43 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       templateUrl: 'templates/route.html',
       controller: 'RouteCtrl'
     })
+
     .state('zahlsymbol', {
       url: '/zahlsymbol',
       templateUrl: 'templates/zahlsymbol.html',
       controller: 'ZSCtrl'
     })
+
     .state('motorik', {
       url: '/motorik',
       templateUrl: 'templates/motorik.html',
       controller: 'MotorikCtrl'
     })
+
     .state('kernsymptome', {
       url: '/kernsymptome',
       templateUrl: 'templates/kernsymptome.html',
       controller: 'KernsympCtrl'
     })
+
     .state('msis', {
       url: '/msis',
       templateUrl: 'templates/msis.html',
       controller: 'MsisCtrl'
     })
+
     .state('msis2', {
       url: '/msis2',
       templateUrl: 'templates/msis2.html',
       controller: 'Msis2Ctrl'
     })
+
     .state('routeanl', {
       url: '/route_anl',
       templateUrl: 'templates/route_anl.html',
       controller: 'RouteAnlCtrl'
     })
+
     .state('zahlsymbolanl', {
       url: '/zahlsymbol_anl',
       templateUrl: 'templates/zahlsymbol_anl.html',
