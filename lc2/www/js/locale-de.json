@@ -24,47 +24,49 @@
  "MsisQs1" : "Wie sehr waren sie in den letzen 2 Wochen eingeschränkt…",
  "MsisQs2" : "Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...",
  "Msis":{
-   "Radios":{
-     "MR1" : "gar nicht",
-     "MR2" : "ein bisschen",
-     "MR3" : "mässig",
-     "MR4" : "ziemlich",
-     "MR5" : "sehr"
-   },
-   "Questions1":{
-     "MQ1" : "körperlich anstrengende Dinge zu tun?",
-     "MQ2" : "Dinge fest anzufassen (z.B. Hahn aufdrehen)?",
-     "MQ3" : "Dinge zu tragen?"
-   },
-   "Questions2":{
-     "MsisQ4" : "Probleme mit dem Gleichgewicht?",
-     "MsisQ5" : "Schwierigkeiten, sich in der Wohnung zu bewegen?",
-     "MsisQ6" : "ungeschickt zu sein?",
-     "MsisQ7" : "steif zu sein?",
-     "MsisQ8" : "schwere Arme und/oder Beine zu haben?"
-   },
- "Questions3":{
-     "MsisQ9" : "Zittern der Arme oder Beine zu haben?",
-     "MsisQ10" : "Krämpfe der Extremitäten zu haben?",
-     "MsisQ11" : "dass ihr Körper nicht tat, was sie wollten?",
-     "MsisQ12" : "dass sie davon abhingen, dass Andere Dinge für sie erledigten?",
-     "MsisQ13" : "Beeinträchtigung im sozialen und Freizeitleben zu Hause?",
-     "MsisQ14" : "gezwungen zu sein, zu Hause zu bleiben?",
-     "MsisQ15" : "Probleme der Hände bei Alltagstätigkeiten?",
-     "MsisQ16" : "die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?",
-     "MsisQ17" : "Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?",
-     "MsisQ18" : "länger für Dinge zu brauchen?",
-     "MsisQ19" : "Schwierigkeiten, Dinge spontan zu machen?",
-     "MsisQ20" : "ganz schnell zur Toilette zu müssen?",
-     "MsisQ21" : "sich allgemein unwohl zu fühlen?",
-     "MsisQ22" : "Schlafprobleme zu haben?",
-     "MsisQ23" : "sich geistig/mental müde zu fühlen?",
-     "MsisQ24" : "Sorgen bezogen auf MS zu haben?",
-     "MsisQ25" : "sich angespannt und ängstlich zu fühlen?",
-     "MsisQ26" : "sich störbar, ungeduldig und aufbrausend zu fühlen?",
-     "MsisQ27" : "Konzentrationsprobleme zu haben?",
-     "MsisQ28" : "keine Zuversicht zu haben?",
-     "MsisQ29" : "sich traurig/depressiv zu fühlen?"
-   }
+   "Radios":[
+      {"id": "1", "label": "gar nicht"},
+      {"id": "2", "label": "ein bisschen"},
+      {"id": "3", "label": "mässig"},
+      {"id": "4", "label": "ziemlich"},
+      {"id": "5", "label": "sehr"}
+    ],
+   "Questions1":[
+     {"id": "1", "text": "körperlich anstrengende Dinge zu tun?"},
+     {"id": "2", "text": "Dinge fest anzufassen (z.B. Hahn aufdrehen)?"},
+     {"id": "3", "text": "Dinge zu tragen?"}
+   ],
+   "Questions2":[
+     {"id": "1", "text": "Probleme mit dem Gleichgewicht?"},
+     {"id": "2", "text": "Schwierigkeiten, sich in der Wohnung zu bewegen?"},
+     {"id": "3", "text": "ungeschickt zu sein?"},
+     {"id": "4", "text": "steif zu sein"},
+     {"id": "5", "text": "schwere Arme und/oder Beine zu haben?"}
+   ],
+ "Questions3":[
+   {"id": "1", "text": "Zittern der Arme oder Beine zu haben?"},
+   {"id": "2", "text": "Krämpfe der Extremitäten zu haben?"},
+   {"id": "3", "text": "dass ihr Körper nicht tat, was sie wollten?"},
+   {"id": "4", "text": "dass sie davon abhingen, dass Andere Dinge für sie erledigten?"},
+   {"id": "5", "text": "Beeinträchtigung im sozialen und Freizeitleben zu Hause?"},
+   {"id": "6", "text": "gezwungen zu sein, zu Hause zu bleiben?"},
+   {"id": "7", "text": "Probleme der Hände bei Alltagstätigkeiten?"},
+   {"id": "8", "text": "die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?"},
+   {"id": "9", "text": "Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?"},
+   {"id": "10", "text": "länger für Dinge zu brauchen?"}
+ ],
+ "Questions4":[
+   {"id": "1", "text": "Schwierigkeiten, Dinge spontan zu machen?"},
+   {"id": "2", "text": "ganz schnell zur Toilette zu müssen?"},
+   {"id": "3", "text": "sich allgemein unwohl zu fühlen?"},
+   {"id": "4", "text": "Schlafprobleme zu haben?"},
+   {"id": "5", "text": "sich geistig/mental müde zu fühlen?"},
+   {"id": "6", "text": "Sorgen bezogen auf MS zu haben?"},
+   {"id": "7", "text": "sich angespannt und ängstlich zu fühlen?"},
+   {"id": "8", "text": "sich störbar, ungeduldig und aufbrausend zu fühlen?"},
+   {"id": "9", "text": "Konzentrationsprobleme zu haben?"},
+   {"id": "10", "text": "keine Zuversicht zu haben?"},
+   {"id": "11", "text": "sich traurig/depressiv zu fühlen?"}
+ ]
  }
 }

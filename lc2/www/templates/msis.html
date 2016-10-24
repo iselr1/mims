@@ -8,11 +8,11 @@
 <div class="fill-vertical space">
   <div class="row">
     <div class="col col-60" translate="MsisQs1"></div>
-    <div class="col" ng-repeat="buttons in radioButtonsCounter">{{buttons.label}}</div>
+    <div class="col" ng-repeat="buttons in data.Msis.Radios">{{buttons.label}}</div>
   </div>
-  <div class="row" ng-repeat="text in msisTexts1">
+  <div class="row" ng-repeat="text in data.Msis.Questions1">
     <div class="col col-60"><span ng-bind-html="text.text"></span></div>
-      <div class="col" ng-repeat="buttons in radioButtonsCounter">
+      <div class="col" ng-repeat="buttons in data.Msis.Radios">
         <input type="radio" ng-model="text.value" value="{{buttons.id}}" name="{{text.id}}" required="yes"/>
       </div>
   </div>
@@ -20,9 +20,9 @@
   <div class="row">
       <div class="col col-60" translate="MsisQs1"></div>
   </div>
-  <div class="row" ng-repeat="text in msisTexts2">
+  <div class="row" ng-repeat="text in data.Msis.Questions2">
       <div class="col col-60"><span ng-bind-html="text.text"></span></div>
-        <div class="col" ng-repeat="buttons in radioButtonsCounter">
+        <div class="col" ng-repeat="buttons in data.Msis.Radios">
           <input type="radio" ng-model="text.value" value="{{buttons.id}}" name="{{text.id}}" required="yes"/>
         </div>
   </div>

@@ -32,7 +32,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('LoginCtrl', function($scope, $translate, I4MIMidataService, $timeout, $http, $state) {
+.controller('LoginCtrl', function($scope, $translate, I4MIMidataService, jsonService, $timeout, $http, $state) {
     // Use for testing the development environment
   $scope.user = {
     server: 'https://test.midata.coop:9000'
@@ -54,13 +54,7 @@ angular.module('starter.controllers', [])
   //Change the language
   $scope.switchLanguage = function(key) {
     $translate.use(key);
-
-    var prefix = 'js/locale-';
-    var suffix = '.json';
-
-    $http.get(prefix + key + suffix).then(function(loadJson){
-      $scope.translateVariables = loadJson.data;
-    })
+    jsonService.loadJson(key);
   };
 
   $scope.showModalLogin = function(){
@@ -100,7 +94,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.goRouteAnl = function() {
-    $location.path('routeanl');
+    $location.path('routeAnl');
   };
 
   $scope.goZS = function() {
@@ -136,69 +130,16 @@ angular.module('starter.controllers', [])
     };
 
   })
-.controller('MsisCtrl', function($scope, $stateParams) {
+.controller('MsisCtrl', function($scope, $stateParams, jsonService) {
     $scope.goMsis2 = function() {
       $location.path('msis2');
     };
+    $scope.data = jsonService.getJson();
+
+
+    console.log($scope.data);
     // Fragen des Fragebogens
-    $scope.msisTexts1 = [{
-      text: '1. körperlich anstrengende Dinge zu tun?',
-      id: 'msis1'
-    }, {
-      text: '2. Dinge fest anzufassen (z.B. Hahn aufdrehen)?',
-      id: 'msis2'
-    }, {
-      text: '3. Dinge zu tragen?',
-      id: 'msis3'
-    }];
-    $scope.msisTexts2 = [{
-      text: '4. Probleme mit dem Gleichgewicht?',
-      id: 'msis4'
-    }, {
-      text: '5. Schwierigkeiten, sich in der Wohnung zu bewegen?',
-      id: 'msis5'
-    }, {
-      text: '6. ungeschickt zu sein?',
-      id: 'msis6'
-    }, {
-      text: '7. steif zu sein?',
-      id: 'msis7'
-    }, {
-      text: '8. schwere Arme und/oder Beine zu haben?',
-      id: 'msis8'
-    }];
-    $scope.msisTexts3 = [{
-      text: '9. Probleme mit dem Gleichgewicht?',
-      id: 'msis4'
-    }, {
-      text: '10. Schwierigkeiten, sich in der Wohnung zu bewegen?',
-      id: 'msis5'
-    }, {
-      text: '11. ungeschickt zu sein?',
-      id: 'msis6'
-    }, {
-      text: '12. steif zu sein?',
-      id: 'msis7'
-    }, {
-      text: '13. schwere Arme und/oder Beine zu haben?',
-      id: 'msis8'
-    }];
-    $scope.radioButtonsCounter = [{
-      id: '1',
-      label: 'garnicht'
-    }, {
-      id: '2',
-      label: 'ein bisschen'
-    }, {
-      id: '3',
-      label: 'mässig'
-    }, {
-      id: '4',
-      label: 'ziemlich'
-    }, {
-      id: '5',
-      label: 'sehr'
-    }];
+
 })
 
 .controller('Msis2Ctrl', function($scope, $stateParams, $location) {
