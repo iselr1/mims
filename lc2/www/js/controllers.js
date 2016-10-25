@@ -114,8 +114,6 @@ angular.module('starter.controllers', [])
 
 })
 
-
-
 .controller('MotorikCtrl', function($scope, $stateParams) {
 
 })

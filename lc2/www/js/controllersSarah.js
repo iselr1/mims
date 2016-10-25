@@ -17,22 +17,26 @@ angular.module('starter.controllersSarah', [])
 
   })
 
-  .controller('RouteCtrl', function($scope, $stateParams) {
-
-    var $configCircle = {
-    id : "example1",
-    radius : "70",
-    fillStyle : 'red',
-    fill : 'true',
-    lineWidth : 5,
-    strokeStyle : 'yellow'
-  };
-
-  var example = new DrawJS($configCircle);
-  example.circle();
+.controller('RouteAnlCtrl', function($scope, $stateParams, $location) {
+      $scope.goRoute = function() {
+        $location.path('route');
+    };
 
   })
 
-  .controller('RouteAnlCtrl', function($scope, $stateParams) {
+.controller('RouteCtrl', function($scope, $stateParams) {
 
-  })
+ var $configCircle = {
+  id : "example1",
+  radius : "70",
+  fillStyle : 'red',
+  fill : 'true',
+  lineWidth : 5,
+  strokeStyle : 'yellow'
+};
+
+ //var example = new DrawJS($configCircle);
+//example.circle();
+
+})
+;
