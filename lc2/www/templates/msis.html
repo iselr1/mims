@@ -2,8 +2,8 @@
   <ion-content>
     <form name="form" novalidate class="css-form">
        <div ng-show="form.$submitted">
-         <div class="error" ng-repeat="text in msisTexts1" ng-show="form[text.id].$error.required">Please rate <span ng-bind-html="text.text"></span></div>
-         <div class="error" ng-repeat="text in msisTexts2" ng-show="form[text.id].$error.required">Please rate <span ng-bind-html="text.text"></span></div>
+         <div class="error" ng-repeat="text in data.Msis.Questions1" ng-show="form[text.id].$error.required">Please rate <span ng-bind-html="text.text"></span></div>
+         <div class="error" ng-repeat="text in data.Msis.Questions2" ng-show="form[text.id].$error.required">Please rate <span ng-bind-html="text.text"></span></div>
        </div>
 <div class="fill-vertical space">
   <div class="row">

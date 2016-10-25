@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'formlyIonic', 'nvd3', 'i4mi', 'starter.controllers', 'starter.services', 'jsonFormatter', 'pascalprecht.translate'])
+angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'formlyIonic', 'nvd3', 'i4mi', 'starter.controllers', 'starter.controllersRea', 'starter.controllersSarah', 'starter.services', 'jsonFormatter', 'pascalprecht.translate'])
   .constant('APPNAME', 'MitrendS')
   .constant('APPSECRET', 'Mi3636trend9696S000')
   .run(function($ionicPlatform) {
@@ -104,15 +104,15 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       controller: 'Msis2Ctrl'
     })
 
-    .state('routeAnl', {
-      url: '/routeAnl',
-      templateUrl: 'templates/routeAnl.html',
+    .state('route_anl', {
+      url: '/route_anl',
+      templateUrl: 'templates/route_anl.html',
       controller: 'RouteAnlCtrl'
     })
 
-    .state('zahlsymbolAnl', {
-      url: '/zahlsymbolAnl',
-      templateUrl: 'templates/zahlsymbolAnl.html',
+    .state('zahlsymbol_anl', {
+      url: '/zahlsymbol_anl',
+      templateUrl: 'templates/zahlsymbol_anl.html',
       controller: 'ZahlsymbolAnlCtrl'
     })
 

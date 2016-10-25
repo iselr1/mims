@@ -7,7 +7,14 @@ angular.module('starter.services', [])
 
     jsonService.data = {};
 
-    //Gets the list of nuclear weapons
+    // initialize it with the german json
+    $http.get(prefix + 'de' + suffix)
+        .success(function(data) {
+            jsonService.data.json = data;
+            console.log('Json data is initialized');
+        });
+
+    //Gets the new json file if the language is changed
     jsonService.loadJson = function(key) {
         $http.get(prefix + key + suffix)
             .success(function(data) {
