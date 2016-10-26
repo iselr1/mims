@@ -6,16 +6,13 @@ angular.module('starter.controllers', [])
     'zahlsymbol') {
     $scope.showHomeButton = true;
     $scope.showLogoutButton = true;
-  }
-  else if($location.path() == 'login'){
+  } else if ($location.path() == 'login') {
     $scope.showHomeButton = false;
     $scope.showLogoutButton = false;
-  }
-  else if($location.path() == 'home'){
+  } else if ($location.path() == 'home') {
     $scope.showHomeButton = false;
     $scope.showLogoutButton = true;
-  }
-  else{
+  } else {
 
   }
 
@@ -33,7 +30,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function($scope, $translate, I4MIMidataService, jsonService, $timeout, $http, $state) {
-    // Use for testing the development environment
+  // Use for testing the development environment
   $scope.user = {
     server: 'https://test.midata.coop:9000'
   }
@@ -43,13 +40,13 @@ angular.module('starter.controllers', [])
 
 
   // Call every Second
-    var timer = $timeout( function refresh(){
-      if (I4MIMidataService.loggedIn()){
-        $state.go('home');
-      }else{
+  var timer = $timeout(function refresh() {
+    if (I4MIMidataService.loggedIn()) {
+      $state.go('home');
+    } else {
       timer = $timeout(refresh, 1000);
-      }
-    }, 1000);
+    }
+  }, 1000);
 
   //Change the language
   $scope.switchLanguage = function(key) {
@@ -57,7 +54,7 @@ angular.module('starter.controllers', [])
     jsonService.loadJson(key);
   };
 
-  $scope.showModalLogin = function(){
+  $scope.showModalLogin = function() {
     I4MIMidataService.login();
   }
 })
@@ -102,7 +99,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.goMotorik = function() {
-    $location.path('motorik');
+    $location.path('geschafft');
   };
 
 })
@@ -116,4 +113,14 @@ angular.module('starter.controllers', [])
 
 .controller('MotorikCtrl', function($scope, $stateParams) {
 
+})
+
+.controller('GeschafftCtrl', function($scope, $stateParams, $location) {
+  $scope.goAu_Uebungen = function() {
+    $location.path('auswahl_uebungen');
+  };
+
+  $scope.goHome = function() {
+    $location.path('home');
+  };
 })

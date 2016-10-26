@@ -69,52 +69,58 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
   })
 
   .state('route', {
-      url: '/route',
-      templateUrl: 'templates/route.html',
-      controller: 'RouteCtrl'
-    })
+    url: '/route',
+    templateUrl: 'templates/route.html',
+    controller: 'RouteCtrl'
+  })
 
-    .state('zahlsymbol', {
-      url: '/zahlsymbol',
-      templateUrl: 'templates/zahlsymbol.html',
-      controller: 'ZSCtrl'
-    })
+  .state('zahlsymbol', {
+    url: '/zahlsymbol',
+    templateUrl: 'templates/zahlsymbol.html',
+    controller: 'ZSCtrl'
+  })
 
-    .state('motorik', {
-      url: '/motorik',
-      templateUrl: 'templates/motorik.html',
-      controller: 'MotorikCtrl'
-    })
+  .state('motorik', {
+    url: '/motorik',
+    templateUrl: 'templates/motorik.html',
+    controller: 'MotorikCtrl'
+  })
 
-    .state('kernsymptome', {
-      url: '/kernsymptome',
-      templateUrl: 'templates/kernsymptome.html',
-      controller: 'KernsympCtrl'
-    })
+  .state('kernsymptome', {
+    url: '/kernsymptome',
+    templateUrl: 'templates/kernsymptome.html',
+    controller: 'KernsympCtrl'
+  })
 
-    .state('msis', {
-      url: '/msis',
-      templateUrl: 'templates/msis.html',
-      controller: 'MsisCtrl'
-    })
+  .state('msis', {
+    url: '/msis',
+    templateUrl: 'templates/msis.html',
+    controller: 'MsisCtrl'
+  })
 
-    .state('msis2', {
-      url: '/msis2',
-      templateUrl: 'templates/msis2.html',
-      controller: 'Msis2Ctrl'
-    })
+  .state('msis2', {
+    url: '/msis2',
+    templateUrl: 'templates/msis2.html',
+    controller: 'Msis2Ctrl'
+  })
 
-    .state('route_anl', {
-      url: '/route_anl',
-      templateUrl: 'templates/route_anl.html',
-      controller: 'RouteAnlCtrl'
-    })
+  .state('route_anl', {
+    url: '/route_anl',
+    templateUrl: 'templates/route_anl.html',
+    controller: 'RouteAnlCtrl'
+  })
 
-    .state('zahlsymbol_anl', {
-      url: '/zahlsymbol_anl',
-      templateUrl: 'templates/zahlsymbol_anl.html',
-      controller: 'ZahlsymbolAnlCtrl'
-    })
+  .state('zahlsymbol_anl', {
+    url: '/zahlsymbol_anl',
+    templateUrl: 'templates/zahlsymbol_anl.html',
+    controller: 'ZahlsymbolAnlCtrl'
+  })
+
+  .state('geschafft', {
+    url: '/geschafft',
+    templateUrl: 'templates/geschafft.html',
+    controller: 'GeschafftCtrl'
+  })
 
   $urlRouterProvider.otherwise('/login')
 
