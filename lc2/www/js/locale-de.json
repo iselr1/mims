@@ -25,11 +25,11 @@
  "MsisQs2" : "Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...",
  "Msis":{
    "Radios":[
-      {"id": "1", "label": "gar nicht", "checked" : "false"},
-      {"id": "2", "label": "ein bisschen", "checked" : "true"},
-      {"id": "3", "label": "mässig", "checked" : "false"},
-      {"id": "4", "label": "ziemlich", "checked" : "false"},
-      {"id": "5", "label": "sehr", "checked" : "false"}
+      {"id": "1", "label": "gar nicht"},
+      {"id": "2", "label": "ein bisschen"},
+      {"id": "3", "label": "mässig"},
+      {"id": "4", "label": "ziemlich"},
+      {"id": "5", "label": "sehr"}
     ],
    "Questions1":[
      {"id": "1", "text": "körperlich anstrengende Dinge zu tun?"},

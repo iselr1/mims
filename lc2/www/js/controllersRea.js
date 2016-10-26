@@ -15,8 +15,8 @@ angular.module('starter.controllersRea', [])
       $location.path('msis2');
     }
   };
-  $scope.setValue = function(value, checked) {
-    console.log(checked);
+  $scope.setValue = function(value) {
+    console.log(value);
   }
 })
 
@@ -80,60 +80,78 @@ angular.module('starter.controllersRea', [])
 
   $scope.images2 = [{
     numSrc: "img/" + solveNums[0] + ".png",
-    imgSrc: "img/green.png",
-    assigned: false
+    imgSrc: "img/empty.png"
   }, {
     numSrc: "img/" + solveNums[1] + ".png",
-    imgSrc: "",
-    assigned: false
+    imgSrc: "img/empty.png"
   }, {
-    numSrc: "img/" + solveNums[2] + ".png"
+    numSrc: "img/" + solveNums[2] + ".png",
+    imgSrc: "img/empty.png"
   }, {
-    numSrc: "img/" + solveNums[3] + ".png"
+    numSrc: "img/" + solveNums[3] + ".png",
+    imgSrc: "img/empty.png"
   }, {
-    numSrc: "img/" + solveNums[4] + ".png"
+    numSrc: "img/" + solveNums[4] + ".png",
+    imgSrc: "img/empty.png"
   }, {
-    numSrc: "img/" + solveNums[5] + ".png"
+    numSrc: "img/" + solveNums[5] + ".png",
+    imgSrc: "img/empty.png"
   }, {
-    numSrc: "img/" + solveNums[6] + ".png"
+    numSrc: "img/" + solveNums[6] + ".png",
+    imgSrc: "img/empty.png"
   }, {
-    numSrc: "img/" + solveNums[7] + ".png"
+    numSrc: "img/" + solveNums[7] + ".png",
+    imgSrc: "img/empty.png"
   }, {
-    numSrc: "img/" + solveNums[8] + ".png"
+    numSrc: "img/" + solveNums[8] + ".png",
+    imgSrc: "img/empty.png"
   }, {
-    numSrc: "img/" + solveNums[9] + ".png"
+    numSrc: "img/" + solveNums[9] + ".png",
+    imgSrc: "img/empty.png"
   }];
-  // SymDigService.setDig =
 
   var solveImgs = SymDigService.doShuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   console.log(solveImgs);
 
-  $scope.images3 = [{
-    imgSrc: "img/SD_" + solveImgs[0].toString() + ".png"
-  }, {
-    imgSrc: "img/SD_" + solveImgs[1].toString() + ".png"
-  }, {
-    imgSrc: "img/SD_" + solveImgs[2].toString() + ".png"
-  }, {
-    imgSrc: "img/SD_" + solveImgs[3].toString() + ".png"
-  }, {
-    imgSrc: "img/SD_" + solveImgs[4].toString() + ".png"
-  }, {
-    imgSrc: "img/SD_" + solveImgs[5].toString() + ".png"
-  }, {
-    imgSrc: "img/SD_" + solveImgs[6].toString() + ".png"
-  }, {
-    imgSrc: "img/SD_" + solveImgs[7].toString() + ".png"
-  }, {
-    imgSrc: "img/SD_" + solveImgs[8].toString() + ".png"
-  }];
-  console.log($scope.images3);
+  $scope.solveImg1 = "img/SD_" + solveImgs[0].toString() + ".png";
+  $scope.solveImg2 = "img/SD_" + solveImgs[1].toString() + ".png";
+  $scope.solveImg3 = "img/SD_" + solveImgs[2].toString() + ".png";
+  $scope.solveImg4 = "img/SD_" + solveImgs[3].toString() + ".png";
+  $scope.solveImg5 = "img/SD_" + solveImgs[4].toString() + ".png";
+  $scope.solveImg6 = "img/SD_" + solveImgs[5].toString() + ".png";
+  $scope.solveImg7 = "img/SD_" + solveImgs[6].toString() + ".png";
+  $scope.solveImg8 = "img/SD_" + solveImgs[7].toString() + ".png";
+  $scope.solveImg9 = "img/SD_" + solveImgs[8].toString() + ".png";
 
-  $scope.controlZS = function(imgSrc) {
-    SymDigService.doControls(imgSrc);
-  }
+
+  $scope.setValueImage = function(imgSrc) {
+    var length = $scope.images2.length;
+    console.log(imgSrc);
+    for (var i = 0; i < length; i++) {
+      if ($scope.images2[i].imgSrc == "img/empty.png") {
+
+        var imageName = $scope.images2[i].numSrc;
+        var number = imageName.match(/\d/g).toString();
+        console.log(imageName);
+        console.log(number);
+        //console.log($scope.images[number].imgSrc);
+        console.log(imgSrc);
+        console.log($scope.images[number - 1].imgSrc);
+        if (angular.equals(imgSrc, $scope.images[number - 1].imgSrc)) {
+          $scope.images2[i].imgSrc = imgSrc;
+          console.log($scope.images2[i].imgSrc);
+          break;
+        } else {
+          break;
+        }
+      } else {
+        //function to reload the line with new values
+
+      }
+    }
+  };
+
 })
-
 
 .controller('ZahlsymbolAnlCtrl', function($scope, $stateParams) {
 

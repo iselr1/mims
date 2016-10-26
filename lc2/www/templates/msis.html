@@ -12,7 +12,7 @@
             <p>{{text.text}}</p>
           </div>
           <div class="col" ng-repeat="buttons in data.Msis.Radios">
-            <input type="radio" ng-model="text.value" checked="checked"  ng-value ="{{buttons.id}}" name="button" ng-required="yes" ng-change="setValue({{buttons.id }}, {{buttons.checked}})"/>
+            <input type="radio" ng-model="text.value" ng-value ="{{buttons.id}}" name="button" ng-required="yes" ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
 

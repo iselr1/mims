@@ -1,40 +1,39 @@
 <ion-view view-title="MitrendS App 1.0">
   <ion-nav-buttons side="left">
-    <button class="button icon-left ion-information-circled" ng-click="goImpressum()" translate="Impressum">
-    </button>
+    <button class="button icon-left ion-information-circled" ng-click="goImpressum()" translate="Impressum"></button>
   </ion-nav-buttons>
   <ion-content scroll="false">
     <div class="fill-vertical-space">
-    <div class = "row">
-      <div class= "col col-40">
-        <button class="button button-clear button-block" ng-click="goKSym_Erf()">
-        <img src="img/write.png" height="150" alt=" "/>
-        </button>
+      <div class="row">
+        <div class="col col-40">
+          <button class="button button-clear button-block" ng-click="goKSym_Erf()">
+            <img src="img/write.png" height="150" alt=" "/>
+          </button>
+        </div>
+        <div class="col col-60">
+          <button class="button button-block button-large button-light" ng-click="goKSym_Erf()" translate="KSym_Erf"/>
+        </div>
       </div>
-      <div class="col col-60">
-        <button class="button button-block button-large button-light" ng-click="goKSym_Erf()" translate="KSym_Erf"/>
+      <div class="row">
+        <div class="col col-40">
+          <button class="button button-clear button-block" ng-click="goAu_Frageb()">
+            <img src="img/write.png" height="150" alt=" "/>
+          </button>
+        </div>
+        <div class="col col-60">
+          <button class="button button-block button-large button-light" ng-click="goAu_Frageb()" translate="Frageb"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-40">
+          <button class="button button-clear button-block" ng-click="goAu_Uebungen()">
+            <img src="img/write.png" height="150" alt=" "/>
+          </button>
+        </div>
+        <div class="col col-60">
+          <button class="button button-block button-large button-light" ng-click="goAu_Uebungen()" translate="Uebung_Durchf"/>
+        </div>
       </div>
     </div>
-    <div class = "row">
-      <div class= "col col-40">
-        <button class="button button-clear button-block" ng-click="goAu_Frageb()">
-        <img src="img/write.png" height="150" alt=" "/>
-        </button>
-      </div>
-      <div class="col col-60">
-        <button class="button button-block button-large button-light" ng-click="goAu_Frageb()" translate="Frageb"/>
-      </div>
-    </div>
-    <div class = "row">
-      <div class= "col col-40">
-        <button class="button button-clear button-block" ng-click="goAu_Uebungen()">
-        <img src="img/write.png" height="150" alt=" "/>
-        </button>
-      </div>
-      <div class="col col-60">
-        <button class="button button-block button-large button-light" ng-click="goAu_Uebungen()" translate="Uebung_Durchf"/>
-      </div>
-    </div>
-  </div>
   </ion-content>
 </ion-view>
