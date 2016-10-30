@@ -1,8 +1,8 @@
 {
  "HEADLINE": "Bonjour!",
- "LANG_DE": "Allemand",
- "LANG_EN": "Anglais",
- "LANG_FR": "Français",
+ "LANG_DE": "DE",
+ "LANG_EN": "EN",
+ "LANG_FR": "FR",
  "Übersicht": "Accueil",
  "Impressum": "Empreinte",
  "KSym_Erf": "Registrer les symtomes principale"

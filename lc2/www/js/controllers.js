@@ -1,27 +1,11 @@
 angular.module('starter.controllers', [])
 
 .controller('NavCtrl', function($scope, $location, $state, I4MIMidataService) {
-  if ($location.path() != 'login' || 'home' || 'motorik' ||
-    'route' ||
-    'zahlsymbol') {
-    $scope.showHomeButton = true;
-    $scope.showLogoutButton = true;
-  } else if ($location.path() == 'login') {
-    $scope.showHomeButton = false;
-    $scope.showLogoutButton = false;
-  } else if ($location.path() == 'home') {
-    $scope.showHomeButton = false;
-    $scope.showLogoutButton = true;
-  } else {
-
-  }
 
   $scope.goHome = function() {
     $location.path('home');
   };
-  $scope.doLogout = function() {
-    $location.path('login');
-  };
+
   $scope.doLogout = function() {
     //Logout function
     I4MIMidataService.logout();
@@ -72,10 +56,6 @@ angular.module('starter.controllers', [])
     $location.path('auswahl_uebungen');
   };
 
-  $scope.doLogout = function() {
-    $location.path('login');
-  };
-
   $scope.goImpressum = function() {
     $location.path('impressum');
   };
@@ -86,9 +66,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('A_UebCtrl', function($scope, $stateParams, $location) {
-  $scope.goHome = function() {
-    $location.path('home');
-  };
 
   $scope.goRouteAnl = function() {
     $location.path('route_anl');
@@ -117,10 +94,6 @@ angular.module('starter.controllers', [])
 
 .controller('GeschafftCtrl', function($scope, $stateParams, $location) {
   $scope.goAu_Uebungen = function() {
-    $location.path('auswahl_uebungen');
-  };
-
-  $scope.goHome = function() {
-    $location.path('home');
-  };
+    $location.path('auswahl_uebungen')
+  }
 })
