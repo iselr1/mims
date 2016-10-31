@@ -1,8 +1,8 @@
 {
  "HEADLINE": "Hello there!",
- "LANG_DE": "German",
- "LANG_EN": "English",
- "LANG_FR": "French",
+ "LANG_DE": "DE",
+ "LANG_EN": "EN",
+ "LANG_FR": "FR",
  "Impressum": "Imprint",
  "Übersicht": "Home",
  "KSym_Erf": "Catch main symtoms",
