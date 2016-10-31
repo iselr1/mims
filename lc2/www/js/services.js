@@ -31,6 +31,9 @@ angular.module('starter.services', [])
 
 .factory('SymDigService', function($rootScope) {
   var SymDigService = {};
+  var n_incorrect = 0;
+  var n_correct = 0;
+  var n_trys = 0;
 
   SymDigService.data = {};
 
@@ -41,6 +44,27 @@ angular.module('starter.services', [])
   SymDigService.setDig = function(array) {
     SymDigService.data.Dig = array;
     console.log(SymDigService.data.Dig);
+  }
+  SymDigService.getIncorrect = function() {
+    return n_incorrect;
+  }
+  SymDigService.getCorrect = function() {
+    return n_correct;
+  }
+  SymDigService.getTrys = function() {
+    return n_trys;
+  }
+  SymDigService.addCorrect = function() {
+    n_correct++;
+    console.log("Correct:" + n_correct);
+  }
+  SymDigService.addIncorrect = function() {
+    n_incorrect++;
+    console.log("Incorrect:" + n_incorrect);
+  }
+  SymDigService.addTry = function() {
+    n_trys++;
+    console.log("Trys:" + n_trys);
   }
 
   //Function to random assign Symbols to numbers
@@ -107,9 +131,7 @@ angular.module('starter.services', [])
     }
     return array;
   }
-  SymDigService.doControl = function(imgID) {
 
-  }
   return SymDigService;
 
 });

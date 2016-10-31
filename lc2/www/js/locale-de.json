@@ -1,72 +1,77 @@
 {
- "HEADLINE": "Hello da!",
- "LANG_DE": "DE",
- "LANG_EN": "EN",
- "LANG_FR": "FR",
- "Impressum": "Impressum",
- "Übersicht": "Übersicht",
- "KSym_Erf": "Kernsymptome erfassen",
- "Frageb": "Fragebögen",
- "Uebung_Durchf": "Übungen durchführen",
- "Route": "Route",
- "Z-S": "Zahlen-Symbol",
- "Motorik": "Motorik",
- "Q1core": "Sind Sie Rechtshänder?",
- "Q2core": "Haben Sie eine Bewegungseinschränkung in der rechten/linken Hand?",
- "Q3core": "Haben Sie eine Gefühlsstörung in der rechten/linken Hand?",
- "Q4core": "Wie fühlen Sie sich heute?",
- "Q5core": "Wie beurteilen Sie ihre momentane Konzentrationsfähigkeit?",
- "Q6core": "Hatten Sie seit der letzen Übung einen Schub?",
- "Q7core": "Haben Ihre MS Symptome seit der letzten Übung zugenommen?",
- "yes":"Ja",
- "no":"Nein",
- "save":"Speichern",
- "MsisQs1" : "Wie sehr waren sie in den letzen 2 Wochen eingeschränkt…",
- "MsisQs2" : "Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...",
- "Msis":{
-   "Radios":[
-      {"id": "1", "label": "gar nicht"},
-      {"id": "2", "label": "ein bisschen"},
-      {"id": "3", "label": "mässig"},
-      {"id": "4", "label": "ziemlich"},
-      {"id": "5", "label": "sehr"}
-    ],
-   "Questions1":[
-     {"id": "1", "text": "körperlich anstrengende Dinge zu tun?"},
-     {"id": "2", "text": "Dinge fest anzufassen (z.B. Hahn aufdrehen)?"},
-     {"id": "3", "text": "Dinge zu tragen?"}
-   ],
-   "Questions2":[
-     {"id": "1", "text": "Probleme mit dem Gleichgewicht?"},
-     {"id": "2", "text": "Schwierigkeiten, sich in der Wohnung zu bewegen?"},
-     {"id": "3", "text": "ungeschickt zu sein?"},
-     {"id": "4", "text": "steif zu sein"},
-     {"id": "5", "text": "schwere Arme und/oder Beine zu haben?"}
-   ],
- "Questions3":[
-   {"id": "1", "text": "Zittern der Arme oder Beine zu haben?"},
-   {"id": "2", "text": "Krämpfe der Extremitäten zu haben?"},
-   {"id": "3", "text": "dass ihr Körper nicht tat, was sie wollten?"},
-   {"id": "4", "text": "dass sie davon abhingen, dass Andere Dinge für sie erledigten?"},
-   {"id": "5", "text": "Beeinträchtigung im sozialen und Freizeitleben zu Hause?"},
-   {"id": "6", "text": "gezwungen zu sein, zu Hause zu bleiben?"},
-   {"id": "7", "text": "Probleme der Hände bei Alltagstätigkeiten?"},
-   {"id": "8", "text": "die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?"},
-   {"id": "9", "text": "Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?"},
-   {"id": "10", "text": "länger für Dinge zu brauchen?"}
- ],
- "Questions4":[
-   {"id": "1", "text": "Schwierigkeiten, Dinge spontan zu machen?"},
-   {"id": "2", "text": "ganz schnell zur Toilette zu müssen?"},
-   {"id": "3", "text": "sich allgemein unwohl zu fühlen?"},
-   {"id": "4", "text": "Schlafprobleme zu haben?"},
-   {"id": "5", "text": "sich geistig/mental müde zu fühlen?"},
-   {"id": "6", "text": "Sorgen bezogen auf MS zu haben?"},
-   {"id": "7", "text": "sich angespannt und ängstlich zu fühlen?"},
-   {"id": "8", "text": "sich störbar, ungeduldig und aufbrausend zu fühlen?"},
-   {"id": "9", "text": "Konzentrationsprobleme zu haben?"},
-   {"id": "10", "text": "keine Zuversicht zu haben?"},
-   {"id": "11", "text": "sich traurig/depressiv zu fühlen?"}
- ]
- }
+  "HEADLINE": "Hello da!",
+  "LANG_DE": "DE",
+  "LANG_EN": "EN",
+  "LANG_FR": "FR",
+  "Impressum": "Impressum",
+  "Übersicht": "Übersicht",
+  "KSym_Erf": "Kernsymptome erfassen",
+  "Frageb": "Fragebögen",
+  "Uebung_Durchf": "Übungen durchführen",
+  "Route": "Route",
+  "Z-S": "Zahlen-Symbol",
+  "Motorik": "Motorik",
+  "Q1core": "Sind Sie Rechtshänder?",
+  "Q2core": "Haben Sie eine Bewegungseinschränkung in der rechten/linken Hand?",
+  "Q3core": "Haben Sie eine Gefühlsstörung in der rechten/linken Hand?",
+  "Q4core": "Wie fühlen Sie sich heute?",
+  "Q5core": "Wie beurteilen Sie ihre momentane Konzentrationsfähigkeit?",
+  "Q6core": "Hatten Sie seit der letzen Übung einen Schub?",
+  "Q7core": "Haben Ihre MS Symptome seit der letzten Übung zugenommen?",
+  "yes": "Ja",
+  "no": "Nein",
+  "save": "Speichern",
+  "back": "Zurück",
+  "next": "Weiter",
+  "ZStitelPopup": "Info",
+  "ZStemplatePopup": "Die Vorbereitung ist nun abgeschlossen. Sobald Sie OK drücken haben sie 120 Sekunden Zeit soviele Felder wie möglich zu lösen.",
+  "Msis": {
+    "Radios": [{
+      "id": "1",
+      "label": "gar nicht"
+    }, {
+      "id": "2",
+      "label": "ein bisschen"
+    }, {
+      "id": "3",
+      "label": "mässig"
+    }, {
+      "id": "4",
+      "label": "ziemlich"
+    }, {
+      "id": "5",
+      "label": "sehr"
+    }]
+  },
+  "MsisQs1": "Wie sehr waren sie in den letzen 2 Wochen eingeschränkt…",
+  "MsisQs2": "Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...",
+  "MsisQe1": "1. körperlich anstrengende Dinge zu tun?",
+  "MsisQe2": "2. Dinge fest anzufassen (z.B. Hahn aufdrehen)?",
+  "MsisQe3": "3. Dinge zu tragen?",
+  "MsisQe4": "4. Probleme mit dem Gleichgewicht?",
+  "MsisQe5": "5. Schwierigkeiten, sich in der Wohnung zu bewegen?",
+  "MsisQe6": "6. ungeschickt zu sein?",
+  "MsisQe7": "7. steif zu sein?",
+  "MsisQe8": "8. schwere Arme und/oder Beine zu haben?",
+  "MsisQe9": "9. Zittern der Arme oder Beine zu haben?",
+  "MsisQe10": "10. Krämpfe der Extremitäten zu haben?",
+  "MsisQe11": "11. dass ihr Körper nicht tat, was sie wollten?",
+  "MsisQe12": "12. dass sie davon abhingen, dass Andere Dinge für sie erledigten?",
+  "MsisQe13": "13. Beeinträchtigung im sozialen und Freizeitleben zu Hause?",
+  "MsisQe14": "14. gezwungen zu sein, zu Hause zu bleiben?",
+  "MsisQe15": "15. Probleme der Hände bei Alltagstätigkeiten?",
+  "MsisQe16": "16. die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?",
+  "MsisQe17": "17. Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?",
+  "MsisQe18": "18. länger für Dinge zu brauchen?",
+  "MsisQe19": "19. Schwierigkeiten, Dinge spontan zu machen?",
+  "MsisQe20": "20. ganz schnell zur Toilette zu müssen?",
+  "MsisQe21": "21. sich allgemein unwohl zu fühlen?",
+  "MsisQe22": "22. Schlafprobleme zu haben?",
+  "MsisQe23": "23. sich geistig/mental müde zu fühlen?",
+  "MsisQe24": "24. Sorgen bezogen auf MS zu haben?",
+  "MsisQe25": "25. sich angespannt und ängstlich zu fühlen?",
+  "MsisQe26": "26. sich störbar, ungeduldig und aufbrausend zu fühlen?",
+  "MsisQe27": "27. Konzentrationsprobleme zu haben?",
+  "MsisQe28": "28. keine Zuversicht zu haben?",
+  "MsisQe29": "29. sich traurig/depressiv zu fühlen?"
 }

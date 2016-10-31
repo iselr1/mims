@@ -1,30 +1,41 @@
+body {
+  font-size: 20px !important;
+}
+
 .center {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-.fill-vertical-space{
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
-.fill-vertical-space > div, .fill-vertical-space > .row{
-    -webkit-flex: 1;
-    flex: 1;
-}
-.scroll{
-    height: 100%;
+.fill-vertical-space {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
+.fill-vertical-space>div, .fill-vertical-space>.row {
+  -webkit-flex: 1;
+  flex: 1;
+}
 
-.zs-col{
+.scroll {
+  height: 100%;
+}
+
+.zs-col {
   border: 2px solid black;
-  text-align:center;
+  text-align: center;
 }
 
 input[type=radio] {
-    width: 100%;
-    height: 3em;
+  width: 100%;
+  height: 3em;
+}
+#radiolabels{
+  text-align: center;
+}
+#questionlabels{
+  vertical-align: middle;
 }

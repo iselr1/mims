@@ -12,21 +12,7 @@ angular.module('starter.controllersSarah', [])
     max: '4',
     value: '2'
   };
-  $scope.YNrighthanded = {
-    name: 'YNrighthanded'
-  }
-  $scope.YNmovehand = {
-    name: 'YNmovehand'
-  }
-  $scope.YNfeelhand = {
-    name: 'YNfeelhand'
-  }
-  $scope.YNthrust = {
-    name: 'YNthrust'
-  }
-  $scope.YNsymp = {
-    name: 'YNsymp'
-  }
+
   $scope.goHome = function() {
     $location.path('home');
   };

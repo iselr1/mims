@@ -98,7 +98,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.goZS = function() {
-    $location.path('zahlsymbol');
+    $location.path('zahlsymbol1');
   };
 
   $scope.goMotorik = function() {
