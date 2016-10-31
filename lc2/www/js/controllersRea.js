@@ -49,6 +49,17 @@ angular.module('starter.controllersRea', [])
     $scope.goMsis3 = function() {
       $location.path('msis3');
     };
+    $scope.goMsis5 = function() {
+      $location.path('msis5');
+    };
+
+  })
+  .controller('Msis5Ctrl', function($scope, $stateParams, $location, jsonService) {
+    $scope.data = jsonService.getJson();
+
+    $scope.goMsis3 = function() {
+      $location.path('msis4');
+    };
     $scope.goHome = function() {
       $location.path('home');
     };

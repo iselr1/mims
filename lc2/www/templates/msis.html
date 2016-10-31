@@ -53,12 +53,7 @@
             <input type="radio" ng-model="Msis1" ng-value="{{buttons.id}}" name="MsisQe6" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
-        <div class="row">
-          <div class="col col-50" translate="MsisQe7"></div>
-          <div class="col" ng-repeat="buttons in data.Msis.Radios">
-            <input type="radio" ng-model="Msis1" ng-value="{{buttons.id}}" name="MsisQe7" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
+      
           <button class="button button-positiv" ng-click="goMsis2()" ng-disabled="msis.Msis1.$valid" translate="Weiter"/>
         </div>
       </form>

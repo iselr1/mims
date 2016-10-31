@@ -118,6 +118,11 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       templateUrl: 'templates/msis4.html',
       controller: 'Msis4Ctrl'
     })
+    .state('msis5', {
+      url: '/msis5',
+      templateUrl: 'templates/msis5.html',
+      controller: 'Msis5Ctrl'
+    })
 
   .state('route_anl', {
     url: '/route_anl',
