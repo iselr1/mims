@@ -31,38 +31,218 @@ angular.module('starter.controllersSarah', [])
 my_canvas = document.getElementById("labyrinth");
 ctx = my_canvas.getContext("2d");
 
-//Draw point 1
+/*--  Draw the Points --*/
+//Draw point 1 START
 ctx.beginPath();
-ctx.arc(50, 400, 15, 0, 2*Math.PI);
+ctx.arc(51, 682, 15, 0, 2*Math.PI);
 ctx.closePath();
 ctx.lineWidth = 5;
 ctx.fillStyle = "black";
 ctx.stroke();
-
-//draw line 1
-ctx.beginPath();
-ctx.moveTo(50,383);
-ctx.lineTo(70, 242);
-ctx.lineWidth = 2;
-ctx.stroke();
-ctx.closePath();
 
 //Draw point 2
 ctx.beginPath();
-ctx.arc(75, 230, 15, 0, 2*Math.PI);
+ctx.arc(160, 415.5, 15, 0, 2*Math.PI);
 ctx.closePath();
 ctx.lineWidth = 5;
 ctx.fillStyle = "black";
 ctx.stroke();
-
 
 //Draw point 3
 ctx.beginPath();
-ctx.arc(170, 370, 15, 0, 2*Math.PI);
+ctx.arc(109, 237.5, 15, 0, 2*Math.PI);
 ctx.closePath();
 ctx.lineWidth = 5;
 ctx.fillStyle = "black";
 ctx.stroke();
+
+//Draw point 4
+ctx.beginPath();
+ctx.arc(160, 142.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 5
+ctx.beginPath();
+ctx.arc(294.5, 104, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 6
+ctx.beginPath();
+ctx.arc(326.5, 396.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 7
+ctx.beginPath();
+ctx.arc(224, 606, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 8
+ctx.beginPath();
+ctx.arc(371, 628, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 9
+ctx.beginPath();
+ctx.arc(678.5, 663, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 10
+ctx.beginPath();
+ctx.arc(512, 472.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 11
+ctx.beginPath();
+ctx.arc(422.5, 320, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 12
+ctx.beginPath();
+ctx.arc(441.5, 180.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 13
+ctx.beginPath();
+ctx.arc(544, 275.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 14
+ctx.beginPath();
+ctx.arc(627, 110.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 15
+ctx.beginPath();
+ctx.arc(761.5, 339, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 16
+ctx.beginPath();
+ctx.arc(710.5, 472.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 17
+ctx.beginPath();
+ctx.arc(806.5, 606, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 18
+ctx.beginPath();
+ctx.arc(909, 555, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 19
+ctx.beginPath();
+ctx.arc(928, 402.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 20
+ctx.beginPath();
+ctx.arc(889.5, 263, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 21
+ctx.beginPath();
+ctx.arc(877, 91.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+//Draw point 22 END
+ctx.beginPath();
+ctx.arc(953.5, 669.5, 15, 0, 2*Math.PI);
+ctx.closePath();
+ctx.lineWidth = 5;
+ctx.fillStyle = "black";
+ctx.stroke();
+
+
+/*--  Draw the lines --*/
+//Draw Line 1
+ctx.beginPath();
+ctx.moveTo(55,670); //von
+ctx.lineTo(160, 429); //zu
+ctx.closePath();
+ctx.lineWidth = 2;
+ctx.stroke();
+
+//Draw Line 2
+ctx.beginPath();
+ctx.moveTo(164,403); //von
+ctx.lineTo(109, 250); //zu
+ctx.closePath();
+ctx.lineWidth = 2;
+ctx.stroke();
+
+//Draw Line 3
+ctx.beginPath();
+ctx.moveTo(113,225); //von
+ctx.lineTo(160, 157); //zu
+ctx.closePath();
+ctx.lineWidth = 2;
+ctx.stroke();
+
+//Draw Line 4
+ctx.beginPath();
+ctx.moveTo(173,142); //von
+ctx.lineTo(280, 104); //zu
+ctx.closePath();
+ctx.lineWidth = 2;
+ctx.stroke();
+
+
 
 // Set up to draw the labyrinth!
 /*var Mydraw = function (config){
