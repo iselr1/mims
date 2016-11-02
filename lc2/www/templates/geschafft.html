@@ -1,10 +1,10 @@
-<ion-view view-title="MitrendS">
+<ion-view view-title="{{'CONGRATULATIONS' | translate}}>
   <ion-nav-buttons side="right">
-    <button class="button icon-left ion-log-out" ng-click="doLogout()" translate="Logout"></button>
+    <button class="button icon-left ion-log-out" ng-click="doLogout()" translate="LOGOUT"></button>
   </ion-nav-buttons>
   <ion-content>
 
-    <h1 align="center">Sie haben das super gemacht!</h1>
+    <h1 align="center" translate="CONGRATULATIONS_TEXT"></h1>
 
     <img src="img/star.png" class="center" height="25%">
 </br>
@@ -12,10 +12,10 @@
 <div class="row">
   <div class="col col-20"> </div>
   <div class="col">
-      <button class="button button-large button-dark center" ng-click="goAu_Uebungen()" translate="Weitere Übungen durchführen"/>
+      <button class="button button-large button-dark center" ng-click="goAu_Uebungen()" translate="DO_MORE_EXCERCISES"/>
     </div>
     <div class="col">
-      <button class="button button-large button-dark center" ng-click="goHome()" translate="Home"/>
+      <button class="button button-large button-dark center" ng-click="goHome()" translate="HOME"/>
 </div>
 <div class="col col-20"> </div>
 </div>

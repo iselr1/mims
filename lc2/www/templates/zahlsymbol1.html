@@ -1,14 +1,14 @@
-<ion-view view-title="Zahl-Symbol Vorbereitung" cache-view="false">
+<ion-view view-title="{{'SD_PREPARATION' | translate}}" cache-view="false">
   <ion-nav-buttons side="left">
-    <button class="button icon-left ion-home" ng-click="goHome()" translate="Übersicht"></button>
+    <button class="button icon-left ion-home" ng-click="goHome()" translate="OVERVIEW"></button>
   </ion-nav-buttons>
   <ion-content>
     <div class="row responsive-lg">
       <div class="col">
-        <h4 align="center">Zahl</h4>
+        <h4 align="center" translate="DIGIT"></h4>
       </br>
     </br>
-    <h4 algin="center">Symbol</h4>
+    <h4 algin="center" translate="SYMBOL"></h4>
   </div>
   <div class="col zs-col" ng-repeat="img in images">
     <img ng-src="{{img.numSrc}}" height="80px"/>

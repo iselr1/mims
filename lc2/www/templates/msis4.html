@@ -1,61 +1,61 @@
-<ion-view view-title="MSIS-29">
+<ion-view view-title="{{'MSIS-29' | translate}}">
   <ion-nav-buttons side="right">
-    <button class="button icon-left ion-log-out" ng-click="doLogout()" translate="Logout"></button>
+    <button class="button icon-left ion-log-out" ng-click="doLogout()" translate="LOGOUT"></button>
   </ion-nav-buttons>
   <ion-nav-buttons side="left">
-    <button class="button icon-left ion-home" ng-click="goHome()" translate="Übersicht"></button>
+    <button class="button icon-left ion-home" ng-click="goHome()" translate="OVERVIEW"></button>
   </ion-nav-buttons>
   <ion-content>
-    <form name="msis" novalidate>
+    <form name="MSIS" novalidate>
       <div class="fill-vertical space">
         <div class="row">
-          <div class="col col-50" translate="MsisQs2"></div>
-          <div class="col" id="radiolabels" ng-repeat="buttons in data.Msis.Radios">{{buttons.label}}</div>
+          <div class="col col-50" translate="MSISQS2"></div>
+          <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
         </div>
 
         <div class="row">
-          <div class="col col-50" translate="MsisQe19"></div>
-          <div class="col" ng-repeat="buttons in data.Msis.Radios">
-            <input type="radio" ng-model="Msis3" ng-value="{{buttons.id}}" name="MsisQe19" required ng-change="setValue({{buttons.id}})"/>
+          <div class="col col-50" translate="MSISQE19"></div>
+          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
+            <input type="radio" ng-model="MSIS3" ng-value="{{buttons.id}}" name="MSISQE19" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
         <div class="row">
-          <div class="col col-50" translate="MsisQe20"></div>
-          <div class="col" ng-repeat="buttons in data.Msis.Radios">
-            <input type="radio" ng-model="Msis3" ng-value="{{buttons.id}}" name="MsisQe20" required ng-change="setValue({{buttons.id}})"/>
+          <div class="col col-50" translate="MSISQE20"></div>
+          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
+            <input type="radio" ng-model="MSIS3" ng-value="{{buttons.id}}" name="MSISQE20" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
         <div class="row">
-          <div class="col col-50" translate="MsisQe21"></div>
-          <div class="col" ng-repeat="buttons in data.Msis.Radios">
-            <input type="radio" ng-model="Msis3" ng-value="{{buttons.id}}" name="MsisQe21" required ng-change="setValue({{buttons.id}})"/>
+          <div class="col col-50" translate="MSISQE21"></div>
+          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
+            <input type="radio" ng-model="MSIS3" ng-value="{{buttons.id}}" name="MSISQE21" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
         <div class="row">
-          <div class="col col-50" translate="MsisQe22"></div>
-          <div class="col" ng-repeat="buttons in data.Msis.Radios">
-            <input type="radio" ng-model="Msis4" ng-value="{{buttons.id}}" name="MsisQe22" required ng-change="setValue({{buttons.id}})"/>
+          <div class="col col-50" translate="MSISQE22"></div>
+          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
+            <input type="radio" ng-model="MSIS4" ng-value="{{buttons.id}}" name="MSISQE22" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
         <div class="row">
-          <div class="col col-50" translate="MsisQe23"></div>
-          <div class="col" ng-repeat="buttons in data.Msis.Radios">
-            <input type="radio" ng-model="Msis4" ng-value="{{buttons.id}}" name="MsisQe23" required ng-change="setValue({{buttons.id}})"/>
+          <div class="col col-50" translate="MSISQE23"></div>
+          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
+            <input type="radio" ng-model="MSIS4" ng-value="{{buttons.id}}" name="MSISQE23" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
         <div class="row">
-          <div class="col col-50" translate="MsisQe24"></div>
-          <div class="col" ng-repeat="buttons in data.Msis.Radios">
-            <input type="radio" ng-model="Msis4" ng-value="{{buttons.id}}" name="MsisQe24" required ng-change="setValue({{buttons.id}})"/>
+          <div class="col col-50" translate="MSISQE24"></div>
+          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
+            <input type="radio" ng-model="MSIS4" ng-value="{{buttons.id}}" name="MSISQE24" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-          <button class="button button-positiv" ng-click="goMsis3()" translate="back"/>
+          <button class="button button-positiv" ng-click="goMSIS3()" translate="BACK"/>
         </div>
         <div class="col">
-          <button class="button button-positiv" ng-click="goMsis4()" ng-disabled="msis.Msis4.$valid" translate="save"/>
+          <button class="button button-positiv" ng-click="goMSIS4()" ng-disabled="MSIS.MSIS4.$valid" translate="SAVE"/>
         </div>
       </div>
       </form>
