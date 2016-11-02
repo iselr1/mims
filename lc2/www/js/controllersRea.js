@@ -117,7 +117,7 @@ angular.module('starter.controllersRea', [])
       imgSrc: "img/SD_" + ranNums[8].toString() + ".png"
     }];
 
-    console.log(SymDigService.setSymDig = $scope.images);
+
     // Zufälliger Array der
 
     var solveNums = SymDigService.genNums([1, 2, 3, 4, 5, 6, 7, 8, 9]);
@@ -125,7 +125,7 @@ angular.module('starter.controllersRea', [])
 
     $scope.images2 = [{
       numSrc: "img/" + solveNums[0] + ".png",
-      imgSrc: "img/empty.png"
+      imgSrc: "img/green.png"
     }, {
       numSrc: "img/" + solveNums[1] + ".png",
       imgSrc: "img/empty.png"
@@ -176,13 +176,18 @@ angular.module('starter.controllersRea', [])
       // The imageName of the selected image
       console.log(imgSrc);
       for (var i = 0; i < length; i++) {
-        if ($scope.images2[i].imgSrc == "img/empty.png") {
+        // true if the symbol image at this position is the green image, to mark that this image is gonna be replaced with the choosen one
+        if ($scope.images2[i].imgSrc == "img/green.png") {
           // imageName of the numberline at the current[i] position
           var imageName = $scope.images2[i].numSrc;
           // Extracte the number of the imageName
           var number = imageName.match(/\d/g).toString();
           // Set the Symbol Image at the current position to the selected one
           $scope.images2[i].imgSrc = imgSrc;
+          // Set the next empty Symbol Image to the green one
+          if (i < (length - 1)) {
+            $scope.images2[i + 1].imgSrc = "img/green.png";
+          }
           console.log(imageName);
           console.log(number);
           // Check if the selected image is the one that corresponds to the number at the current position
@@ -197,8 +202,15 @@ angular.module('starter.controllersRea', [])
               //function to reload the line with new values
             solveNums = SymDigService.genNums([1, 2, 3, 4, 5, 6, 7, 8, 9]);
             for (var i = 0; i < length; i++) {
-              $scope.images2[i].imgSrc = "img/empty.png";
-              $scope.images2[i].numSrc = "img/" + solveNums[i] + ".png"
+              //set the first symbol image to the green image
+              if (i == 0) {
+                $scope.images2[i].imgSrc = "img/green.png";
+                $scope.images2[i].numSrc = "img/" + solveNums[i] + ".png"
+              } // set all the others symbol images to the empty image
+              else {
+                $scope.images2[i].imgSrc = "img/empty.png";
+                $scope.images2[i].numSrc = "img/" + solveNums[i] + ".png"
+              }
             }
           } else {
             break;
@@ -255,7 +267,7 @@ angular.module('starter.controllersRea', [])
       imgSrc: "img/SD_" + ranNums[8].toString() + ".png"
     }];
 
-    console.log(SymDigService.setSymDig = $scope.images);
+
     // Zufälliger Array der
 
     var solveNums = SymDigService.genNums([1, 2, 3, 4, 5, 6, 7, 8, 9]);
@@ -263,7 +275,7 @@ angular.module('starter.controllersRea', [])
 
     $scope.images2 = [{
       numSrc: "img/" + solveNums[0] + ".png",
-      imgSrc: "img/empty.png"
+      imgSrc: "img/green.png"
     }, {
       numSrc: "img/" + solveNums[1] + ".png",
       imgSrc: "img/empty.png"
@@ -314,7 +326,8 @@ angular.module('starter.controllersRea', [])
       console.log(imgSrc);
       for (var i = 0; i < length; i++) {
         console.log($scope.images2);
-        if ($scope.images2[i].imgSrc == "img/empty.png") {
+        // true if the symbol image at this position is the green image, to mark that this image is gonna be replaced with the choosen one
+        if ($scope.images2[i].imgSrc == "img/green.png") {
           console.log("versuch");
           // imageName of the numberline at the current[i] position
           var imageName = $scope.images2[i].numSrc;
@@ -322,6 +335,10 @@ angular.module('starter.controllersRea', [])
           var number = imageName.match(/\d/g).toString();
           // Set the Symbol Image at the current position to the selected one
           $scope.images2[i].imgSrc = imgSrc;
+          // Set the next empty Symbol Image to the green one
+          if (i < (length - 1)) {
+            $scope.images2[i + 1].imgSrc = "img/green.png";
+          }
           console.log(imageName);
           console.log(number);
           // Check if the selected image is the one that corresponds to the number at the current position
@@ -354,8 +371,15 @@ angular.module('starter.controllersRea', [])
               //function to reload the line with new values
               solveNums = SymDigService.genNums([1, 2, 3, 4, 5, 6, 7, 8, 9]);
               for (var i = 0; i < length; i++) {
-                $scope.images2[i].imgSrc = "img/empty.png";
-                $scope.images2[i].numSrc = "img/" + solveNums[i] + ".png"
+                //set the first symbol image to the green image
+                if (i == 0) {
+                  $scope.images2[i].imgSrc = "img/green.png";
+                  $scope.images2[i].numSrc = "img/" + solveNums[i] + ".png"
+                } // set all the others symbol images to the empty image
+                else {
+                  $scope.images2[i].imgSrc = "img/empty.png";
+                  $scope.images2[i].numSrc = "img/" + solveNums[i] + ".png"
+                }
               }
             }
             break;

@@ -34,17 +34,20 @@ angular.module('starter.services', [])
   var n_incorrect = 0;
   var n_correct = 0;
   var n_trys = 0;
+  var next_symbol = 0;
 
   SymDigService.data = {};
 
-  SymDigService.setSymDig = function(array) {
-    SymDigService.data.SymDig = array;
-    console.log(SymDigService.data.SymDig);
-  }
-  SymDigService.setDig = function(array) {
-    SymDigService.data.Dig = array;
-    console.log(SymDigService.data.Dig);
-  }
+  /*SymDigService.setNext_symbol = function(index) {
+    if (next_symbol < 9) {
+      next_symbol++;
+    } else if (next_symbol == 9) {
+      next_symbol = 0;
+    } else {
+      console.log("Der Index des nächsten Elements ist ausserhalb des definierten Bereichs"):
+    }
+    console.log("Index" + );
+  }*/
   SymDigService.getIncorrect = function() {
     return n_incorrect;
   }
@@ -54,6 +57,7 @@ angular.module('starter.services', [])
   SymDigService.getTrys = function() {
     return n_trys;
   }
+
   SymDigService.addCorrect = function() {
     n_correct++;
     console.log("Correct:" + n_correct);
