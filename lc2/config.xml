@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ionicframework.lc2689029" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>lc2</name>
+    <name>MitrendS</name>
     <description>
         An Ionic Framework and Cordova project.
     </description>
     <author email="you@example.com" href="http://example.com.com/">
-      Your Name Here
+      Rea Iseli, Sarah Mele
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -17,6 +17,7 @@
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="screen" />
+    <preference name="Orientation" value="landscape" />
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
@@ -46,4 +47,5 @@
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
     <plugin name="cordova-plugin-statusbar" spec="~2.2.0" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+    <plugin name="cordova-plugin-screen-orientation">
 </widget>

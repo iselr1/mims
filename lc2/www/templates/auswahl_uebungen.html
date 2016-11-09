@@ -1,4 +1,4 @@
-<ion-view view-title=""{{'EXCERCISES' | translate}}">
+<ion-view view-title="{{'EXCERCISES' | translate}}">
   <ion-nav-buttons side="right">
     <button class="button icon-left ion-log-out" ng-click="doLogout()" translate="LOGOUT"></button>
   </ion-nav-buttons>
@@ -8,30 +8,24 @@
   <ion-content scroll="false">
     <div class="fill-vertical-space">
     <div class = "row">
-      <div class= "col col-40">
-        <button class="button button-clear button-block" ng-click="goRouteAnl()">
-          <img src="img/frag.png" height="150" alt=""><img>
-        </button>
+      <div class="col col-20 col-offset-20">
+          <img src="img/frag.png" height="150" alt="" ng-click="goRouteAnl()"><img>
       </div>
       <div class="col col-60">
         <button class="button button-block button-large button-light" ng-click="goRouteAnl()" translate="ROUTE"/>
       </div>
     </div>
     <div class = "row">
-      <div class= "col col-40">
-        <button class="button button-clear button-full" ng-click="goZS()">
-          <img src="img/frag.png" height="150" alt=""><img>
-        </button>
+      <div class="col col-20 col-offset-20">
+          <img src="img/frag.png" height="150" alt="" ng-click="goZS()"><img>
       </div>
       <div class="col col-60">
         <button class="button button-block button-large button-light" ng-click="goZS()" translate="SYMBOL_DIGIT"/>
       </div>
     </div>
     <div class = "row">
-      <div class= "col col-40">
-        <button class="button button-clear button-full" ng-click="goMotorik()">
-          <img src="img/frag.png" height="150" alt=""><img>
-        </button>
+      <div class="col col-20 col-offset-20">
+          <img src="img/frag.png" height="150" alt="" ng-click="goMotorik()"><img>
       </div>
       <div class="col col-60">
         <button class="button button-block button-large button-light" ng-click="goMotorik()" translate="MOTOR_SKILLS"/>

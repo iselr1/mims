@@ -1,35 +1,17 @@
 angular.module('starter.controllers', [])
 
 .controller('NavCtrl', function($scope, $location, $state, I4MIMidataService) {
-    console.info($location.path());
-    console.info($state.current.name);
-    $scope.showHomeButton = true;
-    $scope.showLogoutButton = true;
-/*  if ($location.path() == '/motorik' || '/route' || '/zahlsymbol') {
-    $scope.showHomeButton = false;
-    $scope.showLogoutButton = false;
-  } else if ($location.path() == '/login') {
-    $scope.showHomeButton = false;
-    $scope.showLogoutButton = false;
-  } else if ($location.path() == '/home') {
-    $scope.showHomeButton = false;
-    $scope.showLogoutButton = true;
-  } else {
-    $scope.showHomeButton = true;
-    $scope.showLogoutButton = true;
-  }*/
 
   $scope.goHome = function() {
     $location.path('home');
   };
-  $scope.doLogout = function() {
-    $location.path('login');
-  };
+
   $scope.doLogout = function() {
     //Logout function
     I4MIMidataService.logout();
     $location.path('login');
   }
+
 })
 
 .controller('LoginCtrl', function($scope, $translate, I4MIMidataService, jsonService, $timeout, $http, $state) {

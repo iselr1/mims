@@ -6,6 +6,8 @@
   "HOME":"Home",
   "LOGOUT":"Logout",
   "IMPRESSUM": "Impressum",
+  "IMP_TEXT": "Diese App wurde durch die Zusammenarbeit von der Berner Fachhochschule mit der Abteilung Neurologie des Unispitals Zürich entwickelt.",
+  "IMP_CONTACT": "Kontakt bei Fragen:<br>mitrends@app.ch",
   "OVERVIEW": "Übersicht",
   "EXCERCISES":"Übungen",
   "CONGRATULATIONS":"Gratulation",

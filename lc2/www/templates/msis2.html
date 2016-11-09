@@ -49,12 +49,13 @@
             <input type="radio" ng-model="MSIS2" ng-value="{{buttons.id}}" name="MSISQE12" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
-
-
-          <button class="button button-positiv" ng-click="goMSIS()" translate="BACK"/>
-        </div>
-        </div>
-          <button class="button button-positiv" ng-click="goMSIS3()" ng-disabled="MSIS.MSIS2.$valid" translate="NEXT"/>
+        <div class="row">
+          <div class="col">
+            <button class="button button-balanced button-block" ng-click="goMsis()" translate="BACK"/>
+          </div>
+          <div class="col">
+            <button class="button button-balanced button-block" ng-click="goMsis3()" ng-disabled="MSIS.MSIS3.$valid" translate="NEXT"/>
+          </div>
         </div>
       </form>
     </ion-content>

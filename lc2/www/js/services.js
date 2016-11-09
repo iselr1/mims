@@ -128,7 +128,7 @@ angular.module('starter.services', [])
         else {
           temp = array[i + 1];
           array[i + 1] = array[alength];
-          array[length] = temp;
+          array[alength] = temp;
           break;
         }
       }

@@ -1,8 +1,6 @@
 angular.module('starter.controllersRea', [])
 
 
-
-
 .controller('MsisCtrl', function($scope, $stateParams, $location, $timeout, jsonService) {
   // to initialize the buttons
   $timeout(function() {
@@ -18,7 +16,7 @@ angular.module('starter.controllersRea', [])
   };
   $scope.setValue = function(value) {
     console.log(value);
-  }
+  };
 })
 
 .controller('Msis2Ctrl', function($scope, $stateParams, $location, jsonService) {
@@ -57,7 +55,7 @@ angular.module('starter.controllersRea', [])
   .controller('Msis5Ctrl', function($scope, $stateParams, $location, jsonService) {
     $scope.data = jsonService.getJson();
 
-    $scope.goMsis3 = function() {
+    $scope.goMsis4 = function() {
       $location.path('msis4');
     };
     $scope.goHome = function() {
@@ -353,11 +351,11 @@ angular.module('starter.controllersRea', [])
             console.log();
             SymDigService.addTry();
             //If all images were assigned correctly or the user tried 3 times we navigate to the main excersise
-            if ((SymDigService.getIncorrect() == 0) || (SymDigService.getTrys() == 3)) {
+            if ((SymDigService.getIncorrect() == 0) || (SymDigService.getTrys() >= 3)) {
               console.log("erfolg");
 
-              var popTitle = $translate.instant('ZStitelPopup');
-              var popTemplate = $translate.instant('ZStemplatePopup');
+              var popTitle = $translate.instant('SDTITLE_POPUP');
+              var popTemplate = $translate.instant('SDTEMPLATE_POPUP');
 
               var alertPopup = $ionicPopup.alert({
                 title: popTitle,

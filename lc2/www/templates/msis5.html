@@ -9,7 +9,7 @@
     <form name="MSIS" novalidate>
       <div class="fill-vertical space">
         <div class="row">
-          <div class="col col-60" translate="MSISQS2"></div>
+          <div class="col col-50" translate="MSISQS2"></div>
           <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
         </div>
 
@@ -45,10 +45,10 @@
         </div>
         <div class="row">
           <div class="col">
-          <button class="button button-positiv" ng-click="goMSIS4()" translate="BACK"/>
+          <button class="button button-balanced button-block" ng-click="goMsis4()" translate="BACK"/>
         </div>
         <div class="col">
-          <button class="button button-positiv" ng-click="goHome()" ng-disabled="MSIS.MSIS4.$valid" translate="SAVE"/>
+          <button class="button button-balanced button-block" ng-click="goHome()" ng-disabled="MSIS.MSIS4.$valid" translate="SAVE"/>
         </div>
       </div>
       </form>

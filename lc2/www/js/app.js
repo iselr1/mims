@@ -21,6 +21,12 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
+      //to be able to set the landscape orientation as default
+      if (window.navigator && window.navigator.splashscreen) {
+        window.plugins.orientationLock.unlock();
+
+      }
+      //alert("Current orientation" + window.screen.orienation);
     });
   })
 

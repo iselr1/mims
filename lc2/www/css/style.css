@@ -39,3 +39,17 @@ input[type=radio] {
 #questionlabels{
   vertical-align: middle;
 }
+//Positionierung von inhalten für login und impressum
+.app-container {
+       display: flex;
+       flex-direction: column;
+  }
+  .header{
+         flex: 1;
+   }
+   .content {
+         flex: 2;
+   }
+   .footer {
+         flex: 1;
+   }

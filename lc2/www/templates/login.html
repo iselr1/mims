@@ -5,15 +5,20 @@
     <button class="button" ng-click="switchLanguage('fr')" translate="LANG_FR"></button>
   </ion-nav-buttons>
   <ion-content class="padding">
-    <img src="img/MitrendS.png" class="center" height="30%">
-    <i4mi-midata-login user="user" controller-name="I4MIMidataLoginController"></i4mi-midata-login>
-    <div class="row">
-      <div class="col col-center">
-        <img src="img/usz.png" height="100px">
+    <div class="fill-vertical-space">
+      <div class="row header">
+        <img src="img/MitrendS.png" class="center" height="150px">
       </div>
-      <div class="col"></div>
-      <div class="col col-center">
-        <img src="img/bfh.png" height="150px">
-      </div>
-    </ion-content>
-  </ion-view>
+
+        <i4mi-midata-login user="user" controller-name="I4MIMidataLoginController"></i4mi-midata-login>
+
+      <div class="row footer">
+        <div class="col col-center">
+          <img src="img/usz.png" height="100px">
+        </div>
+        <div class="col"></div>
+        <div class="col col-center">
+          <img src="img/bfh.png" height="150px">
+        </div>
+      </ion-content>
+    </ion-view>
