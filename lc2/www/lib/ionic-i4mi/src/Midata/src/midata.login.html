@@ -8,7 +8,7 @@
 			{{info.text}}
 		</div>
 		<formly-form model="user" fields="userFields">
-		  <button type="submit" class="button button-full button-positive" ng-click="login(user)">Login</button>
+		  <button type="submit" class="button button-full button-balanced" ng-click="login(user)">Login</button>
 		</formly-form>
 	</ion-content>
 </div>
@@ -17,10 +17,10 @@
 		{{info.text}}
 	</div>
 	<formly-form model="user" fields="userFields">
-	  <button type="submit" class="button button-full button-positive" ng-click="login(user)">Login</button>
+	  <button type="submit" class="button button-full button-balanced" ng-click="login(user)">Login</button>
 	</formly-form>
 </div>
 <div ng-show="loggedIn" ng-if="viewClass === 'widget'" class="{{viewClass}}">
 	<label class="item">{{currentUser}}</label>
-	<button type="submit" class="button button-full button-positive" ng-click="logout()">Logout</button>
+	<button type="submit" class="button button-full button-balanced" ng-click="logout()">Logout</button>
 </div>
