@@ -64,7 +64,11 @@ angular.module('starter.controllersRea', [])
 
   })
 
-
+.controller('ZahlsymbolAnlCtrl', function($scope, $location) {
+  $scope.goSD_Preparation = function() {
+    $location.path('zahlsymbol1');
+  };
+})
 
 .controller('ZSCtrl', function($scope, $stateParams, $location, $timeout, SymDigService) {
     // End excersise after 120 seconds
@@ -390,8 +394,4 @@ angular.module('starter.controllersRea', [])
       }
     };
 
-  })
-
-.controller('ZahlsymbolAnlCtrl', function($scope, $stateParams) {
-
-});
+  });

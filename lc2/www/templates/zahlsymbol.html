@@ -3,58 +3,73 @@
     <button class="button icon-left ion-home" ng-click="goHome()" translate="OVERVIEW"></button>
   </ion-nav-buttons>
   <ion-content>
-    <div class="row responsive-lg">
-      <div class="col">
-        <h4 align="center" translate="DIGIT"></h4>
-      </br>
-    </br>
-    <h4 algin="center" translate="SYMBOL"></h4>
+    <div class="row"></br>
   </div>
-  <div class="col zs-col" ng-repeat="img in images">
-    <img ng-src="{{img.numSrc}}" height="80px"/>
-    <img ng-src="{{img.imgSrc}}" width="60px"/>
+  <div class="row">
+    <div class="col col-10">
+      <h4 align="center" translate="DIGIT"></h4>
   </div>
-  <div class="col"></div>
-  <div class="col"></div>
-</div>
-<div class="row">empty</div>
-<div class="row responsive-lg">
-  <div class="col zs-col" ng-repeat="img in images2">
-    <img ng-src="{{img.numSrc}}" height="80px"/>
-    <img ng-src="{{img.imgSrc}}" width="80px"/>
+  <div class="col col-10 zs-col" ng-repeat="img in images">
+    <img ng-src="{{img.numSrc}}" width="70%"/>
   </div>
 </div>
 <div class="row">
-  empty
+  <div class="col col-10">
+  <h4 algin="center" translate="SYMBOL"></h4>
 </div>
-<div class="row responsive-lg">
-  <div class="col zs-col">
-    <img ng-src="{{solveImg1}}" width="80px" ng-click="setValueImage(solveImg1)">
-  </div>
-  <div class="col zs-col">
-    <img ng-src="{{solveImg2}}" width="80px" ng-click="setValueImage(solveImg2)">
-  </div>
-  <div class="col zs-col">
-    <img ng-src="{{solveImg3}}" width="80px" ng-click="setValueImage(solveImg3)">
-  </div>
-  <div class="col zs-col">
-    <img ng-src="{{solveImg4}}" width="80px" ng-click="setValueImage(solveImg4)">
-  </div>
-  <div class="col zs-col">
-    <img ng-src="{{solveImg5}}" width="80px" ng-click="setValueImage(solveImg5)">
-  </div>
-  <div class="col zs-col">
-    <img ng-src="{{solveImg6}}" width="80px" ng-click="setValueImage(solveImg6)">
-  </div>
-  <div class="col zs-col">
-    <img ng-src="{{solveImg7}}" width="80px" ng-click="setValueImage(solveImg7)">
-  </div>
-  <div class="col zs-col">
-    <img ng-src="{{solveImg8}}" width="80px" ng-click="setValueImage(solveImg8)">
-  </div>
-  <div class="col zs-col">
-    <img ng-src="{{solveImg9}}" width="80px" ng-click="setValueImage(solveImg9)">
-  </div>
+<div class="col col-10 zs-col" ng-repeat="img in images">
+  <img ng-src="{{img.imgSrc}}" width="80%"/>
+</div>
+<div class="col"></div>
+</div>
+</div>
+<div class="row"></br>
+</div>
+<div class="row"></br>
+</div>
+
+<div class="row">
+<div class="col col-10 zs-col" ng-repeat="img in images2">
+<img ng-src="{{img.numSrc}}" width="100%"/>
+</div>
+</div>
+<div class="row">
+  <div class="col col-10 zs-col" ng-repeat="img in images2">
+<img ng-src="{{img.imgSrc}}" width="100%"/>
+</div>
+</div>
+<div class="row"></br>
+</div>
+<div class="row">
+<div class="col"></div>
+<div class="col col-10 zs-col">
+<img ng-src="{{solveImg1}}" width="100%" ng-click="setValueImage(solveImg1)"/>
+</div>
+<div class="col col-10 zs-col">
+<img ng-src="{{solveImg2}}" width="100%" ng-click="setValueImage(solveImg2)"/>
+</div>
+<div class="col col-10 zs-col">
+<img ng-src="{{solveImg3}}" width="100%" ng-click="setValueImage(solveImg3)"/>
+</div>
+<div class="col col-10 zs-col">
+<img ng-src="{{solveImg4}}" width="100%" ng-click="setValueImage(solveImg4)"/>
+</div>
+<div class="col col-10 zs-col">
+<img ng-src="{{solveImg5}}" width="100%" ng-click="setValueImage(solveImg5)"/>
+</div>
+<div class="col col-10 zs-col">
+<img ng-src="{{solveImg6}}" width="100%" ng-click="setValueImage(solveImg6)"/>
+</div>
+<div class="col col-10 zs-col">
+<img ng-src="{{solveImg7}}" width="100%" ng-click="setValueImage(solveImg7)"/>
+</div>
+<div class="col col-10 zs-col">
+<img ng-src="{{solveImg8}}" width="100%" ng-click="setValueImage(solveImg8)"/>
+</div>
+<div class="col col-10 zs-col">
+<img ng-src="{{solveImg9}}" width="100%" ng-click="setValueImage(solveImg9)"/>
+</div>
+<div class="col"></div>
 </div>
 </ion-content>
 </ion-view>
