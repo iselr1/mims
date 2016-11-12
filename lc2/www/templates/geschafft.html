@@ -3,21 +3,22 @@
     <button class="button icon-left ion-log-out" ng-click="doLogout()" translate="LOGOUT"></button>
   </ion-nav-buttons>
   <ion-content>
-
+    <div class="row" style="height:10vh">    </div>
     <h1 align="center" translate="CONGRATULATIONS_TEXT"></h1>
-
-    <img src="img/star.png" class="center" height="25%">
-  </br>
-
-  <div class="row">
-    <div class="col col-20"></div>
-    <div class="col">
-      <button class="button button-large button-block button-balanced" ng-click="goAu_Uebungen()" translate="DO_MORE_EXCERCISES"/>
+        <div class="row" style="height:10vh">    </div>
+    <div class="row" style="height:30vh">
+      <img src="img/star.png" class="center" height="100%">
     </div>
-    <div class="col">
-      <button class="button button-large button-block button-balanced" ng-click="goHome()" translate="HOME"/>
+    <div class="row" style="height:10vh">    </div>
+    <div class="row">
+      <div class="col col-20"></div>
+      <div class="col">
+        <button class="button button-large button-block button-positive" ng-click="goHome()" translate="HOME"/>
+      </div>
+      <div class="col">
+        <button class="button button-large button-block button-positive" ng-click="goAu_Uebungen()" translate="DO_MORE_EXCERCISES"/>
+      </div>
+      <div class="col col-20"></div>
     </div>
-    <div class="col col-20"></div>
-  </div>
-</ion-content>
+  </ion-content>
 </ion-view>

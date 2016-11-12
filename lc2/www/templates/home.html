@@ -5,32 +5,30 @@
   <ion-nav-buttons side="right">
     <button class="button icon-left ion-log-out" ng-click="doLogout()" translate="Logout"></button>
   </ion-nav-buttons>
-  <ion-content scroll="false">
-    <div class="fill-vertical-space">
-      <div class="row">
+  <ion-content class="center" scroll="false">
+      <div class="row" style="height:33vh">
         <div class="col col-20 col-offset-20">
-            <img src="img/write.png" height="150" alt=" "/ ng-click="goKSym_Erf()">
+            <img src="img/write.png" height="50%" align="center" valign="center" alt=" "/ >
         </div>
         <div class="col col-60">
-          <button class="button button-block button-large button-light" ng-click="goKSym_Erf()" translate="MAINSYMPTOMS_CAPTURE"/>
+          <button class='button button-block button-light button-large'  ng-click="goKSym_Erf()" translate="MAINSYMPTOMS_CAPTURE"/>
         </div>
       </div>
-      <div class="row">
+      <div class="row" style="height:33vh; vertical-align:center">
         <div class="col col-20 col-offset-20">
-            <img src="img/write.png" height="150" alt=" " ng-click="goAu_Frageb()"/>
+            <img src="img/write.png" height="50%" alt=" " ng-click="goAu_Frageb()"/>
         </div>
         <div class="col col-60">
           <button class="button button-block button-large button-light" ng-click="goAu_Frageb()" translate="QUESTIONNAIRES"/>
         </div>
       </div>
-      <div class="row">
+      <div class="row" style="height:33vh">
           <div class="col col-20 col-offset-20">
-            <img src="img/write.png" height="150" alt=" " ng-click="goAu_Uebungen()"/>
+            <img src="img/write.png" height="50%" alt=" " ng-click="goAu_Uebungen()"/>
         </div>
         <div class="col">
           <button class="button button-block button-large button-light" ng-click="goAu_Uebungen()" translate="EXCERCISES_RUNTROUGH"/>
         </div>
       </div>
-    </div>
   </ion-content>
 </ion-view>

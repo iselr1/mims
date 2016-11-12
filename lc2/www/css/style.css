@@ -1,13 +1,33 @@
 body {
+  /*basic styling */
   font-size: 20px !important;
+  height: 100vh;
+  width: 100vh;
+  vertical-align:bottom;
+  /*flexbox
+  display: flex;*/
 }
 
+/*Login*/
+.row-login{
+  height:33vh;
+}
+.col-login{
+  height:100%;
+  width:100%;
+}
 .center {
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
-
+.bfh50{
+  width:50% !important;
+}
+.usz100{
+  width:100 !important;
+}
+//MSIS
 .fill-vertical-space {
   display: -webkit-flex;
   display: flex;
@@ -18,10 +38,6 @@ body {
 .fill-vertical-space>div, .fill-vertical-space>.row {
   -webkit-flex: 1;
   flex: 1;
-}
-
-.scroll {
-  height: 100%;
 }
 
 .zs-col {
@@ -39,17 +55,30 @@ input[type=radio] {
 #questionlabels{
   vertical-align: middle;
 }
-//Positionierung von inhalten für login und impressum
-.app-container {
-       display: flex;
-       flex-direction: column;
-  }
-  .header{
-         flex: 1;
-   }
-   .content {
-         flex: 2;
-   }
-   .footer {
-         flex: 1;
-   }
+
+/*Auswahl views*/
+
+
+/*Impressum*/
+
+
+/*MSIS*/
+
+
+/* first trys
+
+
+.msis{
+  width: 100%;
+  height: 100%;
+
+}
+
+
+.scroll {
+  height: 100%;
+}
+
+
+
+*/
