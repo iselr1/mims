@@ -26,7 +26,7 @@ angular.module('starter.controllersSarah', [])
 
   })
 
-.controller('RouteCtrl', function($scope, $stateParams) {
+.controller('RouteCtrl', function($scope, $stateParams, $interval) {
 
 var xfactor = 0.8;
 var yfactor = 0.8;
@@ -35,8 +35,6 @@ var xvaluefrom = 0;
 var yvaluefrom = 0;
 var xvalueto = 0;
 var yvalueto = 0;
-var xvalue = 0;
-var yvalue = 0;
 
 var line1;
 var line2;
@@ -75,28 +73,38 @@ var line34;
 var line35;
 var line36;
 
-var point1;
-var point2;
-var point3;
-var point4;
-var point5;
-var point6;
-var point7;
-var point8;
-var point9;
-var point10;
-var point11;
-var point12;
-var point13;
-var point14;
-var point15;
-var point16;
-var point17;
-var point18;
-var point19;
-var point20;
-var point21;
-var point22;
+var xvalue = 0;
+var yvalue = 0;
+
+var point1 = [51, 682];
+var point2 = [160, 415.5];
+var point3 = [109, 237.5];
+var point4 = [160, 142.5];
+var point5 = [294.5, 104];
+var point6 = [326.5, 396.5];
+var point7 = [224, 606];
+var point8 = [371, 628];
+var point9 = [678.5, 663];
+var point10 = [512, 472.5];
+var point11 = [422.5, 320];
+var point12 = [441.5, 180.5];
+var point13 = [544, 275.5];
+var point14 = [627, 110.5];
+var point15 = [761.5, 339];
+var point16 = [710.5, 472.5];
+var point17 = [806.5, 606];
+var point18 = [909, 555];
+var point19 = [928, 402.5];
+var point20 = [889.5, 263];
+var point21 = [877, 91.5];
+var point22 = [953.5, 669.5];
+
+var pointcolor = "white";
+
+var countway = 0;
+var whiteone = 0;
+var firstWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
+var secondWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
 
 my_canvas = document.getElementById("labyrinth");
 ctx = my_canvas.getContext("2d");
@@ -110,10 +118,10 @@ ctx = my_canvas.getContext("2d");
   ctx.stroke();
   };
 
-  drawPoint = function(xvalue, yvalue) {
+  drawPoint = function(xvalue, yvalue, pointcolor) {
     ctx.beginPath();
     ctx.arc(xvalue*xfactor, yvalue*yfactor, 18, 0, 2*Math.PI);
-    ctx.fillStyle = "white";
+    ctx.fillStyle = pointcolor;
     ctx.fill();
     ctx.closePath();
     ctx.lineWidth = 5;
@@ -121,8 +129,23 @@ ctx = my_canvas.getContext("2d");
     ctx.stroke();
   };
 
+  showWay = function () {
+    if (countway == 0){}
+      drawPoint(firstWay[countway][0], firstWay[countway][1], "green");
+    }
+    else if (countway == 15) {
+      whiteone = countway-1;
+      drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
+    }
+    else {
+      drawPoint(firstWay[countway][0], firstWay[countway][1], "green");
+      whiteone = countway-1;
+      drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
+    }
+    countway = countway+1;
+  };
+
   $scope.drawLab = function(){
-    console.info("inside Lab");
     line1 = drawLine(51, 682, 160, 415);
     line2 = drawLine(160, 415, 109, 238);
     line3 = drawLine(109, 238, 160, 142);
@@ -160,31 +183,32 @@ ctx = my_canvas.getContext("2d");
     line35 = drawLine(953.5, 669.5, 806.5, 606);
     line36 = drawLine(422.5,  320, 544, 275.5);
 
-    point1 = drawPoint(51, 682);
-    point2 = drawPoint(160, 415.5);
-    point3 = drawPoint(109,  237.5);
-    point4 = drawPoint(160, 142.5);
-    point5 = drawPoint(294.5, 104);
-    point6 = drawPoint(326.5, 396.5);
-    point7 = drawPoint(224, 606);
-    point8 = drawPoint(371, 628);
-    point9 = drawPoint(678.5, 663);
-    point10 = drawPoint(512, 472.5);
-    point11 = drawPoint(422.5, 320);
-    point12 = drawPoint(441.5, 180.5);
-    point13 = drawPoint(544, 275.5);
-    point14 = drawPoint(627, 110.5);
-    point15 = drawPoint(761.5, 339);
-    point16 = drawPoint(710.5, 472.5);
-    point17 = drawPoint(806.5, 606);
-    point18 = drawPoint(909, 555);
-    point19 = drawPoint(928, 402.5);
-    point20 = drawPoint(889.5, 263);
-    point21 = drawPoint(877, 91.5);
-    point22 = drawPoint(953.5, 669.5);
+    drawPoint(point1[0], point1[1], "black");
+    drawPoint(point2[0], point2[1], "white");
+    drawPoint(point3[0], point3[1], "white");
+    drawPoint(point4[0], point4[1], "white");
+    drawPoint(point5[0], point5[1], "white");
+    drawPoint(point6[0], point6[1], "white");
+    drawPoint(point7[0], point7[1], "white");
+    drawPoint(point8[0], point8[1], "white");
+    drawPoint(point9[0], point9[1], "white");
+    drawPoint(point10[0], point10[1], "white");
+    drawPoint(point11[0], point11[1], "white");
+    drawPoint(point12[0], point12[1], "white");
+    drawPoint(point13[0], point13[1], "white");
+    drawPoint(point14[0], point14[1], "white");
+    drawPoint(point15[0], point15[1], "white");
+    drawPoint(point16[0], point16[1], "white");
+    drawPoint(point17[0], point17[1], "white");
+    drawPoint(point18[0], point18[1], "white");
+    drawPoint(point19[0], point19[1], "white");
+    drawPoint(point20[0], point20[1], "white");
+    drawPoint(point21[0], point21[1], "white");
+    drawPoint(point22[0], point22[1], "black");
   };
 
   $scope.drawLab();
+  $interval(showWay, 2000, 16);
 
 })
 ;
