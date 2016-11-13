@@ -130,7 +130,7 @@ ctx = my_canvas.getContext("2d");
   };
 
   showWay = function () {
-    if (countway == 0){}
+    if (countway == 0){
       drawPoint(firstWay[countway][0], firstWay[countway][1], "green");
     }
     else if (countway == 15) {
@@ -143,6 +143,7 @@ ctx = my_canvas.getContext("2d");
       drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
     }
     countway = countway+1;
+
   };
 
   $scope.drawLab = function(){
