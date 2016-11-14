@@ -143,7 +143,6 @@ ctx = my_canvas.getContext("2d");
       drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
     }
     countway = countway+1;
-
   };
 
   $scope.drawLab = function(){
@@ -207,6 +206,24 @@ ctx = my_canvas.getContext("2d");
     drawPoint(point21[0], point21[1], "white");
     drawPoint(point22[0], point22[1], "black");
   };
+
+  $scope.doClick = function(event){
+    var x = event.clientX;
+    var y = event.clientY;
+    var offsetX = event.offsetX;
+    var offsetY = event.offsetY;
+    console.log(x);
+    console.log(y);
+    console.log(offsetX);
+    console.log(offsetY);
+
+    ctx.beginPath();
+    ctx.arc(x*xfactor, y*yfactor, 18, 0, 2*Math.PI);
+    ctx.fillStyle = "hotpink";
+    ctx.fill();
+    ctx.closePath();
+
+};
 
   $scope.drawLab();
   $interval(showWay, 2000, 16);
