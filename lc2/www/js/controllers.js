@@ -1,37 +1,54 @@
 angular.module('starter.controllers', [])
 
-.controller('NavCtrl', function($scope, $location, $state, I4MIMidataService) {
+.controller('NavCtrl', function($scope, $state, I4MIMidataService) {
 
   $scope.goHome = function() {
-    $location.path('home');
+    $state.go('home');
   };
 
   $scope.doLogout = function() {
     //Logout function
     I4MIMidataService.logout();
-    $location.path('login');
+    $state.go('login');
   }
 
 })
 
 .controller('LoginCtrl', function($scope, $translate, I4MIMidataService, jsonService, $timeout, $http, $state) {
-  // Use for testing the development environment
-  $scope.user = {
-    server: 'https://test.midata.coop:9000'
+  // Values for login
+  $scope.login = {};
+  $scope.login.server = 'https://test.midata.coop:9000';
+
+
+
+  // Login
+  $scope.login = function() {
+    I4MIMidataService.login($scope.login.email, $scope.login.password, $scope.login.server);
+    setTimeout(function() {
+      $scope.checkUser();
+    }, 1000);
   }
 
-  // Connect with MIDATA
-  $scope.loggedIn = I4MIMidataService.loggedIn();
-
-
-  // Call every Second
-  var timer = $timeout(function refresh() {
-    if (I4MIMidataService.loggedIn()) {
+  // Check if valid User
+  $scope.checkUser = function() {
+    console.info(I4MIMidataService.currentUser());
+    if (I4MIMidataService.currentUser() !== undefined) {
+      //$state.go('home');
       $state.go('home');
     } else {
-      timer = $timeout(refresh, 1000);
+      I4MIMidataService.logout();
     }
-  }, 1000);
+  }
+
+  // Logout
+  $scope.logout = function() {
+    console.info("Logout");
+    I4MIMidataService.logout();
+  }
+
+
+
+
 
   //Change the language
   $scope.switchLanguage = function(key) {
@@ -39,73 +56,72 @@ angular.module('starter.controllers', [])
     jsonService.loadJson(key);
   };
 
-  $scope.showModalLogin = function() {
-    I4MIMidataService.login();
-  }
+
+
 })
 
-.controller('HomeCtrl', function($scope, $stateParams, $location) {
+.controller('HomeCtrl', function($scope, $stateParams, $state) {
   $scope.goKSym_Erf = function() {
-    $location.path('kernsymptome');
+    $state.go('kernsymptome');
   };
 
   $scope.goAu_Frageb = function() {
-    $location.path('auswahl_fragebogen');
+    $state.go('auswahl_fragebogen');
   };
 
   $scope.goAu_Uebungen = function() {
-    $location.path('auswahl_uebungen');
+    $state.go('auswahl_uebungen');
   };
 
   $scope.doLogout = function() {
-    $location.path('login');
+    $state.go('login');
   };
 
   $scope.goImpressum = function() {
-    $location.path('impressum');
+    $state.go('impressum');
   };
 })
 
-.controller('ImpCtrl', function($scope, $stateParams) {
+.controller('ImpCtrl', function($scope, $stateParams, $state) {
 
 })
 
-.controller('A_UebCtrl', function($scope, $stateParams, $location) {
+.controller('A_UebCtrl', function($scope, $stateParams, $state) {
   $scope.goHome = function() {
-    $location.path('home');
+    $state.go('home');
   };
 
   $scope.goRouteAnl = function() {
-    $location.path('route_anl');
+    $state.go('route_anl');
   };
 
   $scope.goZS_Instruction = function() {
-    $location.path('zahlsymbol_anl');
+    $state.go('zahlsymbol_anl');
   };
 
   $scope.goMotorik = function() {
-    $location.path('geschafft');
+    $state.go('geschafft');
   };
 
 })
 
-.controller('A_FragCtrl', function($scope, $stateParams, $location) {
+.controller('A_FragCtrl', function($scope, $stateParams, $state) {
   $scope.goMsis = function() {
-    $location.path('msis');
+    $state.go('msis');
   };
 
 })
 
-.controller('MotorikCtrl', function($scope, $stateParams) {
+.controller('MotorikCtrl', function($scope, $stateParams, $state) {
 
 })
 
-.controller('GeschafftCtrl', function($scope, $stateParams, $location) {
+.controller('GeschafftCtrl', function($scope, $stateParams, $state) {
   $scope.goAu_Uebungen = function() {
-    $location.path('auswahl_uebungen');
+    $state.go('auswahl_uebungen');
   };
 
   $scope.goHome = function() {
-    $location.path('home');
+    $state.go('home');
   };
 })

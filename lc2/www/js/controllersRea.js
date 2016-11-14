@@ -1,7 +1,7 @@
 angular.module('starter.controllersRea', [])
 
 
-.controller('MsisCtrl', function($scope, $stateParams, $location, $timeout, jsonService) {
+.controller('MsisCtrl', function($scope, $stateParams, $state, $timeout, jsonService) {
   // to initialize the buttons
   $timeout(function() {
     $scope.data = jsonService.getJson();
@@ -12,68 +12,68 @@ angular.module('starter.controllersRea', [])
   console.log($scope.data);
 
   $scope.goMsis2 = function() {
-    $location.path('msis2');
+    $state.go('msis2');
   };
   $scope.setValue = function(value) {
     console.log(value);
   };
 })
 
-.controller('Msis2Ctrl', function($scope, $stateParams, $location, jsonService) {
+.controller('Msis2Ctrl', function($scope, $stateParams, $state, jsonService) {
     $scope.data = jsonService.getJson();
 
     $scope.goMsis = function() {
-      $location.path('msis');
+      $state.go('msis');
     };
     $scope.goMsis3 = function() {
-      $location.path('msis3');
+      $state.go('msis3');
     };
 
   })
-  .controller('Msis3Ctrl', function($scope, $stateParams, $location, jsonService) {
+  .controller('Msis3Ctrl', function($scope, $stateParams, $state, jsonService) {
     $scope.data = jsonService.getJson();
 
     $scope.goMsis2 = function() {
-      $location.path('msis2');
+      $state.go('msis2');
     };
     $scope.goMsis4 = function() {
-      $location.path('msis4');
+      $state.go('msis4');
     };
 
   })
-  .controller('Msis4Ctrl', function($scope, $stateParams, $location, jsonService) {
+  .controller('Msis4Ctrl', function($scope, $stateParams, $state, jsonService) {
     $scope.data = jsonService.getJson();
 
     $scope.goMsis3 = function() {
-      $location.path('msis3');
+      $state.go('msis3');
     };
     $scope.goMsis5 = function() {
-      $location.path('msis5');
+      $state.go('msis5');
     };
 
   })
-  .controller('Msis5Ctrl', function($scope, $stateParams, $location, jsonService) {
+  .controller('Msis5Ctrl', function($scope, $stateParams, $state, jsonService) {
     $scope.data = jsonService.getJson();
 
     $scope.goMsis4 = function() {
-      $location.path('msis4');
+      $state.go('msis4');
     };
     $scope.goHome = function() {
-      $location.path('home');
+      $state.go('home');
     };
 
   })
 
-.controller('ZahlsymbolAnlCtrl', function($scope, $location) {
+.controller('ZahlsymbolAnlCtrl', function($scope, $state) {
   $scope.goSD_Preparation = function() {
-    $location.path('zahlsymbol1');
+    $state.go('zahlsymbol1');
   };
 })
 
-.controller('ZSCtrl', function($scope, $stateParams, $location, $timeout, SymDigService) {
+.controller('ZSCtrl', function($scope, $stateParams, $state, $timeout, SymDigService) {
     // End excersise after 120 seconds
     $timeout(function() {
-      $location.path('geschafft');
+      $state.go('geschafft');
       //Ergänzen mit Code zum übergeben der correct und Incorrect variablen an midata
       //...
     }, 120000);
@@ -226,7 +226,7 @@ angular.module('starter.controllersRea', [])
     };
 
   })
-  .controller('ZS1Ctrl', function($scope, $stateParams, $ionicPopup, $translate, $location, SymDigService) {
+  .controller('ZS1Ctrl', function($scope, $stateParams, $ionicPopup, $translate, $state, SymDigService) {
 
     var ranNums = SymDigService.doShuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     console.log(ranNums);
@@ -366,7 +366,7 @@ angular.module('starter.controllersRea', [])
                 template: popTemplate,
               });
               alertPopup.then(function() {
-                $location.path('zahlsymbol');
+                $state.go('zahlsymbol');
               })
 
             } else {
