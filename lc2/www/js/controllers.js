@@ -14,20 +14,36 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('LoginCtrl', function($scope, $translate, I4MIMidataService, jsonService, $timeout, $http, $state) {
+.controller('LoginCtrl', function($scope, $translate, I4MIMidataService, jsonService, $timeout, $http, $state, $ionicLoading) {
   // Values for login
   $scope.login = {};
+  $scope.login.email = '';
+  $scope.login.password = '';
   $scope.login.server = 'https://test.midata.coop:9000';
 
-
-
   // Login
-  $scope.login = function() {
-    I4MIMidataService.login($scope.login.email, $scope.login.password, $scope.login.server);
+  $scope.doLogin = function() {
+    console.info(I4MIMidataService.currentUser());
+
+    if ($scope.login.email != '' && $scope.login.password != '')
+      I4MIMidataService.login($scope.login.email, $scope.login.password, $scope.login.server);
+    //$scope.closeModal();
+    // Zeige Loading Spinner
+    $scope.show = function() {
+      $ionicLoading.show({
+        template: '<p>Loading...</p><ion-spinner></ion-spinner>'
+      });
+    };
     setTimeout(function() {
       $scope.checkUser();
-    }, 1000);
+      // Verstecke Loading Spinner
+      $scope.hide = function() {
+        $ionicLoading.hide();
+      };
+    }, 3000);
   }
+
+
 
   // Check if valid User
   $scope.checkUser = function() {
@@ -46,18 +62,11 @@ angular.module('starter.controllers', [])
     I4MIMidataService.logout();
   }
 
-
-
-
-
   //Change the language
   $scope.switchLanguage = function(key) {
     $translate.use(key);
     jsonService.loadJson(key);
   };
-
-
-
 })
 
 .controller('HomeCtrl', function($scope, $stateParams, $state) {
@@ -73,10 +82,6 @@ angular.module('starter.controllers', [])
     $state.go('auswahl_uebungen');
   };
 
-  $scope.doLogout = function() {
-    $state.go('login');
-  };
-
   $scope.goImpressum = function() {
     $state.go('impressum');
   };
@@ -87,9 +92,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('A_UebCtrl', function($scope, $stateParams, $state) {
-  $scope.goHome = function() {
-    $state.go('home');
-  };
+
 
   $scope.goRouteAnl = function() {
     $state.go('route_anl');
@@ -117,11 +120,5 @@ angular.module('starter.controllers', [])
 })
 
 .controller('GeschafftCtrl', function($scope, $stateParams, $state) {
-  $scope.goAu_Uebungen = function() {
-    $state.go('auswahl_uebungen');
-  };
 
-  $scope.goHome = function() {
-    $state.go('home');
-  };
 })

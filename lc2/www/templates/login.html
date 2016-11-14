@@ -21,11 +21,11 @@
         <label class="item item-input">
           <input ng-model="login.password" type="password" placeholder="Password">
         </label>
-        <!--<label class="item item-input">
+        <label class="item item-input">
           <input ng-model="login.server" type="text" value='https://test.midata.coop:9000' placeholder="https://test.midata.coop:9000">
-        </label>-->
+        </label>
       </div>
-      <button type="submit" class="button button-full button-positive" ng-click="login()">Login</button>
+      <button type="submit" class="button button-full button-positive" ng-click="doLogin()">Login</button>
 
       <div class="row" style="height:33vh">
         <div class="col col-50" style="width:100%">
@@ -35,7 +35,6 @@
         <div class="col col-50" style="width:100%">
           <img src="img/bfh.png" class="center" width="50%">
         </div>
-
       </div>
   </ion-content>
 </ion-view>

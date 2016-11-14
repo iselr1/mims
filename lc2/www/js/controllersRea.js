@@ -44,9 +44,6 @@ angular.module('starter.controllersRea', [])
   .controller('Msis4Ctrl', function($scope, $stateParams, $state, jsonService) {
     $scope.data = jsonService.getJson();
 
-    $scope.goMsis3 = function() {
-      $state.go('msis3');
-    };
     $scope.goMsis5 = function() {
       $state.go('msis5');
     };
@@ -54,13 +51,6 @@ angular.module('starter.controllersRea', [])
   })
   .controller('Msis5Ctrl', function($scope, $stateParams, $state, jsonService) {
     $scope.data = jsonService.getJson();
-
-    $scope.goMsis4 = function() {
-      $state.go('msis4');
-    };
-    $scope.goHome = function() {
-      $state.go('home');
-    };
 
   })
 
@@ -71,12 +61,23 @@ angular.module('starter.controllersRea', [])
 })
 
 .controller('ZSCtrl', function($scope, $stateParams, $state, $timeout, SymDigService) {
+    // Registrieren der Startzeit der Übung
+    var lastTime = (new Date()).getTime();
+
     // End excersise after 120 seconds
     $timeout(function() {
       $state.go('geschafft');
       //Ergänzen mit Code zum übergeben der correct und Incorrect variablen an midata
       //...
-    }, 120000);
+      //Code zu Testzwecken für Kundenworkshop
+      var alertPopup = $ionicPopup.alert({
+        title: "Geschafft",
+        template: "Anzahl korrekte Felder:" + SymDigService.getCorrect + "/br" + "Anzahl inkorrekte Felder" + SymDigService.getIncorrect + "Klickfrequenz:" + SymDigService.getClickFrequency,
+      });
+      alertPopup.then(function() {
+        $state.go('zahlsymbol');
+      })
+    }, SymDigService.getTime);
 
     var ranNums = SymDigService.doShuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     console.log(ranNums);
@@ -173,8 +174,21 @@ angular.module('starter.controllersRea', [])
 
     $scope.setValueImage = function(imgSrc) {
       var length = $scope.images2.length;
-      var n_correct = 0;
-      var n_incorrect = 0;
+
+      /*Funktion um die Längste Latenz zwischen zwei Klicks zu eruieren*/
+      var lastLatency = 0;
+
+      function onClickCheck() {
+        var timeNow = (new Date()).getTime();
+
+        if (timeNow > (lastLatency + 5000)) {
+          // Execute the link action
+        } else {
+          alert('Please wait at least 5 seconds between clicks!');
+        }
+
+        lastLatency = timeNow;
+      }
       // The imageName of the selected image
       console.log(imgSrc);
       for (var i = 0; i < length; i++) {

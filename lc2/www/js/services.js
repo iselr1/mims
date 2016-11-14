@@ -31,9 +31,23 @@ angular.module('starter.services', [])
 
 .factory('SymDigService', function($rootScope) {
   var SymDigService = {};
+  //Anzahl der falschen Zuordnungen
   var n_incorrect = 0;
+  //Anzahl der korrekten Zuordnungen
   var n_correct = 0;
+  //Anzahl der Versuche bei der Vorbereitung
   var n_trys = 0;
+  // Zeit für Zahlsymbol Übung in ms - 120 sek
+  //var time = 120000:
+  // Für Kundenworkshop
+  // Zeitdauer, welche für die Übung zur Verfügung steht
+  var timeExcersise = 30000;
+  // Zeit beim Start der Übung
+  //var timeWhenExcersiseStart = 0;
+  //Klickfrequenz (Zeit /(Anzahl Korrekte + Inkorrekte Zuordnungen))
+  var clickfrequency = 0;
+  // Längste Latenz (Zeit ohne Klick)
+  var longestLatency = 0;
   var next_symbol = 0;
 
   SymDigService.data = {};
@@ -57,7 +71,23 @@ angular.module('starter.services', [])
   SymDigService.getTrys = function() {
     return n_trys;
   }
+  SymDigService.getTimeExcersise = function() {
+      return timeExcersise;
+    }
+    /*SymDigService.getTimeWhenExcersiseStart = function() {
+      return timeWhenExcersiseStart;
+    }*/
+  SymDigService.getClickFrequency = function() {
+    var temp = timeExcersise / (n_incorrect + n_correct);
+    clickfrequency = temp;
+    return clickfrequency;
+  }
+  SymDigService.getLongestLatency = function() {
 
+    }
+    /*SymDigService.setTimeWhenExcersiseStart = function(time) {
+      timeWhenExcersiseStart = time;
+    }*/
   SymDigService.addCorrect = function() {
     n_correct++;
     console.log("Correct:" + n_correct);
