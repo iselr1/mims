@@ -23,23 +23,20 @@ angular.module('starter.controllers', [])
 
   // Login
   $scope.doLogin = function() {
-    console.info(I4MIMidataService.currentUser());
+    //console.info(I4MIMidataService.currentUser());
 
     if ($scope.login.email != '' && $scope.login.password != '')
       I4MIMidataService.login($scope.login.email, $scope.login.password, $scope.login.server);
     //$scope.closeModal();
     // Zeige Loading Spinner
-    $scope.show = function() {
-      $ionicLoading.show({
-        template: '<p>Loading...</p><ion-spinner></ion-spinner>'
-      });
-    };
+    $ionicLoading.show({
+      template: '<p>Loading...</p><ion-spinner></ion-spinner>'
+    });
+
     setTimeout(function() {
       $scope.checkUser();
       // Verstecke Loading Spinner
-      $scope.hide = function() {
-        $ionicLoading.hide();
-      };
+      $ionicLoading.hide();
     }, 3000);
   }
 
@@ -120,5 +117,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('GeschafftCtrl', function($scope, $stateParams, $state) {
-
+  $scope.goAu_Uebungen = function() {
+    $state.go('auswahl_uebungen');
+  };
 })

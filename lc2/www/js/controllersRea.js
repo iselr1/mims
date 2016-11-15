@@ -44,6 +44,9 @@ angular.module('starter.controllersRea', [])
   .controller('Msis4Ctrl', function($scope, $stateParams, $state, jsonService) {
     $scope.data = jsonService.getJson();
 
+    $scope.goMsis3 = function() {
+      $state.go('msis3');
+    };
     $scope.goMsis5 = function() {
       $state.go('msis5');
     };
@@ -52,15 +55,49 @@ angular.module('starter.controllersRea', [])
   .controller('Msis5Ctrl', function($scope, $stateParams, $state, jsonService) {
     $scope.data = jsonService.getJson();
 
+    $scope.goMsis4 = function() {
+      $state.go('msis4');
+    };
   })
 
-.controller('ZahlsymbolAnlCtrl', function($scope, $state) {
-  $scope.goSD_Preparation = function() {
-    $state.go('zahlsymbol1');
-  };
-})
+.controller('ZahlsymbolAnlCtrl', function($scope, $state, $ionicLoading, $ionicModal) {
+    $scope.goSD_Preparation = function() {
+      $ionicLoading.show({
+        template: '<p>Loading...</p><ion-spinner></ion-spinner>'
+      });
 
-.controller('ZSCtrl', function($scope, $stateParams, $state, $timeout, SymDigService) {
+      setTimeout(function() {
+        $state.go('zahlsymbol1');
+        // Verstecke Loading Spinner
+        $ionicLoading.hide();
+      }, 1000);
+    };
+    $scope.showModal = function(templateUrl) {
+      $ionicModal.fromTemplateUrl(templateUrl, {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function(modal) {
+        $scope.modal = modal;
+        $scope.modal.show();
+      });
+    }
+
+    // Close the modal
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+      $scope.modal.remove()
+    };
+    $scope.playVideo = function() {
+      $scope.showModal('templates/zahlsymbolVideo.html');
+    }
+  })
+  .controller('ZSVideoCtrl', function($scope, $state, $ionicModal) {
+
+    $scope.clipSrc = 'http://www.w3schools.com/html/mov_bbb.mp4';
+
+  })
+
+.controller('ZSCtrl', function($scope, $stateParams, $state, $timeout, $ionicPopup, SymDigService) {
     // Registrieren der Startzeit der Übung
     var lastTime = (new Date()).getTime();
 
@@ -70,14 +107,17 @@ angular.module('starter.controllersRea', [])
       //Ergänzen mit Code zum übergeben der correct und Incorrect variablen an midata
       //...
       //Code zu Testzwecken für Kundenworkshop
+      var correct = SymDigService.getCorrect();
+      var incorrect = SymDigService.getIncorrect();
+      var clickFrequency = SymDigService.getClickFrequency();
       var alertPopup = $ionicPopup.alert({
-        title: "Geschafft",
-        template: "Anzahl korrekte Felder:" + SymDigService.getCorrect + "/br" + "Anzahl inkorrekte Felder" + SymDigService.getIncorrect + "Klickfrequenz:" + SymDigService.getClickFrequency,
+        title: "Variablen für MIDATA",
+        template: "Korrekte Felder:" + correct + "</br></br>" + "Inkorrekte Felder:" + incorrect + "</br></br>" + "Klickfrequenz(pro Min):" + clickFrequency,
       });
       alertPopup.then(function() {
-        $state.go('zahlsymbol');
+        $state.go('geschafft');
       })
-    }, SymDigService.getTime);
+    }, SymDigService.getTimeExcersise());
 
     var ranNums = SymDigService.doShuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     console.log(ranNums);

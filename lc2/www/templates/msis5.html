@@ -8,42 +8,42 @@
   <ion-content>
     <form name="MSIS" novalidate>
       <div class="fill-vertical space">
-        <div class="row">
+        <div class="row" style="height:8vh">
           <div class="col col-50" translate="MSISQS2"></div>
           <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
         </div>
 
-        <div class="row">
+        <div class="row" style="height:8vh">
           <div class="col col-50" translate="MSISQE25"></div>
           <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
             <input type="radio" ng-model="MSIS4" ng-value="{{buttons.id}}" name="MSISQE25" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="height:8vh">
           <div class="col col-50" translate="MSISQE26"></div>
           <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
             <input type="radio" ng-model="MSIS4" ng-value="{{buttons.id}}" name="MSISQE26" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="height:8vh">
           <div class="col col-50" translate="MSISQE27"></div>
           <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
             <input type="radio" ng-model="MSIS4" ng-value="{{buttons.id}}" name="MSISQE27" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="height:8vh">
           <div class="col col-50" translate="MSISQE28"></div>
           <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
             <input type="radio" ng-model="MSIS4" ng-value="{{buttons.id}}" name="MSISQE28" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="height:8vh">
           <div class="col col-50" translate="MSISQE29"></div>
           <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
             <input type="radio" ng-model="MSIS4" ng-value="{{buttons.id}}" name="MSISQE29" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="height:8vh">
           <div class="col col-10"></div>
           <div class="col">
           <button class="button button-positive button-block" ng-click="goMsis4()" translate="BACK"/>

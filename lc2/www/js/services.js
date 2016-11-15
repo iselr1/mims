@@ -41,7 +41,7 @@ angular.module('starter.services', [])
   //var time = 120000:
   // Für Kundenworkshop
   // Zeitdauer, welche für die Übung zur Verfügung steht
-  var timeExcersise = 30000;
+  var timeExcersise = 60000;
   // Zeit beim Start der Übung
   //var timeWhenExcersiseStart = 0;
   //Klickfrequenz (Zeit /(Anzahl Korrekte + Inkorrekte Zuordnungen))
@@ -78,7 +78,8 @@ angular.module('starter.services', [])
       return timeWhenExcersiseStart;
     }*/
   SymDigService.getClickFrequency = function() {
-    var temp = timeExcersise / (n_incorrect + n_correct);
+    var temp = (n_incorrect + n_correct) / (timeExcersise / 60000);
+
     clickfrequency = temp;
     return clickfrequency;
   }

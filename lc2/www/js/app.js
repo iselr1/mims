@@ -148,6 +148,12 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     controller: 'GeschafftCtrl'
   })
 
+  .state('zahlsymbolVideo', {
+    url: '/zahlsymbolVideo',
+    templateUrl: 'templates/zahlsymbolVideo.html',
+    controller: 'ZSVideoCtrl'
+  })
+
   $urlRouterProvider.otherwise('/login')
 
 });
