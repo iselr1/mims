@@ -6,17 +6,19 @@
     <button class="button icon-left ion-home" ng-click="goHome()" translate="OVERVIEW"></button>
   </ion-nav-buttons>
   <ion-content>
-    <div class="fill-vertical-space">
-    <div class = "row">
-      <div class= "col col-40">
-        <button class="button button-clear button-block" ng-click="goRoute()">
-          <img src="img/frag.png" height="150" alt=""><img>
-        </button>
+    <h4>Wie funktioniert die Übung?</h4>
+    <p>Der Computer gibt Ihen einen Weg durch das Labyrinth vor</p>
+    <p>Der Weg wird Ihnen <b>einmal </b>gezeigt</p>
+    <p>Versuchen Sie danach den gleichen Weg nachzumachen</p>
+    <p>Die Übung ist beendet, wenn Sie beim Ende angelangt sind (Klicken auf Ende)</p>
+    <p><b>Wichtig</b>: Sie sollten bei diesem Test ungestört sein!</p>
+    <div class="row">
+      <div class="col col-offset-10">
+        <button class="button button-positive button-block" ng-click="playVideo()" translate="Videoanleitung"></div>
+        <div class="col col-offset-10">
+          <button class="button button-positive button-block" ng-click="goRoute()" translate="NEXT"/>
+        </div>
+        <div class="col col-10"></div>
       </div>
-      <div class="col col-60">
-        <button class="button button-block button-large button-light" ng-click="goRoute()" translate="ROUTE"/>
-      </div>
-    </div>
-    </div>
-  </ion-content>
+    </ion-content>
 </ion-view>
