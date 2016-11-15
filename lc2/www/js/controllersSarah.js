@@ -1,6 +1,6 @@
 angular.module('starter.controllersSarah', [])
 
-.controller('KernsympCtrl', function($scope, $stateParams, $location) {
+.controller('KernsympCtrl', function($scope, $stateParams, $state) {
 
   $scope.user1 = {
     min: '0',
@@ -14,22 +14,22 @@ angular.module('starter.controllersSarah', [])
   };
 
   $scope.goHome = function() {
-    $location.path('home');
+    $state.go('home');
   };
 
   })
 
-.controller('RouteAnlCtrl', function($scope, $stateParams, $location) {
+.controller('RouteAnlCtrl', function($scope, $stateParams, $state) {
       $scope.goRoute = function() {
-        $location.path('route');
+      $state.go('route');
     };
 
   })
 
 .controller('RouteCtrl', function($scope, $stateParams, $interval) {
 
-var xfactor = 0.8;
-var yfactor = 0.8;
+var xfactor = 0.0;
+var yfactor = 0.0;
 
 var xvaluefrom = 0;
 var yvaluefrom = 0;
@@ -75,6 +75,8 @@ var line36;
 
 var xvalue = 0;
 var yvalue = 0;
+
+var clickOK = true;
 
 var point1 = [51, 682];
 var point2 = [160, 415.5];
@@ -208,25 +210,46 @@ ctx = my_canvas.getContext("2d");
   };
 
   $scope.doClick = function(event){
+    if (clickOK == true){
     var x = event.clientX;
     var y = event.clientY;
-    var offsetX = event.offsetX;
-    var offsetY = event.offsetY;
+
+    var BB = my_canvas.getBoundingClientRect();
+    var offsetX=BB.left;
+    var offsetY=BB.top;
+    /*var offsetX = event.offsetX;
+    var offsetY = event.offsetY;*/
+    console.log("PointX: "+point2[0]*xfactor);
+    console.log("PointY: "+point2[1]*yfactor);
     console.log(x);
     console.log(y);
     console.log(offsetX);
     console.log(offsetY);
 
     ctx.beginPath();
-    ctx.arc(x*xfactor, y*yfactor, 18, 0, 2*Math.PI);
-    ctx.fillStyle = "hotpink";
+    ctx.arc(x-offsetX, y-offsetY, 18, 0, 2*Math.PI);
+    ctx.fillStyle = "blue";
     ctx.fill();
     ctx.closePath();
+  }
+  else {
+    console.info("nopes");
+  }
 
 };
+  // Labyrinth is defined for width="1024" height="768"
+  // Calculate Factor
+  var xfactor = window.innerWidth/1024;
+  var yfactor = window.innerHeight/768;
+
+  ctx.canvas.width  = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
 
   $scope.drawLab();
+  $scope.IsClickEnable = false;
+  setTimeout(function() {
+    clickOK = true;
+  }, 32000);
   $interval(showWay, 2000, 16);
-
 })
 ;
