@@ -72,30 +72,39 @@ angular.module('starter.controllersRea', [])
         $ionicLoading.hide();
       }, 1000);
     };
+    // Show the Modal - the view with the video
     $scope.showModal = function(templateUrl) {
-      $ionicModal.fromTemplateUrl(templateUrl, {
-        scope: $scope,
-        animation: 'slide-in-up'
-      }).then(function(modal) {
-        $scope.modal = modal;
-        $scope.modal.show();
-      });
-    }
-
-    // Close the modal
+        $ionicModal.fromTemplateUrl(templateUrl, {
+          scope: $scope,
+          animation: 'slide-in-up'
+        }).then(function(modal) {
+          $scope.modal = modal;
+          $scope.modal.show();
+        });
+      }
+      // Close the modal
     $scope.closeModal = function() {
       $scope.modal.hide();
       $scope.modal.remove()
     };
+    // Play the video in other View
     $scope.playVideo = function() {
       $scope.showModal('templates/zahlsymbolVideo.html');
-    }
+    };
   })
   .controller('ZSVideoCtrl', function($scope, $state, $ionicModal) {
-
-    $scope.clipSrc = 'http://www.w3schools.com/html/mov_bbb.mp4';
-
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+      $scope.modal.remove()
+    };
   })
+  .controller('RouteVideoCtrl', function($scope, $state, $ionicModal) {
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+      $scope.modal.remove()
+    };
+  })
+
 
 .controller('ZSCtrl', function($scope, $stateParams, $state, $timeout, $ionicPopup, SymDigService) {
     // Registrieren der Startzeit der Übung

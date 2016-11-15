@@ -17,112 +17,131 @@ angular.module('starter.controllersSarah', [])
     $state.go('home');
   };
 
-  })
+})
 
-.controller('RouteAnlCtrl', function($scope, $stateParams, $state) {
-      $scope.goRoute = function() {
-      $state.go('route');
-    };
+.controller('RouteAnlCtrl', function($scope, $stateParams, $state, $ionicModal) {
+  $scope.goRoute = function() {
+    $state.go('route');
+  };
 
-  })
+  // Show the Modal - the view with the video
+  $scope.showModal = function(templateUrl) {
+      $ionicModal.fromTemplateUrl(templateUrl, {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function(modal) {
+        $scope.modal = modal;
+        $scope.modal.show();
+      });
+    }
+    // Close the modal
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+    $scope.modal.remove()
+  };
+  // Play the video in other View
+  $scope.playVideo = function() {
+    $scope.showModal('templates/routeVideo.html');
+  };
+})
 
 .controller('RouteCtrl', function($scope, $stateParams, $interval, $state) {
 
-var xfactor = 0.0;
-var yfactor = 0.0;
+  var xfactor = 0.0;
+  var yfactor = 0.0;
 
-var xvaluefrom = 0;
-var yvaluefrom = 0;
-var xvalueto = 0;
-var yvalueto = 0;
+  var xvaluefrom = 0;
+  var yvaluefrom = 0;
+  var xvalueto = 0;
+  var yvalueto = 0;
 
-var line1 = [51, 682, 160, 415];
-var line2 = [160, 415, 109, 238];
-var line3 = [109, 238, 160, 142];
-var line4 = [160, 142, 294.5, 104];
-var line5 = [294.5, 104, 326.5, 396.5];
-var line6 = [109, 238, 326.5, 396.5];
-var line7 = [160, 416, 326.5, 396.5];
-var line8 = [160, 416, 224, 606];
-var line9 = [51, 682, 224, 606];
-var line10 = [224, 606, 371, 628];
-var line11 = [371, 628, 326, 396];
-var line12 = [326, 396, 512, 472.5];
-var line13 = [512, 472.5, 422.5, 320];
-var line14 = [422.5, 320, 441.5, 180.5];
-var line15 = [441.5, 180.5, 294.5, 104];
-var line16 = [441.5, 180.5, 627, 110.5];
-var line17 = [441.5, 180.5, 544, 275.5];
-var line18 = [544, 275.5, 761.5, 339];
-var line19 = [761.5, 339, 627,  110.5];
-var line20 = [761.5,  339, 710.4, 472.5];
-var line21 = [710.4,  472.5, 512, 472.5];
-var line22 = [512, 472.5, 678.5, 663]
-var line23 = [678.5, 663, 371, 628];
-var line24 = [678.5, 663, 806.5, 606];
-var line25 = [806.5, 606, 710.5, 472.5];
-var line26 = [710.5, 472.5, 928, 402.5];
-var line27 = [928, 402.5, 761.5, 339];
-var line28 = [928, 402.5, 889.5, 263];
-var line29 = [889.5, 263, 877, 91.5];
-var line30 = [889.5, 263, 761.5, 339];
-var line31 = [877, 91.5, 627, 110.5];
-var line32 = [928,  402.5, 909, 555];
-var line33 = [909, 555, 806.5, 606];
-var line34 = [909, 555, 953.5, 669.5];
-var line35 = [953.5, 669.5, 806.5, 606];
-var line36 = [422.5,  320, 544, 275.5];
+  var line1 = [51, 682, 160, 415];
+  var line2 = [160, 415, 109, 238];
+  var line3 = [109, 238, 160, 142];
+  var line4 = [160, 142, 294.5, 104];
+  var line5 = [294.5, 104, 326.5, 396.5];
+  var line6 = [109, 238, 326.5, 396.5];
+  var line7 = [160, 416, 326.5, 396.5];
+  var line8 = [160, 416, 224, 606];
+  var line9 = [51, 682, 224, 606];
+  var line10 = [224, 606, 371, 628];
+  var line11 = [371, 628, 326, 396];
+  var line12 = [326, 396, 512, 472.5];
+  var line13 = [512, 472.5, 422.5, 320];
+  var line14 = [422.5, 320, 441.5, 180.5];
+  var line15 = [441.5, 180.5, 294.5, 104];
+  var line16 = [441.5, 180.5, 627, 110.5];
+  var line17 = [441.5, 180.5, 544, 275.5];
+  var line18 = [544, 275.5, 761.5, 339];
+  var line19 = [761.5, 339, 627, 110.5];
+  var line20 = [761.5, 339, 710.4, 472.5];
+  var line21 = [710.4, 472.5, 512, 472.5];
+  var line22 = [512, 472.5, 678.5, 663]
+  var line23 = [678.5, 663, 371, 628];
+  var line24 = [678.5, 663, 806.5, 606];
+  var line25 = [806.5, 606, 710.5, 472.5];
+  var line26 = [710.5, 472.5, 928, 402.5];
+  var line27 = [928, 402.5, 761.5, 339];
+  var line28 = [928, 402.5, 889.5, 263];
+  var line29 = [889.5, 263, 877, 91.5];
+  var line30 = [889.5, 263, 761.5, 339];
+  var line31 = [877, 91.5, 627, 110.5];
+  var line32 = [928, 402.5, 909, 555];
+  var line33 = [909, 555, 806.5, 606];
+  var line34 = [909, 555, 953.5, 669.5];
+  var line35 = [953.5, 669.5, 806.5, 606];
+  var line36 = [422.5, 320, 544, 275.5];
 
-var xvalue = 0;
-var yvalue = 0;
+  var xvalue = 0;
+  var yvalue = 0;
 
-var clickOK = false;
+  var clickOK = false;
 
-var point1 = [51, 682];
-var point2 = [160, 415.5];
-var point3 = [109, 237.5];
-var point4 = [160, 142.5];
-var point5 = [294.5, 104];
-var point6 = [326.5, 396.5];
-var point7 = [224, 606];
-var point8 = [371, 628];
-var point9 = [678.5, 663];
-var point10 = [512, 472.5];
-var point11 = [422.5, 320];
-var point12 = [441.5, 180.5];
-var point13 = [544, 275.5];
-var point14 = [627, 110.5];
-var point15 = [761.5, 339];
-var point16 = [710.5, 472.5];
-var point17 = [806.5, 606];
-var point18 = [909, 555];
-var point19 = [928, 402.5];
-var point20 = [889.5, 263];
-var point21 = [877, 91.5];
-var point22 = [953.5, 669.5];
+  var point1 = [51, 682];
+  var point2 = [160, 415.5];
+  var point3 = [109, 237.5];
+  var point4 = [160, 142.5];
+  var point5 = [294.5, 104];
+  var point6 = [326.5, 396.5];
+  var point7 = [224, 606];
+  var point8 = [371, 628];
+  var point9 = [678.5, 663];
+  var point10 = [512, 472.5];
+  var point11 = [422.5, 320];
+  var point12 = [441.5, 180.5];
+  var point13 = [544, 275.5];
+  var point14 = [627, 110.5];
+  var point15 = [761.5, 339];
+  var point16 = [710.5, 472.5];
+  var point17 = [806.5, 606];
+  var point18 = [909, 555];
+  var point19 = [928, 402.5];
+  var point20 = [889.5, 263];
+  var point21 = [877, 91.5];
+  var point22 = [953.5, 669.5];
 
-var countway = 0;
-var whiteone = 0;
-var firstWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
-var secondWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
+  var countway = 0;
+  var whiteone = 0;
+  var firstWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
+  var secondWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
 
-my_canvas = document.getElementById("labyrinth");
-ctx = my_canvas.getContext("2d");
+  my_canvas = document.getElementById("labyrinth");
+  ctx = my_canvas.getContext("2d");
 
   // Function to draw a line
   drawLine = function(xvaluefrom, yvaluefrom, xvalueto, yvalueto) {
-  ctx.beginPath();
-  ctx.moveTo(xvaluefrom*xfactor,yvaluefrom*yfactor); //von
-  ctx.lineTo(xvalueto*xfactor, yvalueto*yfactor); //zu
-  ctx.closePath();
-  ctx.lineWidth = 3;
-  ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(xvaluefrom * xfactor, yvaluefrom * yfactor); //von
+    ctx.lineTo(xvalueto * xfactor, yvalueto * yfactor); //zu
+    ctx.closePath();
+    ctx.lineWidth = 3;
+    ctx.stroke();
   };
 
   // Function to draw a point
   drawPoint = function(xvalue, yvalue, pointcolor) {
     ctx.beginPath();
-    ctx.arc(xvalue*xfactor, yvalue*yfactor, 18, 0, 2*Math.PI);
+    ctx.arc(xvalue * xfactor, yvalue * yfactor, 18, 0, 2 * Math.PI);
     ctx.fillStyle = pointcolor;
     ctx.fill();
     ctx.closePath();
@@ -132,24 +151,22 @@ ctx = my_canvas.getContext("2d");
   };
 
   // Function show the Way in the Labyrinth
-  showWay = function () {
-    if (countway == 0){
+  showWay = function() {
+    if (countway == 0) {
       drawPoint(firstWay[countway][0], firstWay[countway][1], "green");
-    }
-    else if (countway == 15) {
-      whiteone = countway-1;
+    } else if (countway == 15) {
+      whiteone = countway - 1;
+      drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
+    } else {
+      drawPoint(firstWay[countway][0], firstWay[countway][1], "green");
+      whiteone = countway - 1;
       drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
     }
-    else {
-      drawPoint(firstWay[countway][0], firstWay[countway][1], "green");
-      whiteone = countway-1;
-      drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
-    }
-    countway = countway+1;
+    countway = countway + 1;
   };
 
   // Function Draw the Lab
-  $scope.drawLab = function(){
+  $scope.drawLab = function() {
     // Draw all the Lines
     drawLine(line1[0], line1[1], line1[2], line1[3]);
     drawLine(line2[0], line2[1], line2[2], line2[3]);
@@ -213,58 +230,56 @@ ctx = my_canvas.getContext("2d");
     drawPoint(point22[0], point22[1], "black");
 
     // Name Start and End
-    var xstart = parseInt(point1[0]*xfactor+50);
-    var ystart = parseInt(point1[1]*yfactor+10);
+    var xstart = parseInt(point1[0] * xfactor + 50);
+    var ystart = parseInt(point1[1] * yfactor + 10);
 
-    var xend = parseInt(point22[0]*xfactor-50);
-    var yend = parseInt(point22[1]*yfactor+10);
+    var xend = parseInt(point22[0] * xfactor - 50);
+    var yend = parseInt(point22[1] * yfactor + 10);
 
     ctx.font = 'bold 20pt Arial';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = "black";
     ctx.fill();
-    ctx.fillText('Start',xstart,ystart);
-    ctx.fillText('Ende',xend,yend);
+    ctx.fillText('Start', xstart, ystart);
+    ctx.fillText('Ende', xend, yend);
 
   };
 
   // Function Click: Draw a blue point when click
-  $scope.doClick = function(event){
-    if (clickOK == true){
+  $scope.doClick = function(event) {
+    if (clickOK == true) {
       var xclient = event.clientX;
       var yclient = event.clientY;
 
       var BB = my_canvas.getBoundingClientRect();
-      var offsetX=BB.left;
-      var offsetY=BB.top;
+      var offsetX = BB.left;
+      var offsetY = BB.top;
 
-      var x = xclient-offsetX;
-      var y = yclient-offsetY;
+      var x = xclient - offsetX;
+      var y = yclient - offsetY;
 
-      if ((x < (window.innerWidth-100)) && (y < (window.innerHeight-100))){
+      if ((x < (window.innerWidth - 100)) && (y < (window.innerHeight - 100))) {
         ctx.beginPath();
-        ctx.arc(x, y, 18, 0, 2*Math.PI);
+        ctx.arc(x, y, 18, 0, 2 * Math.PI);
         ctx.fillStyle = "blue";
         ctx.fill();
         ctx.closePath();
-      }
-      else{
+      } else {
         $state.go('geschafft');
       }
-    }
-    else {
+    } else {
       console.info("nopes");
     }
   };
 
   // Labyrinth is defined for width="1024" height="768"
   // Calculate Factor
-  var xfactor = window.innerWidth/1024;
-  var yfactor = window.innerHeight/768;
+  var xfactor = window.innerWidth / 1024;
+  var yfactor = window.innerHeight / 768;
 
   // Canvas Size = Screen Size
-  ctx.canvas.width  = window.innerWidth;
+  ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
 
   // Draw The Labyrinth
@@ -277,5 +292,4 @@ ctx = my_canvas.getContext("2d");
 
   // Show the Way through the Labyrinth
   $interval(showWay, 2000, 16);
-})
-;
+});

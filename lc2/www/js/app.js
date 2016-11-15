@@ -154,6 +154,12 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     controller: 'ZSVideoCtrl'
   })
 
+  .state('routeVideo', {
+    url: '/routeVideo',
+    templateUrl: 'templates/routeVideo.html',
+    controller: 'RouteVideoCtrl'
+  })
+
   $urlRouterProvider.otherwise('/login')
 
 });
