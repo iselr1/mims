@@ -31,6 +31,10 @@ angular.module('starter.services', [])
 
 .factory('SymDigService', function($rootScope) {
   var SymDigService = {};
+  //Anzahl der falschen Zuordnungen bei der Vorbereitung
+  var n_incorrectPrep = 0;
+  //Anzahl der korrekten Zuordnungen bei der Vorbereitung
+  var n_correctPrep = 0;
   //Anzahl der falschen Zuordnungen
   var n_incorrect = 0;
   //Anzahl der korrekten Zuordnungen
@@ -41,7 +45,7 @@ angular.module('starter.services', [])
   //var time = 120000:
   // Für Kundenworkshop
   // Zeitdauer, welche für die Übung zur Verfügung steht
-  var timeExcersise = 60000;
+  var timeExcersise = 40000;
   // Zeit beim Start der Übung
   //var timeWhenExcersiseStart = 0;
   //Klickfrequenz (Zeit /(Anzahl Korrekte + Inkorrekte Zuordnungen))
@@ -67,6 +71,12 @@ angular.module('starter.services', [])
   }
   SymDigService.getCorrect = function() {
     return n_correct;
+  }
+  SymDigService.getIncorrectPrep = function() {
+    return n_incorrectPrep;
+  }
+  SymDigService.getCorrectPrep = function() {
+    return n_correctPrep;
   }
   SymDigService.getTrys = function() {
     return n_trys;
@@ -96,6 +106,14 @@ angular.module('starter.services', [])
   SymDigService.addIncorrect = function() {
     n_incorrect++;
     console.log("Incorrect:" + n_incorrect);
+  }
+  SymDigService.addCorrectPrep = function() {
+    n_correctPrep++;
+    console.log("Correct:" + n_correctPrep);
+  }
+  SymDigService.addIncorrectPrep = function() {
+    n_incorrectPrep++;
+    console.log("Incorrect:" + n_incorrectPrep);
   }
   SymDigService.addTry = function() {
     n_trys++;

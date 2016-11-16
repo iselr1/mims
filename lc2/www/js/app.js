@@ -160,6 +160,6 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     controller: 'RouteVideoCtrl'
   })
 
-  $urlRouterProvider.otherwise('/login')
+  $urlRouterProvider.otherwise('/home')
 
 });

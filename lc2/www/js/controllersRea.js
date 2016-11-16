@@ -408,9 +408,9 @@ angular.module('starter.controllersRea', [])
           console.log(number);
           // Check if the selected image is the one that corresponds to the number at the current position
           if (angular.equals(imgSrc, $scope.images[number - 1].imgSrc)) {
-            SymDigService.addCorrect();
+            SymDigService.addCorrectPrep();
           } else {
-            SymDigService.addIncorrect();
+            SymDigService.addIncorrectPrep();
 
           }
           //True if the image for the last field was choosen
@@ -418,7 +418,7 @@ angular.module('starter.controllersRea', [])
             console.log();
             SymDigService.addTry();
             //If all images were assigned correctly or the user tried 3 times we navigate to the main excersise
-            if ((SymDigService.getIncorrect() == 0) || (SymDigService.getTrys() >= 3)) {
+            if ((SymDigService.getIncorrectPrep() == 0) || (SymDigService.getTrys() >= 3)) {
               console.log("erfolg");
 
               var popTitle = $translate.instant('SDTITLE_POPUP');
