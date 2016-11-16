@@ -259,7 +259,12 @@ angular.module('starter.controllersSarah', [])
       var x = xclient - offsetX;
       var y = yclient - offsetY;
 
-      if ((x < (window.innerWidth - 100)) && (y < (window.innerHeight - 100))) {
+      console.log(x);
+      console.log(y);
+      console.log(window.innerWidth - 100);
+      console.log(window.innerHeight - 100);
+
+      if ((x < (window.innerWidth - 100)) || (y < (window.innerHeight - 100))) {
         ctx.beginPath();
         ctx.arc(x, y, 18, 0, 2 * Math.PI);
         ctx.fillStyle = "blue";
