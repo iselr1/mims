@@ -31,6 +31,18 @@ angular.module('starter.services', [])
 
 .factory('SymDigService', function($rootScope) {
   var SymDigService = {};
+  // Array für die Schlüsseltabelle
+  var keyTable = [];
+  // Array für die Lösungstabelle
+  var solveTable = [];
+  /* Objekt mit welchem die Schlüsseltabelle gefüllt werden soll
+  mit Variablen, id, numSrc -> Pfad zum Bild der Zahl, imgSrc -> Pfad zum Bild des Zeichens*/
+  // Array für Lösungsbilder
+  var solveImages = [];
+  // Anzahl der Objekte der Schlüsseltabelle
+  var numberObjectsKeyTable = 9;
+  // Anzahl der Objekte der lösungstabelle
+  var numberObjectsSolveTable = 10;
   //Anzahl der falschen Zuordnungen bei der Vorbereitung
   var n_incorrectPrep = 0;
   //Anzahl der korrekten Zuordnungen bei der Vorbereitung
@@ -55,17 +67,62 @@ angular.module('starter.services', [])
   var next_symbol = 0;
 
   SymDigService.data = {};
-
-  /*SymDigService.setNext_symbol = function(index) {
-    if (next_symbol < 9) {
-      next_symbol++;
-    } else if (next_symbol == 9) {
-      next_symbol = 0;
-    } else {
-      console.log("Der Index des nächsten Elements ist ausserhalb des definierten Bereichs"):
+  /* Funktion um die Schlüsseltabelle mit Objekten zu befüllen*/
+  SymDigService.fillKeyTable = function(ranNums) {
+    keyTable = [];
+    for (var i = 1; i <= numberObjectsKeyTable; i++) {
+      var newObject = {};
+      newObject.id = i;
+      newObject.numSrc = "img/" + i + ".png";
+      newObject.imgSrc = "img/SD_" + ranNums[i - 1].toString() + ".png";
+      keyTable.push(newObject);
     }
-    console.log("Index" + );
-  }*/
+    console.log(keyTable);
+    return keyTable;
+  }
+
+  /* Funktion um die Schlüsseltabelle mit Objekten zu befüllen*/
+  SymDigService.fillSolveTable = function(solveNums) {
+    solveTable = [];
+    for (var i = 1; i <= numberObjectsSolveTable; i++) {
+      var newObject = {};
+      if (i == 1) {
+        newObject.numSrc = "img/" + solveNums[i - 1] + ".png";
+        newObject.imgSrc = "img/green.png";
+      } else {
+        newObject.numSrc = "img/" + solveNums[i - 1] + ".png";
+        newObject.imgSrc = "img/empty.png";
+
+      }
+      solveTable.push(newObject);
+    }
+    console.log(solveTable);
+    return solveTable;
+  }
+
+  /* Funktion um die Schlüsseltabelle mit Objekten zu befüllen*/
+  SymDigService.genSolveImages = function(solveImgs) {
+      solveImages = [];
+      for (var i = 1; i <= numberObjectsKeyTable; i++) {
+        var newObject = {};
+        newObject.id = i;
+        newObject.imgSrc = "img/SD_" + solveImgs[i - 1].toString() + ".png";
+        solveImages.push(newObject);
+        console.log(solveImages);
+      }
+      console.log(solveImages);
+      return solveImages;
+    }
+    /*SymDigService.setNext_symbol = function(index) {
+      if (next_symbol < 9) {
+        next_symbol++;
+      } else if (next_symbol == 9) {
+        next_symbol = 0;
+      } else {
+        console.log("Der Index des nächsten Elements ist ausserhalb des definierten Bereichs"):
+      }
+      console.log("Index" + );
+    }*/
   SymDigService.getIncorrect = function() {
     return n_incorrect;
   }
@@ -74,6 +131,12 @@ angular.module('starter.services', [])
   }
   SymDigService.getIncorrectPrep = function() {
     return n_incorrectPrep;
+  }
+  SymDigService.setIncorrectPrep = function(number) {
+    n_incorrectPrep = number;
+  }
+  SymDigService.setCorrectPrep = function(number) {
+    n_correctPrep = number;
   }
   SymDigService.getCorrectPrep = function() {
     return n_correctPrep;
