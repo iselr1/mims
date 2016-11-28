@@ -95,7 +95,7 @@ angular.module('starter.controllersSarah', [])
   var xvalue = 0;
   var yvalue = 0;
 
-  var clickOK = false;
+  var clickOK = true;
 
   var point1 = [51, 682];
   var point2 = [160, 415.5];
@@ -127,6 +127,18 @@ angular.module('starter.controllersSarah', [])
 
   my_canvas = document.getElementById("labyrinth");
   ctx = my_canvas.getContext("2d");
+
+  // x,y is the point to test
+  // cx, cy is circle center, and radius is circle radius
+  pointInCircle = function (x, y, cx, cy, radius) {
+    console.log(x);
+    console.log(y);
+    console.log(cx);
+    console.log(cy);
+    console.log(radius);
+    var distancesquared = (x - cx) * (x - cx) + (y - cy) * (y - cy);
+    return distancesquared <= radius * radius;
+  };
 
   // Function to draw a line
   drawLine = function(xvaluefrom, yvaluefrom, xvalueto, yvalueto) {
@@ -259,12 +271,14 @@ angular.module('starter.controllersSarah', [])
       var x = xclient - offsetX;
       var y = yclient - offsetY;
 
-      console.log(x);
-      console.log(y);
-      console.log(window.innerWidth - 100);
-      console.log(window.innerHeight - 100);
+      var endcircle = pointInCircle(x, y, point22[0]*xfactor, point22[1]*yfactor, 18);
+      console.log(endcircle);
 
-      if ((x < (window.innerWidth - 100)) || (y < (window.innerHeight - 100))) {
+      for(var i=0;i<firstWay.length;i++){
+        console.log(firstWay[i]);
+      }
+
+      if (!endcircle){
         ctx.beginPath();
         ctx.arc(x, y, 18, 0, 2 * Math.PI);
         ctx.fillStyle = "blue";
