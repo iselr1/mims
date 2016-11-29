@@ -1,25 +1,41 @@
+/*
+Document name       controllerSarah.js
+Made:               01.10.2016
+Made through:       meles1
+Version Nr.:         1.0
+
+Function: All Controller for the Views "Kernsymptome", "Route", "Route Anleitung"
+*/
 angular.module('starter.controllersSarah', [])
 
+/* -- Controller for Kernsymptome View -- */
 .controller('KernsympCtrl', function($scope, $stateParams, $state) {
 
+  // Range for "How do you feel today"
   $scope.user1 = {
     min: '1',
     max: '10',
     value: '5'
   };
+
+  // Range for "How is your Concentration today"
   $scope.user2 = {
     min: '1',
     max: '4',
     value: '2'
   };
 
+  // Go to the page "Home" after Save
   $scope.goHome = function() {
     $state.go('home');
   };
 
 })
 
+/* -- Controller for Route Anleitung View -- */
 .controller('RouteAnlCtrl', function($scope, $stateParams, $state, $ionicModal) {
+
+  // Go to the page "Route" after Save
   $scope.goRoute = function() {
     $state.go('route');
   };
@@ -33,28 +49,34 @@ angular.module('starter.controllersSarah', [])
         $scope.modal = modal;
         $scope.modal.show();
       });
-    }
-    // Close the modal
+  }
+
+  // Close the modal
   $scope.closeModal = function() {
     $scope.modal.hide();
     $scope.modal.remove()
   };
+
   // Play the video in other View
   $scope.playVideo = function() {
     $scope.showModal('templates/routeVideo.html');
   };
 })
 
+/* -- Controller for Route View -- */
 .controller('RouteCtrl', function($scope, $stateParams, $interval, $state) {
 
+  // Factor to draw the Labyrinth (Standard 1024x768)
   var xfactor = 0.0;
   var yfactor = 0.0;
 
+  // X and Y values for drawing a line from - to
   var xvaluefrom = 0;
   var yvaluefrom = 0;
   var xvalueto = 0;
   var yvalueto = 0;
 
+  // Coordinates for the lines of the Labyrinth (Standard 1024x768)
   var line1 = [51, 682, 160, 415];
   var line2 = [160, 415, 109, 238];
   var line3 = [109, 238, 160, 142];
@@ -92,11 +114,14 @@ angular.module('starter.controllersSarah', [])
   var line35 = [953.5, 669.5, 806.5, 606];
   var line36 = [422.5, 320, 544, 275.5];
 
+  // X and Y Coordinates to draw a point (Center)
   var xvalue = 0;
   var yvalue = 0;
 
+  // Boolean - is Labyrinth clickable (Standard false)
   var clickOK = true;
 
+  // Coordinates for the points of the Labyrinth - Center (Standard 1024x768)
   var point1 = [51, 682];
   var point2 = [160, 415.5];
   var point3 = [109, 237.5];
@@ -120,14 +145,29 @@ angular.module('starter.controllersSarah', [])
   var point21 = [877, 91.5];
   var point22 = [953.5, 669.5];
 
+  // how many times the function showWay was executed - initial 0 - counter for the point to draw
   var countway = 0;
+
+  // counter for the point, that needs to be drawn white again (after green)
   var whiteone = 0;
+
+  // Array with all the points to show the first time
+  // 2 Dimensional Array
+  // The first square bracket references the desired element in the outer array (firstWay).
+  // The second square bracket references the desired element in the inner array (Point Aaray).
+  // (JavaScript array indexes start at zero.)
   var firstWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
+
+  // Array with all the points to show the second time - 2 Dimensional Array
   var secondWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
 
+  // get the html canvas labyrinth
   my_canvas = document.getElementById("labyrinth");
+
+  // get the context of the canvas
   ctx = my_canvas.getContext("2d");
 
+  // Function to test if the User hit a circle
   // x,y is the point to test
   // cx, cy is circle center, and radius is circle radius
   pointInCircle = function (x, y, cx, cy, radius) {
@@ -143,9 +183,15 @@ angular.module('starter.controllersSarah', [])
   // Function to draw a line
   drawLine = function(xvaluefrom, yvaluefrom, xvalueto, yvalueto) {
     ctx.beginPath();
-    ctx.moveTo(xvaluefrom * xfactor, yvaluefrom * yfactor); //von
-    ctx.lineTo(xvalueto * xfactor, yvalueto * yfactor); //zu
+
+    // line from
+    ctx.moveTo(xvaluefrom * xfactor, yvaluefrom * yfactor);
+
+    // line to
+    ctx.lineTo(xvalueto * xfactor, yvalueto * yfactor);
     ctx.closePath();
+
+    // line thickness
     ctx.lineWidth = 3;
     ctx.stroke();
   };
@@ -153,32 +199,54 @@ angular.module('starter.controllersSarah', [])
   // Function to draw a point
   drawPoint = function(xvalue, yvalue, pointcolor) {
     ctx.beginPath();
+
+    // x and y are center / factor depends on screensize / radius is 18
     ctx.arc(xvalue * xfactor, yvalue * yfactor, 18, 0, 2 * Math.PI);
+
+    //  color of the circles filling
     ctx.fillStyle = pointcolor;
     ctx.fill();
     ctx.closePath();
+
+    // thickness of the circle line and color
     ctx.lineWidth = 5;
     ctx.fillStyle = "black";
     ctx.stroke();
   };
 
   // Function show the Way in the Labyrinth
+  // 2 Dimensional Arrays
+  // The first square bracket references the desired element in the outer array (firstWay).
+  // The second square bracket references the desired element in the inner array (Point Array).
+  // (JavaScript array indexes start at zero.)
   showWay = function() {
     if (countway == 0) {
+
+      // draw the first point in green --> coordinates
       drawPoint(firstWay[countway][0], firstWay[countway][1], "green");
     } else if (countway == 15) {
+
+      // make the last point white again
+      // whiteone = 14
       whiteone = countway - 1;
       drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
     } else {
+
+      // draw the point in green
       drawPoint(firstWay[countway][0], firstWay[countway][1], "green");
+
+      // draw the point before the one, which is drawn in green, white again
       whiteone = countway - 1;
       drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
     }
+
+    // counter which point
     countway = countway + 1;
   };
 
-  // Function Draw the Lab
+  // Function Draw the Lab initially
   $scope.drawLab = function() {
+
     // Draw all the Lines
     drawLine(line1[0], line1[1], line1[2], line1[3]);
     drawLine(line2[0], line2[1], line2[2], line2[3]);
@@ -242,23 +310,24 @@ angular.module('starter.controllersSarah', [])
     drawPoint(point22[0], point22[1], "black");
 
     // Name Start and End
+    // where to write START
     var xstart = parseInt(point1[0] * xfactor + 50);
     var ystart = parseInt(point1[1] * yfactor + 10);
-
+    // where to write END
     var xend = parseInt(point22[0] * xfactor - 50);
     var yend = parseInt(point22[1] * yfactor + 10);
-
+    // write the letters in Arial, 20 pt in black
     ctx.font = 'bold 20pt Arial';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = "black";
     ctx.fill();
     ctx.fillText('Start', xstart, ystart);
-    ctx.fillText('Ende', xend, yend);
+    ctx.fillText('End', xend, yend);
 
   };
 
-  // Function Click: Draw a blue point when click
+  // Function Click: Draw a blue point when click, wherever you are
   $scope.doClick = function(event) {
     if (clickOK == true) {
       var xclient = event.clientX;
@@ -310,5 +379,7 @@ angular.module('starter.controllersSarah', [])
   }, 32000);
 
   // Show the Way through the Labyrinth
+  // Function showWay is executed every 2 seconds - 16 times (because 16 points to show)
   $interval(showWay, 2000, 16);
+
 });
