@@ -151,12 +151,13 @@ angular.module('starter.controllersSarah', [])
   // counter for the point, that needs to be drawn white again (after green)
   var whiteone = 0;
 
-  // Array with all the points from the labyrinth
+  // Arrays with all the points and all the lines from the labyrinth
   // 2 Dimensional Array
-  // The first square bracket references the desired element in the outer array (actuaLab).
-  // The second square bracket references the desired element in the inner array (Point Aaray).
+  // The first square bracket references the desired element in the outer array (actualLab).
+  // The second square bracket references the desired element in the inner array (Point or Line Array).
   // (JavaScript array indexes start at zero.)
   var actualLab = [point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12, point13, point14, point15, point16, point17, point18, point19, point20, point21];
+  var actualLabLines = [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10, line11, line12, line13, line14, line15, line16, line17, line18, line19, line20, line21, line22, line23, line24, line25, line26, line27, line28, line29, line30, line31, line32, line33, line34, line35, line36];
 
   // Array with all the points to show the first time
   var firstWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
@@ -173,9 +174,6 @@ angular.module('starter.controllersSarah', [])
   // Where did the user click in the canvas
   var xclient = 0.0;
   var yclient = 0.0;
-/*  var BB = my_canvas.getBoundingClientRect();
-  var offsetX = BB.left;
-  var offsetY = BB.top;*/
   var xrealclient = 0.0;
   var yrealclient = 0.0;
 
@@ -263,48 +261,18 @@ angular.module('starter.controllersSarah', [])
   $scope.drawLab = function() {
 
     // Draw all the Lines
-    drawLine(line1[0], line1[1], line1[2], line1[3]);
-    drawLine(line2[0], line2[1], line2[2], line2[3]);
-    drawLine(line3[0], line3[1], line3[2], line3[3]);
-    drawLine(line4[0], line4[1], line4[2], line4[3]);
-    drawLine(line5[0], line5[1], line5[2], line5[3]);
-    drawLine(line6[0], line6[1], line6[2], line6[3]);
-    drawLine(line7[0], line7[1], line7[2], line7[3]);
-    drawLine(line8[0], line8[1], line8[2], line8[3]);
-    drawLine(line9[0], line9[1], line9[2], line9[3]);
-    drawLine(line10[0], line10[1], line10[2], line10[3]);
-    drawLine(line11[0], line11[1], line11[2], line11[3]);
-    drawLine(line12[0], line12[1], line12[2], line12[3]);
-    drawLine(line13[0], line13[1], line13[2], line13[3]);
-    drawLine(line14[0], line14[1], line14[2], line14[3]);
-    drawLine(line15[0], line15[1], line15[2], line15[3]);
-    drawLine(line16[0], line16[1], line16[2], line16[3]);
-    drawLine(line17[0], line17[1], line17[2], line17[3]);
-    drawLine(line18[0], line18[1], line18[2], line18[3]);
-    drawLine(line19[0], line19[1], line19[2], line19[3]);
-    drawLine(line20[0], line20[1], line20[2], line20[3]);
-    drawLine(line21[0], line21[1], line21[2], line21[3]);
-    drawLine(line22[0], line22[1], line22[2], line22[3]);
-    drawLine(line23[0], line23[1], line23[2], line23[3]);
-    drawLine(line24[0], line24[1], line24[2], line24[3]);
-    drawLine(line25[0], line25[1], line25[2], line25[3]);
-    drawLine(line26[0], line26[1], line26[2], line26[3]);
-    drawLine(line27[0], line27[1], line27[2], line27[3]);
-    drawLine(line28[0], line28[1], line28[2], line28[3]);
-    drawLine(line29[0], line29[1], line29[2], line29[3]);
-    drawLine(line30[0], line30[1], line30[2], line30[3]);
-    drawLine(line31[0], line31[1], line31[2], line31[3]);
-    drawLine(line32[0], line32[1], line32[2], line32[3]);
-    drawLine(line33[0], line33[1], line33[2], line33[3]);
-    drawLine(line34[0], line34[1], line34[2], line34[3]);
-    drawLine(line35[0], line35[1], line35[2], line35[3]);
-    drawLine(line36[0], line36[1], line36[2], line36[3]);
+    for(var i=0;i<actualLabLines.length;i++){
+          drawLine(actualLabLines[i][0], actualLabLines[i][1], actualLabLines[i][2], actualLabLines[i][3]);
+    }
 
     // Draw all the Points
+    // Draw Start Point
     drawPoint(point1[0], point1[1], "black");
+    // Draw the Points of the Lab
     for(var i=0;i<actualLab.length;i++){
           drawPoint(actualLab[i][0], actualLab[i][1], "white");
     }
+    // Draw End Point
     drawPoint(point22[0], point22[1], "black");
 
     // Name Start and End
