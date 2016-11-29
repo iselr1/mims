@@ -1,33 +1,65 @@
 angular.module('starter.services', [])
+  /*
+  .factory('QuestionService', function() {
+      var QuestionService = {};
+      var questionsStartType1 = [];
+      var questionsStartType2 = [];
 
-.factory('jsonService', function($rootScope, $http) {
-  var jsonService = {};
-  var prefix = 'js/locale-';
-  var suffix = '.json';
+      QuestionService.getQuestionsStartType1 = function() {
+        return questionsStartType1;
+      }
+      QuestionService.getQuestionsStartType2 = function() {
+        return questionsStartType2;
+      }
 
-  jsonService.data = {};
+      //Funktion to generate array to load questions dynamically
+      QuestionService.genQuestions = function(numberOfTotalQuestions) {
+        questionsStartType1 = [];
+        questionsStartType2 = [];
+        for (var i = 1; i <= numberOfTotalQuestions; i++) {
+          var question = {};
+          if (i <= 3) {
+            question.name = "MSISQE" + i;
+            questionsStartType1.push(question);
+            console.log(question);
+            console.log(questionsStartType1);
+          } else {
+            question.name = "MSISQE" + i;
+            questionsStartType2.push(question);
+          }
+        }
+      }
+      return QuestionService;
+    })*/
+  .factory('jsonService', function($rootScope, $http, $translate) {
+    var jsonService = {};
+    var prefix = 'js/locale-';
+    var suffix = '.json';
 
-  // initialize it with the german json
-  $http.get(prefix + 'de' + suffix)
-    .success(function(data) {
-      jsonService.data.json = data;
-      console.log('Json data is initialized');
-    });
+    jsonService.data = {};
 
-  //Gets the new json file if the language is changed
-  jsonService.loadJson = function(key) {
+    // initialize the json file with the currentLanguage
+    var key = ($translate.proposedLanguage() || $translate.use());
     $http.get(prefix + key + suffix)
       .success(function(data) {
         jsonService.data.json = data;
-        console.log('Json data is loaded');
+        console.log('Json data is initialized');
       });
-  };
-  jsonService.getJson = function() {
-    return jsonService.data.json;
-  };
 
-  return jsonService;
-})
+    //Gets the new json file if the language is changed
+    jsonService.loadJson = function(key) {
+      $http.get(prefix + key + suffix)
+        .success(function(data) {
+          jsonService.data.json = data;
+          console.log('Json data is loaded');
+        });
+    };
+    jsonService.getJson = function() {
+      return jsonService.data.json;
+    };
+
+    return jsonService;
+  })
 
 .factory('SymDigService', function($rootScope) {
   var SymDigService = {};

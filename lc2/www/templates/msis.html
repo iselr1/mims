@@ -13,54 +13,28 @@
           <div class="col col-50" translate="MSISQS1"></div>
           <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
         </div>
+
         <div class="row" style="height:3vh"></div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" id="questionlabels" translate="MSISQE1"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS1" ng-value="{{buttons.id}}" name="MSISQE1" required ng-change="setValue({{buttons.id}})"/>
+        <div class="row row-top-border" style="height:8vh" ng-repeat="question in data.MSIS.QUESTIONS.QS1  track by $index">
+          <div class="col col-50 col-align-center" translate="{{question}}"></div>
+          <div class="col col-text-align-center" ng-repeat="buttons in data.MSIS.RADIOS">
+          <input type="radio" class="col-text-align-center" ng-model="MSISQS1" ng-value="{{buttons.id}}" name="{{$parent.$index}}" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE2"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS1" ng-value="{{buttons.id}}" name="MSISQE2" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE3"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS1" ng-value="{{buttons.id}}" name="MSISQE3" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
+
         <div class="row" style="height:3vh"></div>
         <div class="row" style="height:8vh">
           <div class="col col-50" translate="MSISQS2"></div>
+          <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
         </div>
         <div class="row" style="height:3vh"></div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE4"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS1" ng-value="{{buttons.id}}" name="MSISQE4" required ng-change="setValue({{buttons.id}})"/>
+        <div class="row row-top-border" style="height:8vh" ng-repeat="question in data.MSIS.QUESTIONS.QS2_1  track by $index">
+          <div class="col col-50 col-align-center" translate="{{question}}"></div>
+          <div class="col col-text-align-center" ng-repeat="buttons in data.MSIS.RADIOS">
+          <input type="radio" ng-model="MSISQS1" ng-value="{{buttons.id}}" name="{{$parent.$index}}" required ng-change="setValue({{buttons.id}})"/>
           </div>
         </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE5"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS1" ng-value="{{buttons.id}}" name="MSISQE5" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE6"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS1" ng-value="{{buttons.id}}" name="MSISQE6" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE7"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS1" ng-value="{{buttons.id}}" name="MSISQE7" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
+
         <div class="row" style="height:3vh"></div>
         <div class="row" style="height:8vh">
           <div class="col col-10"></div>

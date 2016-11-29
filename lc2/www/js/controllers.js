@@ -117,7 +117,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('GeschafftCtrl', function($scope, $stateParams, $state) {
+  $scope.comment = {};
+
   $scope.goAu_Uebungen = function() {
     $state.go('auswahl_uebungen');
   };
+  $scope.$on('$ionicView.beforeLeave', function() {
+    // Zu ersetzen mit Datenübermittlung an Midata
+    console.log($scope.comment.text);
+  });
 })

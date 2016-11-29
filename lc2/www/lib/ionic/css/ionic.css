@@ -10463,6 +10463,17 @@ a.button .icon:before, a.button.icon:before, a.button.icon-left:before, a.button
   margin-top: -5px;
   padding-top: 0;
 }
+.row-top-border{
+  border-top: 1px solid lightgray;
+  /*align-content: center;*/
+}
+.row-bottom-border{
+  border-bottom: 1px solid lightgray;
+}
+/* horizontal in the grid*/
+.col-text-align-center{
+  text-align: center;
+}
 
 .col {
   -webkit-box-flex: 1;
@@ -10475,6 +10486,11 @@ a.button .icon:before, a.button.icon:before, a.button.icon-left:before, a.button
   padding: 5px;
   width: 100%;
 }
+/* Vertical in the grid*/
+.col-align-center{
+  align-self: center;
+}
+
 
 
 /* Vertically Align Columns */

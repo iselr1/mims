@@ -7,9 +7,12 @@ angular.module('starter.controllersRea', [])
     $scope.data = jsonService.getJson();
   }, 10);
 
+  // initialize the questions
+  /*
+  QuestionService.genQuestions(29);
 
-
-  console.log($scope.data);
+  $scope.questionsStartType1 = QuestionService.getQuestionsStartType1();
+*/
 
   $scope.goMsis2 = function() {
     $state.go('msis2');
