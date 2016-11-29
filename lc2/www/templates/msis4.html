@@ -8,13 +8,13 @@
   <ion-content>
     <div class="row row-5"></div>
     <div class="row row-5">
-      <div class="col col-50" translate="MSISQS2"></div>
+      <div class="col col-55" translate="MSISQS2"></div>
       <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
     </div>
 
     <div class="row row-3"></div>
     <div class="row row-8 row-top-border" ng-repeat="question in data.MSIS.QUESTIONS.QS2_4  track by question.id">
-      <div class="col col-50 col-align-center" translate="{{question.text}}"></div>
+      <div class="col col-55 col-align-center" translate="{{question.text}}"></div>
       <div class="col col-text-align-center" ng-repeat="buttons in data.MSIS.RADIOS">
         <input type="radio" id="msis" ng-model="MSISQS4" ng-value="{{buttons.id}}" name="{{$parent.question.id}}" required ng-change="setValue({{buttons.id}})"/>
         <label for="msis"></label>
