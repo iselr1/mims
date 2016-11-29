@@ -6,64 +6,24 @@
     <button class="button icon-left ion-home" ng-click="goHome()" translate="OVERVIEW"></button>
   </ion-nav-buttons>
   <ion-content>
-    <form name="MSIS" novalidate>
-      <div class="fill-vertical space">
-        <div class="row" style="height:5vh"></div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQS2"></div>
-          <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
+    <form name="MSIS">
+      <div class="row row-5"></div>
+      <div class="row row-5">
+        <div class="col col-50" translate="MSISQS2"></div>
+        <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
+      </div>
+
+      <div class="row row-3"></div>
+      <div class="row row-8 row-top-border" ng-repeat="question in data.MSIS.QUESTIONS.QS2_2  track by question.id">
+        <div class="col col-50 col-align-center" translate="{{question.text}}"></div>
+        <div class="col col-text-align-center" ng-repeat="buttons in data.MSIS.RADIOS">
+          <input type="radio" id="msis" ng-model="MSISQS2" ng-value="{{buttons.id}}" name="{{$parent.question.id}}" required ng-change="setValue({{buttons.id}})"/>
+          <label for="msis"></label>
         </div>
-<div class="row" style="height:3vh"></div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE8"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS2" ng-value="{{buttons.id}}" name="MSISQE8" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE9"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS2" ng-value="{{buttons.id}}" name="MSISQE9" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE10"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS2" ng-value="{{buttons.id}}" name="MSISQE10" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE11"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS2" ng-value="{{buttons.id}}" name="MSISQE11" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE12"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS2" ng-value="{{buttons.id}}" name="MSISQE12" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE13"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS2" ng-value="{{buttons.id}}" name="MSISQE13" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE14"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS2" ng-value="{{buttons.id}}" name="MSISQE14" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:8vh">
-          <div class="col col-50" translate="MSISQE15"></div>
-          <div class="col" ng-repeat="buttons in data.MSIS.RADIOS">
-            <input type="radio" ng-model="MSIS3" ng-value="{{buttons.id}}" name="MSISQE15" required ng-change="setValue({{buttons.id}})"/>
-          </div>
-        </div>
-        <div class="row" style="height:3vh"></div>
-        <div class="row" style="height:8vh">
+      </div>
+
+      <div class="row row-5"></div>
+      <div class="row">
           <div class="col col-10"></div>
           <div class="col">
             <button class="button button-positive button-block" ng-click="goMsis()" translate="BACK"/>

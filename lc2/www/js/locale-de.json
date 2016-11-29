@@ -60,45 +60,98 @@
       "label": "sehr"
     }],
     "QUESTIONS": {
-      "QS1": {
-        "MSISQE1": "1. körperlich anstrengende Dinge zu tun?",
-        "MSISQE2": "2. Dinge fest anzufassen (z.B. Hahn aufdrehen)?",
-        "MSISQE3": "3. Dinge zu tragen?"
-      },
-      "QS2_1": {
-        "MSISQE4": "4. Probleme mit dem Gleichgewicht?",
-        "MSISQE5": "5. Schwierigkeiten, sich in der Wohnung zu bewegen?",
-        "MSISQE6": "6. ungeschickt zu sein?",
-        "MSISQE7": "7. steif zu sein?"
-      },
-      "QS2_2": {
-        "MSISQE8": "8. schwere Arme und/oder Beine zu haben?",
-        "MSISQE9": "9. Zittern der Arme oder Beine zu haben?",
-        "MSISQE10": "10. Krämpfe der Extremitäten zu haben?",
-        "MSISQE11": "11. dass ihr Körper nicht tat, was sie wollten?",
-        "MSISQE12": "12. dass sie davon abhingen, dass Andere Dinge für sie erledigten?",
-        "MSISQE13": "13. Beeinträchtigung im sozialen und Freizeitleben zu Hause?",
-        "MSISQE14": "14. gezwungen zu sein, zu Hause zu bleiben?"
-      },
-      "QS2_3": {
-        "MSISQE15": "15. Probleme der Hände bei Alltagstätigkeiten?",
-        "MSISQE16": "16. die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?",
-        "MSISQE17": "17. Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?",
-        "MSISQE18": "18. länger für Dinge zu brauchen?",
-        "MSISQE19": "19. Schwierigkeiten, Dinge spontan zu machen?",
-        "MSISQE20": "20. ganz schnell zur Toilette zu müssen?",
-        "MSISQE21": "21. sich allgemein unwohl zu fühlen?",
-        "MSISQE22": "22. Schlafprobleme zu haben?"
-      },
-      "QS2_4": {
-        "MSISQE23": "23. sich geistig/mental müde zu fühlen?",
-        "MSISQE24": "24. Sorgen bezogen auf MS zu haben?",
-        "MSISQE25": "25. sich angespannt und ängstlich zu fühlen?",
-        "MSISQE26": "26. sich störbar, ungeduldig und aufbrausend zu fühlen?",
-        "MSISQE27": "27. Konzentrationsprobleme zu haben?",
-        "MSISQE28": "28. keine Zuversicht zu haben?",
-        "MSISQE29": "29. sich traurig/depressiv zu fühlen?"
-      }
+      "QS1": [{
+        "id": "1",
+        "text": "1. körperlich anstrengende Dinge zu tun?"
+      }, {
+        "id": "2",
+        "text": "2. Dinge fest anzufassen (z.B. Hahn aufdrehen)?"
+      }, {
+        "id": "3",
+        "text": "3. Dinge zu tragen?"
+      }],
+      "QS2_1": [{
+        "id": "4",
+        "text": "4. Probleme mit dem Gleichgewicht?"
+      }, {
+        "id": "5",
+        "text": "5. Schwierigkeiten, sich in der Wohnung zu bewegen?"
+      }, {
+        "id": "6",
+        "text": "6. ungeschickt zu sein?"
+      }, {
+        "id": "7",
+        "text": "7. steif zu sein"
+      }],
+      "QS2_2": [{
+        "id": "8",
+        "text": "8. schwere Arme und/oder Beine zu haben?"
+      }, {
+        "id": "9",
+        "text": "9. Zittern der Arme oder Beine zu haben?"
+      }, {
+        "id": "10",
+        "text": "10. Krämpfe der Extremitäten zu haben?"
+      }, {
+        "id": "11",
+        "text": "11. dass ihr Körper nicht tat, was sie wollten?"
+      }, {
+        "id": "12",
+        "text": "12. dass sie davon abhingen, dass Andere Dinge für sie erledigten?"
+      }, {
+        "id": "13",
+        "text": "13. Beeinträchtigung im sozialen und Freizeitleben zu Hause?"
+      }, {
+        "id": "14",
+        "text": "14. gezwungen zu sein, zu Hause zu bleiben?"
+      }, {
+        "id": "15",
+        "text": "15. Probleme der Hände bei Alltagstätigkeiten?"
+      }],
+      "QS2_3": [{
+        "id": "16",
+        "text": "16. die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?"
+      }, {
+        "id": "17",
+        "text": "17. Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?"
+      }, {
+        "id": "18",
+        "text": "18. länger für Dinge zu brauchen?"
+      }, {
+        "id": "19",
+        "text": "19. Schwierigkeiten, Dinge spontan zu machen?"
+      }, {
+        "id": "20",
+        "text": "20. ganz schnell zur Toilette zu müssen?"
+      }, {
+        "id": "21",
+        "text": "21. sich allgemein unwohl zu fühlen?"
+      }, {
+        "id": "22",
+        "text": "22. Schlafprobleme zu haben?"
+      }, {
+        "id": "23",
+        "text": "23. sich geistig/mental müde zu fühlen?"
+      }],
+      "QS2_4": [{
+        "id": "24",
+        "text": "24. Sorgen bezogen auf MS zu haben?"
+      }, {
+        "id": "25",
+        "text": "25. sich angespannt und ängstlich zu fühlen?"
+      }, {
+        "id": "26",
+        "text": "26. sich störbar, ungeduldig und aufbrausend zu fühlen?"
+      }, {
+        "id": "27",
+        "text": "27. Konzentrationsprobleme zu haben?"
+      }, {
+        "id": "28",
+        "text": "28. keine Zuversicht zu haben?"
+      }, {
+        "id": "29",
+        "text": "29. sich traurig/depressiv zu fühlen?"
+      }]
     }
   },
   "MSISQS1": "Wie sehr waren sie in den letzen 2 Wochen eingeschränkt…",

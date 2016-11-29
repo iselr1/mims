@@ -46,7 +46,15 @@ body {
   text-align: center;
 }
 
-input[type=radio] {
+#kernsymp{
+  width: 70%;
+  height: 100%;
+}
+#kernsymp_one{
+  width: 70%;
+  height: 120%;
+}
+#msis{
   width: 30%;
   height: 100%;
 }

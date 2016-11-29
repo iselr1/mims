@@ -7,36 +7,38 @@
   </ion-nav-buttons>
   <ion-content>
     <form name="MSIS" novalidate>
-      <div class="fill-vertical-space">
-        <div class="row" style="height:5vh"></div>
-        <div class="row" style="height:8vh">
+        <div class="row row-5"></div>
+        <div class="row row-5">
           <div class="col col-50" translate="MSISQS1"></div>
           <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
         </div>
 
-        <div class="row" style="height:3vh"></div>
-        <div class="row row-top-border" style="height:8vh" ng-repeat="question in data.MSIS.QUESTIONS.QS1  track by $index">
-          <div class="col col-50 col-align-center" translate="{{question}}"></div>
+        <div class="row row-3"></div>
+        <div class="row row-8 row-top-border" ng-repeat="question in data.MSIS.QUESTIONS.QS1  track by question.id">
+          <div class="col col-50 col-align-center" translate="{{question.text}}"></div>
           <div class="col col-text-align-center" ng-repeat="buttons in data.MSIS.RADIOS">
-          <input type="radio" class="col-text-align-center" ng-model="MSISQS1" ng-value="{{buttons.id}}" name="{{$parent.$index}}" required ng-change="setValue({{buttons.id}})"/>
+            <input type="radio" id="msis" class="col-text-align-center" ng-model="MSISQS1" ng-value="{{buttons.id}}" name="{{$parent.question.id}}" required ng-change="setValue({{buttons.id}})"/>
+            <label for="msis"></label>
           </div>
         </div>
 
-        <div class="row" style="height:3vh"></div>
-        <div class="row" style="height:8vh">
+        <div class="row row-5"></div>
+        <div class="row row-5">
           <div class="col col-50" translate="MSISQS2"></div>
           <div class="col" id="radiolabels" ng-repeat="buttons in data.MSIS.RADIOS">{{buttons.label}}</div>
         </div>
-        <div class="row" style="height:3vh"></div>
-        <div class="row row-top-border" style="height:8vh" ng-repeat="question in data.MSIS.QUESTIONS.QS2_1  track by $index">
-          <div class="col col-50 col-align-center" translate="{{question}}"></div>
+
+        <div class="row row-3"></div>
+        <div class="row row-8 row-top-border" ng-repeat="question in data.MSIS.QUESTIONS.QS2_1  track by question.id">
+          <div class="col col-50 col-align-center" translate="{{question.text}}"></div>
           <div class="col col-text-align-center" ng-repeat="buttons in data.MSIS.RADIOS">
-          <input type="radio" ng-model="MSISQS1" ng-value="{{buttons.id}}" name="{{$parent.$index}}" required ng-change="setValue({{buttons.id}})"/>
+            <input type="radio" id="msis" ng-model="MSISQS1" ng-value="{{buttons.id}}" name="{{$parent.question.id}}" required ng-change="setValue({{buttons.id}})"/>
+            <label for="msis"></label>
           </div>
         </div>
 
-        <div class="row" style="height:3vh"></div>
-        <div class="row" style="height:8vh">
+        <div class="row row-3"></div>
+        <div class="row">
           <div class="col col-10"></div>
           <div class="col">
             <button class="button button-positive button-block" ng-click="goMsis2()" ng-disabled="MSIS.MSIS1.$valid" translate="NEXT"/>
