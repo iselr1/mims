@@ -151,11 +151,14 @@ angular.module('starter.controllersSarah', [])
   // counter for the point, that needs to be drawn white again (after green)
   var whiteone = 0;
 
-  // Array with all the points to show the first time
+  // Array with all the points from the labyrinth
   // 2 Dimensional Array
-  // The first square bracket references the desired element in the outer array (firstWay).
+  // The first square bracket references the desired element in the outer array (actuaLab).
   // The second square bracket references the desired element in the inner array (Point Aaray).
   // (JavaScript array indexes start at zero.)
+  var actualLab = [point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12, point13, point14, point15, point16, point17, point18, point19, point20, point21];
+
+  // Array with all the points to show the first time
   var firstWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
 
   // Array with all the points to show the second time - 2 Dimensional Array
@@ -166,6 +169,18 @@ angular.module('starter.controllersSarah', [])
 
   // get the context of the canvas
   ctx = my_canvas.getContext("2d");
+
+  // Where did the user click in the canvas
+  var xclient = 0.0;
+  var yclient = 0.0;
+/*  var BB = my_canvas.getBoundingClientRect();
+  var offsetX = BB.left;
+  var offsetY = BB.top;*/
+  var xrealclient = 0.0;
+  var yrealclient = 0.0;
+
+  //position for the endcircle
+  var endcircle;
 
   // Function to test if the User hit a circle
   // x,y is the point to test
@@ -287,26 +302,9 @@ angular.module('starter.controllersSarah', [])
 
     // Draw all the Points
     drawPoint(point1[0], point1[1], "black");
-    drawPoint(point2[0], point2[1], "white");
-    drawPoint(point3[0], point3[1], "white");
-    drawPoint(point4[0], point4[1], "white");
-    drawPoint(point5[0], point5[1], "white");
-    drawPoint(point6[0], point6[1], "white");
-    drawPoint(point7[0], point7[1], "white");
-    drawPoint(point8[0], point8[1], "white");
-    drawPoint(point9[0], point9[1], "white");
-    drawPoint(point10[0], point10[1], "white");
-    drawPoint(point11[0], point11[1], "white");
-    drawPoint(point12[0], point12[1], "white");
-    drawPoint(point13[0], point13[1], "white");
-    drawPoint(point14[0], point14[1], "white");
-    drawPoint(point15[0], point15[1], "white");
-    drawPoint(point16[0], point16[1], "white");
-    drawPoint(point17[0], point17[1], "white");
-    drawPoint(point18[0], point18[1], "white");
-    drawPoint(point19[0], point19[1], "white");
-    drawPoint(point20[0], point20[1], "white");
-    drawPoint(point21[0], point21[1], "white");
+    for(var i=0;i<actualLab.length;i++){
+          drawPoint(actualLab[i][0], actualLab[i][1], "white");
+    }
     drawPoint(point22[0], point22[1], "black");
 
     // Name Start and End
@@ -329,30 +327,34 @@ angular.module('starter.controllersSarah', [])
 
   // Function Click: Draw a blue point when click, wherever you are
   $scope.doClick = function(event) {
+
+    // Only if canvas is clickable
     if (clickOK == true) {
-      var xclient = event.clientX;
-      var yclient = event.clientY;
+      xclient = event.clientX;
+      yclient = event.clientY;
 
       var BB = my_canvas.getBoundingClientRect();
       var offsetX = BB.left;
       var offsetY = BB.top;
 
-      var x = xclient - offsetX;
-      var y = yclient - offsetY;
+      xrealclient = xclient - offsetX;
+      yrealclient = yclient - offsetY;
 
-      var endcircle = pointInCircle(x, y, point22[0]*xfactor, point22[1]*yfactor, 18);
+      // true if the user clicks into the endcircle
+      endcircle = pointInCircle(xrealclient, yrealclient, point22[0]*xfactor, point22[1]*yfactor, 18);
       console.log(endcircle);
 
-      for(var i=0;i<firstWay.length;i++){
-        console.log(firstWay[i]);
-      }
+      // gets true if the user clicks into a point in the labyrinth
+      var clickedinacircle = false;
 
       if (!endcircle){
-        ctx.beginPath();
-        ctx.arc(x, y, 18, 0, 2 * Math.PI);
-        ctx.fillStyle = "blue";
-        ctx.fill();
-        ctx.closePath();
+        for(var i=0;i<actualLab.length;i++){
+            clickedinacircle = pointInCircle(xrealclient, yrealclient, actualLab[i][0]*xfactor, actualLab[i][1]*yfactor, 18);
+            if (clickedinacircle){
+              drawPoint(actualLab[i][0], actualLab[i][1], "blue");
+              console.log(clickedinacircle)
+          }
+        }
       } else {
         $state.go('geschafft');
       }
