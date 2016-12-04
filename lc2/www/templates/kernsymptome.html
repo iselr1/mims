@@ -7,116 +7,98 @@
   </ion-nav-buttons>
   <ion-content class="padding">
     <form>
-      <div class="row" style="height:6vh">
-        <div class="col col-70" style:"height:100%" translate="Q1CORE"></div>
-
-        <div class="col col-6" translate="YES"></div>
+      <div class="row padding-horizontal padding-bottom" style="height:8vh">
+        <div class="col col-70 col-align-center" style:"height:100%" translate="Q1CORE"></div>
+        <div class="col col-6 col-align-center" translate="YES"></div>
         <div class="col col-6"><input type="radio" id="kernsymp_one" ng-model="YNrighthanded" name="YNrighthanded" value="y">
           <label for="kernsymp_one"></label>
         </div>
-        <div class="col col-6" translate="NO"></div>
+        <div class="col col-6 col-align-center" translate="NO"></div>
         <div class="col col-6"><input type="radio" id="kernsymp_one" ng-model="YNrighthanded" name="YNrighthanded" value="n">
           <label for="kernsymp"></label>
         </div>
+      </div>
 
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-100"></div>
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-70" style:"height:100%" translate="Q2CORE"></div>
-        <div class="col col-6" translate="YES"></div>
+      <div class="row padding row-top-border" style="height:8vh">
+        <div class="col col-70 col-align-center" style:"height:100%" translate="Q2CORE"></div>
+        <div class="col col-6 col-align-center" translate="YES"></div>
         <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNmovehand" name="YNmovehand" value="y">
           <label for="kernsymp"></label>
         </div>
-        <div class="col col-6" translate="NO"></div>
+        <div class="col col-6 col-align-center" translate="NO"></div>
         <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNmovehand" name="YNmovehand" value="n">
           <label for="kernsymp"></label>
-
         </div>
       </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-100"></div>
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-70" style:"height:100%" translate="Q3CORE"></div>
-        <div class="col col-6" translate="YES"></div>
+      <div class="row padding row-top-border" style="height:8vh">
+        <div class="col col-70 col-align-center" style:"height:100%" translate="Q3CORE"></div>
+        <div class="col col-6 col-align-center" translate="YES"></div>
         <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNfeelhand" name="YNfeelhand" value="y">
           <label for="kernsymp"></label>
         </div>
-        <div class="col col-6" translate="NO"></div>
+        <div class="col col-6 col-align-center" translate="NO"></div>
         <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNfeelhand" name="YNfeelhand" value="n">
           <label for="kernsymp"></label>
-
         </div>
-      </div>
-      <div class="row" style="height:3vh">
-        <div class="col col-100"></div>
-      </div>
-      <div class="row" style="height:vh">
-        <div class="col col-70" style:"height:100%" translate="Q4CORE"></div>
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-70" style:"height:100%">
-          <div class="range">
-            <input type="range" min="1" max="10" value="user.value" step="1" snaps="true" ng-model="user1.value">
-            {{user1.value}}
-            /{{user1.max}}
-          </div>
-        </div>
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-offset-3" translate="1 = sehr schlecht"></div>
-        <div class="col col-20" translate="10 = sehr gut"></div>
       </div>
 
-      <div class="row" style="height:3vh">
-        <div class="col col-100"></div>
-      </div>
-      <div class="row" style="height:3vh">
-        <div class="col col-70" style:"height:100%" translate="Q5CORE"></div>
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-70" style:"height:100%">
-          <div class="range">
-            <input type="range" min="1" max="4" value="user.value" step="1" snaps="true" ng-model="user2.value">
-            {{user2.value}}
-            /{{user2.max}}
+        <div class="row row-top-border" style="height:6vh">
+          <div class="col col-70 col-align-center" style:"height:100%" translate="Q4CORE"></div>
+        </div>
+        <div class="row" style="height:6vh">
+          <div class="col col-70" style:"height:100%">
+            <div class="range">
+              <input type="range" min="1" max="10" value="user.value" step="1" snaps="true" ng-model="user1.value">
+              {{user1.value}}
+              /{{user1.max}}
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-offset-3" translate="1 = sehr schlecht"></div>
-        <div class="col col-20" translate="4 = sehr gut"></div>
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-100"></div>
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-70" style:"height:100%" translate="Q6CORE"></div>
-        <div class="col col-6" translate="YES"></div>
+        <div class="row" style="height:6vh">
+          <div class="col col-offset-3" translate="1 = sehr schlecht"></div>
+          <div class="col col-20" translate="10 = sehr gut"></div>
+        </div>
+
+
+        <div class="row row-top-border" style="height:6vh">
+          <div class="col col-70 col-align-center" style:"height:100%" translate="Q5CORE"></div>
+        </div>
+        <div class="row" style="height:6vh">
+          <div class="col col-70" style:"height:100%">
+            <div class="range">
+              <input type="range" min="1" max="4" value="user.value" step="1" snaps="true" ng-model="user2.value">
+              {{user2.value}}
+              /{{user2.max}}
+            </div>
+          </div>
+        </div>
+        <div class="row" style="height:6vh">
+          <div class="col col-align-center col-offset-3" translate="1 = sehr schlecht"></div>
+          <div class="col col-20" translate="4 = sehr gut"></div>
+        </div>
+
+      <div class="row padding row-top-border" style="height:8vh">
+        <div class="col col-70 col-align-center" style:"height:100%" translate="Q6CORE"></div>
+        <div class="col col-6 col-align-center" translate="YES"></div>
         <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNthrust" name="YNthrust" value="y">
           <label for="kernsymp"></label>
         </div>
-        <div class="col col-6" translate="NO"></div>
+        <div class="col col-6 col-align-center" translate="NO"></div>
         <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNthrust" name="YNthrust" value="n">
           <label for="kernsymp"></label>
         </div>
       </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-100"></div>
-      </div>
-      <div class="row" style="height:6vh">
-        <div class="col col-70" style:"height:100%" translate="Q7CORE"></div>
-        <div class="col col-6" translate="YES"></div>
+
+      <div class="row padding row-top-border" style="height:8vh">
+        <div class="col col-70 col-align-center" style:"height:100%" translate="Q7CORE"></div>
+        <div class="col col-6 col-align-center" translate="YES"></div>
         <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNsymp" name="YNsymp" value="y">
         </div>
-        <div class="col col-6" translate="NO"></div>
+        <div class="col col-6 col-align-center" translate="NO"></div>
         <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNsymp" name="YNsymp" value="n">
         </div>
       </div>
-      <div class="row" style="height:3vh"></div>
-      <div class="row" style="height:6vh">
+      <div class="row padding row-top-border" style="height:8vh">
         <div class="col col-offset-20"><button class="button button-block button-positive" ng-click="goHome()" translate="SAVE"/></div>
         <div class="col col-20"></div>
       </div>

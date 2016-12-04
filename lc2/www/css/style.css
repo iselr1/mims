@@ -45,14 +45,32 @@ body {
   border: 2px solid black;
   text-align: center;
 }
-
+input[type="radio"]:checked {
+  background: linear-gradiant(#3498DB);
+  color: #3498DB;
+  font-style: normal;
+}
 #kernsymp{
   width: 70%;
   height: 100%;
 }
 #kernsymp_one{
   width: 70%;
-  height: 120%;
+  height: 110%;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    top: -1px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#387ef5));
+    /*background: linear-gradient(to right, #ccc 0%, #0c60ee 100%) !important;*/
 }
 #msis{
   width: 35%;

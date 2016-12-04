@@ -2,55 +2,51 @@
   <ion-nav-buttons side="left">
     <button class="button icon-left ion-home" ng-click="goHome()" translate="OVERVIEW"></button>
   </ion-nav-buttons>
-  <ion-content>
+  <ion-content class="padding">
     <div class="row">
-      <div class="col" style="text-align:center">
-        <h5>Referenztabelle</h5>
+      <div class="col padding" style="text-align:center" translate="REFERENCETABLE"></div>
+    </div>
+    <div class="row">
+      <div class="col col-9 padding">
+        <h4 align="center" translate="DIGIT"></h4>
+      </div>
+      <div class="col col-9 zs-col" ng-repeat="digit in keyTable">
+        <img ng-src="{{digit.numSrc}}" width="70%"/>
+      </div>
+      <div class="col col-9"></div>
+    </div>
+    <div class="row">
+      <div class="col col-9 padding">
+        <h4 align="center" translate="SYMBOL"></h4>
+      </div>
+      <div class="col col-9 zs-col" ng-repeat="symbol in keyTable">
+        <img ng-src="{{symbol.imgSrc}}" width="80%"/>
+      </div>
+      <div class="col col-9"></div>
+    </div>
+    <div class="row">
+      <div class="col padding" style="text-align:center" translate="ZS-INSTRUCTION"></div>
+    </div>
+
+    <div class="row">
+      <div class="col col-10 zs-col" ng-repeat="digit in solveTable">
+        <img ng-src="{{digit.numSrc}}" width="100%"/>
       </div>
     </div>
     <div class="row">
-      <div class="col col-9"></br>
-      <h4 align="center" translate="DIGIT"></h4>
+      <div class="col col-10 zs-col" ng-repeat="symbol in solveTable">
+        <img ng-src="{{symbol.imgSrc}}" width="100%"/>
+      </div>
     </div>
-    <div class="col col-9 zs-col" ng-repeat="digit in keyTable">
-      <img ng-src="{{digit.numSrc}}" width="70%"/>
+    <div class"row">
+      <div class="col padding" style="text-align:center" translate="SYMBOLTABLE"></div>
     </div>
-    <div class="col col-9"></div>
-  </div>
-  <div class="row">
-    <div class="col col-9"></br>
-    <h4 align="center" translate="SYMBOL"></h4>
-  </div>
-  <div class="col col-9 zs-col" ng-repeat="symbol in keyTable">
-    <img ng-src="{{symbol.imgSrc}}" width="80%"/>
-  </div>
-  <div class="col col-9"></div>
-</div>
-<div class="row"></br>
-</div>
-<div class="row">
-<div class="col" style="text-align:center">Wählen Sie anhand der Referenztabelle aus der Zeichentabelle das passende Zeichen zur Zahl oberhalb der grünen Fläche.</div>
-</div>
-
-<div class="row">
-<div class="col col-10 zs-col" ng-repeat="digit in solveTable">
-  <img ng-src="{{digit.numSrc}}" width="100%"/>
-</div>
-</div>
-<div class="row">
-<div class="col col-10 zs-col" ng-repeat="symbol in solveTable">
-  <img ng-src="{{symbol.imgSrc}}" width="100%"/>
-</div>
-</div>
-<div class="col" style="text-align:center">
-<h5>Zeichentabelle</h5>
-</div>
-<div class="row">
-<div class="col"></div>
-<div class="col col-10 zs-col" ng-repeat="symbol in solveImages">
-  <img ng-src="{{symbol.imgSrc}}" width="100%" ng-click="setValueImage(symbol.imgSrc)"/>
-</div>
-<div class="col col-5"></div>
-</div>
-</ion-content>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col col-10 zs-col" ng-repeat="symbol in solveImages">
+        <img ng-src="{{symbol.imgSrc}}" width="100%" ng-click="setValueImage(symbol.imgSrc)"/>
+      </div>
+      <div class="col col-5"></div>
+    </div>
+  </ion-content>
 </ion-view>

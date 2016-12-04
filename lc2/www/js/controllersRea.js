@@ -1,67 +1,109 @@
 angular.module('starter.controllersRea', [])
 
 
-.controller('MsisCtrl', function($scope, $stateParams, $state, $timeout, jsonService) {
+.controller('MsisCtrl', function($scope, $stateParams, $state, $timeout, jsonService, $translate, $ionicPopup, QuestionnaireService) {
   // to initialize the buttons
   $timeout(function() {
     $scope.data = jsonService.getJson();
   }, 10);
 
-  // initialize the questions
-  /*
-  QuestionService.genQuestions(29);
-
-  $scope.questionsStartType1 = QuestionService.getQuestionsStartType1();
-*/
-
+  //$scope.MSISQS1 = {};
+  /* Checks if all Questions are answered
+  if not, a popup informs the user about it
+  if it's the case, we navigate to the next view */
   $scope.goMsis2 = function() {
-    $state.go('msis2');
+    /*first variable has to be the name of the view we want to navigate to
+    scond is the name of the ng-modal under which we save the answers with localStorage*/
+    QuestionnaireService.checkAndStore('msis2', 'MSISQS1');
   };
-  $scope.setValue = function(value) {
-    console.log(value);
+
+  $scope.setValue = function(value, questionid) {
+    QuestionnaireService.setValue(value, questionid, '7');
   };
 })
 
-.controller('Msis2Ctrl', function($scope, $stateParams, $state, jsonService) {
-    $scope.data = jsonService.getJson();
+.controller('Msis2Ctrl', function($scope, $stateParams, $state, jsonService, QuestionnaireService, $timeout) {
+    $timeout(function() {
+      $scope.data = jsonService.getJson();
+    }, 10);
+    QuestionnaireService.reset();
 
+    /* Checks if all Questions are answered
+    if not, a popup informs the user about it
+    if it's the case, we navigate to the next view */
+    $scope.goMsis3 = function() {
+      /*first variable has to be the name of the view we want to navigate to
+      scond is the name of the ng-modal under which we save the answers with localStorage*/
+      QuestionnaireService.checkAndStore('msis3', 'MSISQS2');
+    };
+
+    $scope.setValue = function(value, questionid) {
+      QuestionnaireService.setValue(value, questionid, '8');
+    };
     $scope.goMsis = function() {
       $state.go('msis');
-    };
-    $scope.goMsis3 = function() {
-      $state.go('msis3');
+      //******ergänzen mit load function von loaclstorage******/
     };
 
   })
-  .controller('Msis3Ctrl', function($scope, $stateParams, $state, jsonService) {
-    $scope.data = jsonService.getJson();
+  .controller('Msis3Ctrl', function($scope, $stateParams, $state, jsonService, QuestionnaireService, $timeout) {
+    $timeout(function() {
+      $scope.data = jsonService.getJson();
+    }, 10);
+    QuestionnaireService.reset();
+
+    /* Checks if all Questions are answered
+    if not, a popup informs the user about it
+    if it's the case, we navigate to the next view */
+    $scope.goMsis4 = function() {
+      /*first variable has to be the name of the view we want to navigate to
+      scond is the name of the ng-modal under which we save the answers with localStorage*/
+      QuestionnaireService.checkAndStore('msis4', 'MSISQS3');
+    };
+
+    $scope.setValue = function(value, questionid) {
+      QuestionnaireService.setValue(value, questionid, '8');
+    };
 
     $scope.goMsis2 = function() {
       $state.go('msis2');
+      //******ergänzen mit load function von loaclstorage******/
     };
-    $scope.goMsis4 = function() {
-      $state.go('msis4');
+  })
+  .controller('Msis4Ctrl', function($scope, $stateParams, $state, jsonService, QuestionnaireService, $timeout) {
+    $timeout(function() {
+      $scope.data = jsonService.getJson();
+    }, 10);
+
+    QuestionnaireService.reset();
+
+    /* Checks if all Questions are answered
+    if not, a popup informs the user about it
+    if it's the case, we navigate to the next view */
+    $scope.goHome = function() {
+      /*first variable has to be the name of the view we want to navigate to
+      scond is the name of the ng-modal under which we save the answers with localStorage*/
+      QuestionnaireService.checkAndStore('home', 'MSISQS4');
     };
 
-  })
-  .controller('Msis4Ctrl', function($scope, $stateParams, $state, jsonService) {
-    $scope.data = jsonService.getJson();
+    $scope.setValue = function(value, questionid) {
+      QuestionnaireService.setValue(value, questionid, '6');
+    };
 
     $scope.goMsis3 = function() {
       $state.go('msis3');
     };
-    $scope.goMsis5 = function() {
-      $state.go('msis5');
-    };
-
   })
-  .controller('Msis5Ctrl', function($scope, $stateParams, $state, jsonService) {
+
+.controller('Msis5Ctrl', function($scope, $stateParams, $state, jsonService, $timeout) {
+  $timeout(function() {
     $scope.data = jsonService.getJson();
+  }, 10);
 
-    $scope.goMsis4 = function() {
-      $state.go('msis4');
-    };
-  })
+  $scope.goMsis4 = function() {
+    $state.go('msis4');
+  };
+})
 
 .controller('ZahlsymbolAnlCtrl', function($scope, $state, $ionicLoading, $ionicModal) {
     $scope.goSD_Preparation = function() {

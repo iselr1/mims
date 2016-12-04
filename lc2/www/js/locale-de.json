@@ -155,5 +155,8 @@
     }
   },
   "MSISQS1": "Wie sehr waren sie in den letzen 2 Wochen eingeschränkt…",
-  "MSISQS2": "Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch..."
+  "MSISQS2": "Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...",
+  "ZS-INSTRUCTION": "Wählen Sie anhand der Referenztabelle aus der Zeichentabelle das passende Zeichen zur Zahl oberhalb der grünen Fläche.",
+  "REFERENCETABLE": "Referenztabelle",
+  "SYMBOLTABLE": "Zeichentabelle"
 }

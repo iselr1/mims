@@ -31,35 +31,98 @@ angular.module('starter.services', [])
       }
       return QuestionService;
     })*/
-  .factory('jsonService', function($rootScope, $http, $translate) {
-    var jsonService = {};
-    var prefix = 'js/locale-';
-    var suffix = '.json';
 
-    jsonService.data = {};
+.factory('QuestionnaireService', function($state, $ionicPopup, $translate) {
+  var QuestionnaireService = {};
 
-    // initialize the json file with the currentLanguage
-    var key = ($translate.proposedLanguage() || $translate.use());
+  var allAnswers = false;
+  var answers = [];
+  QuestionnaireService.reset = function() {
+    allAnswers = false;
+    answers = [];
+  };
+
+  QuestionnaireService.setValue = function(value, questionid, numberofAnswers) {
+
+    console.log(answers.length);
+    if (answers.length == 0) {
+      var answer = {};
+      answer.question = questionid;
+      answer.value = value;
+      answers.push(answer);
+      console.log(answers);
+      console.log(allAnswers);
+    } else {
+      console.log("hier");
+      for (var i = 0; i < answers.length; i++) {
+        console.log(answers[i].question);
+        if (answers[i].question == questionid) {
+          answers[i].value = value;
+          break;
+        } else if (i == (answers.length - 1)) {
+          var answer = {};
+          answer.question = questionid;
+          answer.value = value;
+          answers.push(answer);
+        }
+      }
+      if (answers.length == numberofAnswers) {
+        allAnswers = true;
+      }
+      console.log(answers);
+      console.log(allAnswers);
+    }
+  };
+
+  QuestionnaireService.checkAndStore = function(goTo, msisModal) {
+    if (allAnswers) {
+      $state.go(goTo);
+      localStorage.setItem(msisModal, JSON.stringify(answers));
+      var storedAnswers = JSON.parse(localStorage.getItem(msisModal));
+      console.log(storedAnswers);
+    } else {
+      var popTitle = $translate.instant('Info');
+      var popTemplate = $translate.instant('Bitte wählen Sie eine Antwort für jede Aussage');
+
+      var alertPopup = $ionicPopup.alert({
+        title: popTitle,
+        template: popTemplate,
+      });
+    }
+  };
+
+  return QuestionnaireService;
+})
+
+.factory('jsonService', function($rootScope, $http, $translate) {
+  var jsonService = {};
+  var prefix = 'js/locale-';
+  var suffix = '.json';
+
+  jsonService.data = {};
+
+  // initialize the json file with the currentLanguage
+  var key = ($translate.proposedLanguage() || $translate.use());
+  $http.get(prefix + key + suffix)
+    .success(function(data) {
+      jsonService.data.json = data;
+      console.log('Json data is initialized');
+    });
+
+  //Gets the new json file if the language is changed
+  jsonService.loadJson = function(key) {
     $http.get(prefix + key + suffix)
       .success(function(data) {
         jsonService.data.json = data;
-        console.log('Json data is initialized');
+        console.log('Json data is loaded');
       });
+  };
+  jsonService.getJson = function() {
+    return jsonService.data.json;
+  };
 
-    //Gets the new json file if the language is changed
-    jsonService.loadJson = function(key) {
-      $http.get(prefix + key + suffix)
-        .success(function(data) {
-          jsonService.data.json = data;
-          console.log('Json data is loaded');
-        });
-    };
-    jsonService.getJson = function() {
-      return jsonService.data.json;
-    };
-
-    return jsonService;
-  })
+  return jsonService;
+})
 
 .factory('SymDigService', function($rootScope) {
   var SymDigService = {};
