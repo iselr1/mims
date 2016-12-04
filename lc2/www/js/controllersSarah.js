@@ -64,7 +64,7 @@ angular.module('starter.controllersSarah', [])
 })
 
 /* -- Controller for Route View -- */
-.controller('RouteCtrl', function($scope, $stateParams, $interval, $state) {
+.controller('RouteCtrl', function($scope, $stateParams, $interval, $state, $ionicPopup) {
 
   // Factor to draw the Labyrinth (Standard 1024x768)
   var xfactor = 0.0;
@@ -119,7 +119,7 @@ angular.module('starter.controllersSarah', [])
   var yvalue = 0;
 
   // Boolean - is Labyrinth clickable (Standard false)
-  var clickOK = true;
+  var clickOK = false;
 
   // Coordinates for the points of the Labyrinth - Center (Standard 1024x768)
   var point1 = [51, 682];
@@ -165,6 +165,9 @@ angular.module('starter.controllersSarah', [])
   // Array with all the points to show the second time - 2 Dimensional Array
   var secondWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
 
+  // The way the user did
+  var userway=[];
+
   // get the html canvas labyrinth
   my_canvas = document.getElementById("labyrinth");
 
@@ -185,6 +188,9 @@ angular.module('starter.controllersSarah', [])
 
   //clicks - how many clicks by the user
   var clicks = 0;
+
+  //how many joints of the user were actually right
+  var rightlines = 0;
 
   // Function to test if the User hit a circle
   // x,y is the point to test
@@ -293,11 +299,34 @@ angular.module('starter.controllersSarah', [])
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = "black";
-    ctx.fill();
     ctx.fillText('Start', xstart, ystart);
     ctx.fillText('End', xend, yend);
-
+    ctx.font = '14pt Arial';
+    ctx.fillStyle = "green";
+    ctx.fillText('Bitte merken Sie sich den Weg', ctx.canvas.width/2, 15);
   };
+
+  nowDoIt = function() {
+  // write the letters in Arial, 16 pt in white
+  ctx.clearRect((ctx.canvas.width/2)-250,5,500,30);
+  ctx.font = '14pt Arial';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = "blue";
+  ctx.fillText('Bitte versuchen die den vorgezeigten Weg nachzumachen', ctx.canvas.width/2, 15);
+};
+
+// BESCHREIBUNG
+$scope.showPopup = function() {
+  var alertPopup = $ionicPopup.alert({
+    title:'Variablen für MIDATA',
+    template: "Anzahl Clicks: " + clicks + "</br></br>" + "Anz. Punkt des Labs angeklickt: " + rightclicks + "</br></br>" + "Anz. richtige Verbindungen: " + rightlines,
+  });
+  alertPopup.then(function() {
+    $state.go('geschafft');
+  });
+};
+
 
   // Function Click: Draw a blue point when click, wherever you are
   $scope.doClick = function(event) {
@@ -330,20 +359,35 @@ angular.module('starter.controllersSarah', [])
         for(var i=0;i<actualLab.length;i++){
             // check if user clicked in a circle
             clickedinacircle = pointInCircle(xrealclient, yrealclient, actualLab[i][0]*xfactor, actualLab[i][1]*yfactor, 18);
-            //if yes --> make it blue an get a rightclick (means he clicked a circle of the whole lab)
+            // if yes --> make it blue an get a rightclick (means he clicked a circle of the whole lab)
             if (clickedinacircle){
-              /* here to do: iterate the array with the actual points of the labyrinth
-                  check if he clicked a point in the lab
-                  if yes --> make a counter for that / save the point into an array
-                  if this is done compare the two arrays (reihenfolge der punkte) --> when clicked on endcircle*/
+              userway.push([actualLab[i][0],actualLab[i][1]]);
               rightclicks = rightclicks +1;
               drawPoint(actualLab[i][0], actualLab[i][1], "blue");
+              console.log(userway);
               console.log(clickedinacircle);
               console.log(rightclicks);
           }
         }
       } else {
+
+        //search in the whole labyrinth
+        for(var i=0;i<userway.length;i++){
+          if(i!=0){
+            /* here to do: iterate the array with the actual points of the labyrinth
+                check if he clicked a point in the lab
+                if yes --> make a counter for that / save the point into an array
+                if this is done compare the two arrays (reihenfolge der punkte) --> when clicked on endcircle*/
+          }
+          else{
+            if((userway[i][0] == firstWay[i][0]) && (userway[i][1] == firstWay[i][1])){
+              rightlines = rightlines + 1;
+            }
+          }
+          console.log("rightlines: "+rightlines);
+        }
         $state.go('geschafft');
+        $scope.showPopup();
       }
     } else {
       console.info("nopes");
@@ -365,6 +409,7 @@ angular.module('starter.controllersSarah', [])
   // Click is Only possible when way through Labyrinth was shown
   setTimeout(function() {
     clickOK = true;
+    nowDoIt();
   }, 32000);
 
   // Show the Way through the Labyrinth
