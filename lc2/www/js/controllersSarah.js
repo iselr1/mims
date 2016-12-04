@@ -180,15 +180,21 @@ angular.module('starter.controllersSarah', [])
   //position for the endcircle
   var endcircle;
 
+  //rightclicks - how many clicks by the user where in a circle
+  var rightclicks = 0;
+
+  //clicks - how many clicks by the user
+  var clicks = 0;
+
   // Function to test if the User hit a circle
   // x,y is the point to test
   // cx, cy is circle center, and radius is circle radius
   pointInCircle = function (x, y, cx, cy, radius) {
-    console.log(x);
+  /*  console.log(x);
     console.log(y);
     console.log(cx);
     console.log(cy);
-    console.log(radius);
+    console.log(radius);*/
     var distancesquared = (x - cx) * (x - cx) + (y - cy) * (y - cy);
     return distancesquared <= radius * radius;
   };
@@ -316,11 +322,24 @@ angular.module('starter.controllersSarah', [])
       var clickedinacircle = false;
 
       if (!endcircle){
+        // the user clicked in a circle which was not the end
+        clicks = clicks + 1;
+        console.log(clicks);
+
+        //search in the whole labyrinth
         for(var i=0;i<actualLab.length;i++){
+            // check if user clicked in a circle
             clickedinacircle = pointInCircle(xrealclient, yrealclient, actualLab[i][0]*xfactor, actualLab[i][1]*yfactor, 18);
+            //if yes --> make it blue an get a rightclick (means he clicked a circle of the whole lab)
             if (clickedinacircle){
+              /* here to do: iterate the array with the actual points of the labyrinth
+                  check if he clicked a point in the lab
+                  if yes --> make a counter for that / save the point into an array
+                  if this is done compare the two arrays (reihenfolge der punkte) --> when clicked on endcircle*/
+              rightclicks = rightclicks +1;
               drawPoint(actualLab[i][0], actualLab[i][1], "blue");
-              console.log(clickedinacircle)
+              console.log(clickedinacircle);
+              console.log(rightclicks);
           }
         }
       } else {
