@@ -51,12 +51,16 @@ input[type="radio"]:checked {
   font-style: normal;
 }
 #kernsymp{
-  width: 70%;
-  height: 100%;
+  width: 80%;
+  height: 90%;
 }
 #kernsymp_one{
-  width: 70%;
-  height: 110%;
+  width: 80%;
+  height: 100%;
+}
+#core_smile{
+  width: 80%;
+  height: 80%;
 }
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;

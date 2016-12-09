@@ -137,7 +137,7 @@ angular.module('starter.services', [])
   // Anzahl der Objekte der Schlüsseltabelle
   var numberObjectsKeyTable = 9;
   // Anzahl der Objekte der lösungstabelle
-  var numberObjectsSolveTable = 10;
+  var numberObjectsSolveTable = 18;
   //Anzahl der falschen Zuordnungen bei der Vorbereitung
   var n_incorrectPrep = 0;
   //Anzahl der korrekten Zuordnungen bei der Vorbereitung
@@ -152,7 +152,7 @@ angular.module('starter.services', [])
   //var time = 120000:
   // Für Kundenworkshop
   // Zeitdauer, welche für die Übung zur Verfügung steht
-  var timeExcersise = 40000;
+  var timeExcersise = 120000;
   // Zeit beim Start der Übung
   //var timeWhenExcersiseStart = 0;
   //Klickfrequenz (Zeit /(Anzahl Korrekte + Inkorrekte Zuordnungen))
@@ -177,16 +177,22 @@ angular.module('starter.services', [])
   }
 
   /* Funktion um die Schlüsseltabelle mit Objekten zu befüllen*/
-  SymDigService.fillSolveTable = function(solveNums) {
+  SymDigService.fillSolveTable = function(solveNums, booleanGreen) {
     solveTable = [];
     for (var i = 1; i <= numberObjectsSolveTable; i++) {
       var newObject = {};
-      if (i == 1) {
-        newObject.numSrc = "img/" + solveNums[i - 1] + ".png";
-        newObject.imgSrc = "img/green.png";
+      if (i == 1 && booleanGreen == true) {
+        newObject.imgSrc = "img/SD_" + solveNums[i - 1] + ".png";
+        newObject.numSrc = "img/green.png";
+        newObject.next = true;
+      } else if (i == 1 && booleanGreen == false) {
+        newObject.imgSrc = "img/SD_" + solveNums[i - 1] + ".png";
+        newObject.numSrc = "img/empty.png";
+        newObject.next = true;
       } else {
-        newObject.numSrc = "img/" + solveNums[i - 1] + ".png";
-        newObject.imgSrc = "img/empty.png";
+        newObject.imgSrc = "img/SD_" + solveNums[i - 1] + ".png";
+        newObject.numSrc = "img/empty.png";
+        newObject.next = false;
 
       }
       solveTable.push(newObject);
@@ -201,9 +207,8 @@ angular.module('starter.services', [])
       for (var i = 1; i <= numberObjectsKeyTable; i++) {
         var newObject = {};
         newObject.id = i;
-        newObject.imgSrc = "img/SD_" + solveImgs[i - 1].toString() + ".png";
+        newObject.imgSrc = "img/b" + solveImgs[i - 1].toString() + ".png";
         solveImages.push(newObject);
-        console.log(solveImages);
       }
       console.log(solveImages);
       return solveImages;
@@ -277,6 +282,9 @@ angular.module('starter.services', [])
     n_trys++;
     console.log("Trys:" + n_trys);
   }
+  SymDigService.setTry = function(number) {
+    n_trys = number;
+  }
 
   //Function to random assign Symbols to numbers
   SymDigService.doShuffle = function(array) {
@@ -298,48 +306,48 @@ angular.module('starter.services', [])
     }
     // Function to random generate 10 numbers according to the specifications for the middle block
   SymDigService.genNums = function(array) {
-    var i = 9,
-      j = 0,
-      number = 0,
-      index = 0,
+
+    var arrayPosition = (array.length - 1),
+      randomPosition = 0,
+      minPosition = 0,
+      maxPosition = 17,
       temp = [],
-      alength = 9;
+      alength = array.length;
 
-    while (i--) {
-      j = Math.floor(Math.random() * (i + 1));
+    // While the number of elements of the Array
+    while (arrayPosition--) {
+      randomPosition = Math.floor(Math.random() * (maxPosition - minPosition) + minPosition);
 
-      // swap randomly chosen element with current element
-      temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      // swap number at randomly chosen position(randomPosition) with number at current Position (arrayPosition)
+      temp = array[arrayPosition];
+      array[arrayPosition] = array[randomPosition];
+      array[randomPosition] = temp;
     }
-    number = Math.floor((Math.random() * alength) + 1);
-    index = Math.floor(Math.random() * alength);
+    console.log("array vor check" + array);
 
-    //add a 10th number at a random place in the array without deleting an exsiting
-    array.splice(index, 0, number);
-
-    // check if the 2 equal numbers are right next to each other
-    for (var i = 0; i <= alength; i++) {
+    // check if two equal numbers are right next to each other
+    for (var i = 0; i < alength; i++) {
       // if true, then two numbers are right next to eachother
       if (array[i] == array[i + 1]) {
+        console.log(array[i + 1]);
         //if true the two last numbers are equal, then the last number
         // changes the place with the number at index 2
-        if (i == alength) {
+        if (i == (alength - 2)) {
           temp = array[i + 1];
           array[i + 1] = array[2];
           array[2] = temp;
         }
-        // If the two equal numbers are not the last ones, then the one at position i+1 changes
-        // place with the last number of the array and we can exit the for-loop
+        // If the two equal numbers are not the last ones, then the one at position i+1 changes place with the last number of the array
         else {
-          temp = array[i + 1];
-          array[i + 1] = array[alength];
-          array[alength] = temp;
-          break;
+          temp = array[i];
+          console.log(temp);
+          array[i] = array[alength - 1];
+          array[alength - 1] = temp;
+          i--;
         }
       }
     }
+    console.log(array);
     return array;
   }
 

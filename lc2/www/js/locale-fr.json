@@ -40,7 +40,7 @@
    "DIGIT": "Zahl",
    "SYMBOL": "Zeichen",
    "SDTITLE_POPUP": "Info",
-   "SDTEMPLATE_POPUP": "Die Vorbereitung ist nun abgeschlossen. Sobald Sie OK drücken haben sie 120 Sekunden Zeit soviele Felder wie möglich zu lösen.",
+  "SDTEMPLATE_POPUP": "Die Vorbereitung ist nun abgeschlossen. Sobald Sie OK drücken beginnt die eigentliche Übung.",
    "MSIS-29": "MSIS-29",
    "MSIS": {
      "RADIOS": [{

@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
     console.info(I4MIMidataService.currentUser());
     if (I4MIMidataService.currentUser() !== undefined) {
       //$state.go('home');
-      $state.go('home');
+      $state.go('kernsymptome');
     } else {
       I4MIMidataService.logout();
     }

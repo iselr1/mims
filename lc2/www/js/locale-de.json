@@ -11,7 +11,7 @@
   "OVERVIEW": "Übersicht",
   "EXCERCISES": "Übungen",
   "CONGRATULATIONS": "Gratulation",
-  "CONGRATULATIONS_TEXT": "Sie haben das super gemacht!",
+  "CONGRATULATIONS_TEXT": "Vielen Dank fürs mitmachen!",
   "OVERVIEW_QUESTIONNAIRES": "Übersicht Fragebögen",
   "MAINSYMPTOMS": "Kernsymptome",
   "MAINSYMPTOMS_CAPTURE": "Kernsymptome erfassen",
@@ -24,13 +24,55 @@
   "SD_PREPARATION": "Zahl-Zeichen Vorbereitung",
   "SD_INSTRUCTION": "Zahl-Zeichen Übungsanleitung",
   "MOTOR_SKILLS": "Motorik",
-  "Q1CORE": "Sind Sie Rechtshänder?",
-  "Q2CORE": "Haben Sie eine Bewegungseinschränkung in der rechten/linken Hand?",
-  "Q3CORE": "Haben Sie eine Gefühlsstörung in der rechten/linken Hand?",
+  "CORE": {
+    "AHAND": [{
+      "id": "1",
+      "label": "Rechtshänder"
+    }, {
+      "id": "2",
+      "label": "Linkshänder"
+    }, {
+      "id": "3",
+      "label": "Beidhänder"
+    }],
+    "AYN": [{
+      "id": "true",
+      "label": "Ja"
+    }, {
+      "id": "false",
+      "label": "Nein"
+      }],
+      "ASMILE": [{
+        "id": "1",
+        "imgSrc": "img/emotes_face_sad.png"
+      },{
+        "id": "2",
+        "imgSrc": "img/emotes_face_uncertain.png"
+      },{
+        "id": "3",
+        "imgSrc": "img/emotes_face_plain.png"
+      },{
+        "id": "4",
+        "imgSrc": "img/emotes_face_smile.png"
+      },{
+        "id": "5",
+        "imgSrc": "img/emotes_face_smile_big.png"
+      }]
+
+  },
+  "Q1CORE": "Sie sind...",
+  "Q2COREL": "Haben Sie eine Bewegungseinschränkung in der linken Hand?",
+  "Q2CORER": "Haben Sie eine Bewegungseinschränkung in der rechten Hand?",
+  "Q3COREL": "Haben Sie eine Gefühlsstörung in der linken Hand?",
+  "Q3CORER": "Haben Sie eine Gefühlsstörung in der rechten Hand?",
   "Q4CORE": "Wie fühlen Sie sich heute?",
   "Q5CORE": "Wie beurteilen Sie ihre momentane Konzentrationsfähigkeit?",
   "Q6CORE": "Hatten Sie seit der letzen Übung einen Schub?",
   "Q7CORE": "Haben Ihre MS Symptome seit der letzten Übung zugenommen?",
+
+  "RIGHTHANDED": "Rechtshänder",
+  "LEFTHANDED": "Linkshänder",
+  "BOTHHANDED": "Beidhänder",
   "YES": "Ja",
   "NO": "Nein",
   "SAVE": "Speichern",
@@ -40,7 +82,7 @@
   "DIGIT": "Zahl",
   "SYMBOL": "Zeichen",
   "SDTITLE_POPUP": "Info",
-  "SDTEMPLATE_POPUP": "Die Vorbereitung ist nun abgeschlossen. Sobald Sie OK drücken haben sie 120 Sekunden Zeit soviele Felder wie möglich zu lösen.",
+  "SDTEMPLATE_POPUP": "Die Vorbereitung ist nun abgeschlossen. Sobald Sie OK drücken beginnt die eigentliche Übung.",
   "MSIS-29": "MSIS-29",
   "MSIS": {
     "RADIOS": [{
@@ -158,5 +200,9 @@
   "MSISQS2": "Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...",
   "ZS-INSTRUCTION": "Wählen Sie anhand der Referenztabelle aus der Zeichentabelle das passende Zeichen zur Zahl oberhalb der grünen Fläche.",
   "REFERENCETABLE": "Referenztabelle",
-  "SYMBOLTABLE": "Zeichentabelle"
+  "SYMBOLTABLE": "Zeichentabelle",
+  "PAGE1OF4": "Seite 1 von 4",
+  "PAGE2OF4": "Seite 2 von 4",
+  "PAGE3OF4": "Seite 3 von 4",
+  "PAGE4OF4": "Seite 4 von 4"
 }

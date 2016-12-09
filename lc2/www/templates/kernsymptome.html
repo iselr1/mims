@@ -8,94 +8,167 @@
   <ion-content class="padding">
     <form>
       <div class="row padding-horizontal padding-bottom" style="height:8vh">
-        <div class="col col-70 col-align-center" style:"height:100%" translate="Q1CORE"></div>
-        <div class="col col-6 col-align-center" translate="YES"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp_one" ng-model="YNrighthanded" name="YNrighthanded" value="y">
+        <div class="col col-18 col-align-center" style:"height:100%" translate="Q1CORE"></div>
+        <div class="col col-14 col-align-center" translate="RIGHTHANDED"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp_one" ng-model="handed" name="handed" value="right" ng-change="setValue(right)">
           <label for="kernsymp_one"></label>
         </div>
-        <div class="col col-6 col-align-center" translate="NO"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp_one" ng-model="YNrighthanded" name="YNrighthanded" value="n">
-          <label for="kernsymp"></label>
+        <div class="col col-14 col-align-center" translate="LEFTHANDED"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp_one" ng-model="handed" name="handed" value="left">
+          <label for="kernsymp_one"></label>
+        </div>
+        <div class="col col-14 col-align-center" translate="BOTHHANDED"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp_one" ng-model="handed" name="handed" value="both">
+          <label for="kernsymp_one"></label>
         </div>
       </div>
 
       <div class="row padding row-top-border" style="height:8vh">
-        <div class="col col-70 col-align-center" style:"height:100%" translate="Q2CORE"></div>
-        <div class="col col-6 col-align-center" translate="YES"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNmovehand" name="YNmovehand" value="y">
+        <div class="col col-70 col-align-center" style:"height:100%" translate="Q2COREL"></div>
+        <div class="col col-8 col-align-center" translate="YES"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="lmove" name="lmove" value="y">
           <label for="kernsymp"></label>
         </div>
-        <div class="col col-6 col-align-center" translate="NO"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNmovehand" name="YNmovehand" value="n">
+        <div class="col col-8 col-align-center" translate="NO"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="lmove" name="lmove" value="n">
           <label for="kernsymp"></label>
         </div>
       </div>
       <div class="row padding row-top-border" style="height:8vh">
-        <div class="col col-70 col-align-center" style:"height:100%" translate="Q3CORE"></div>
-        <div class="col col-6 col-align-center" translate="YES"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNfeelhand" name="YNfeelhand" value="y">
+        <div class="col col-70 col-align-center" style:"height:100%" translate="Q2CORER"></div>
+        <div class="col col-8 col-align-center" translate="YES"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="rmove" name="rmove" value="y">
           <label for="kernsymp"></label>
         </div>
-        <div class="col col-6 col-align-center" translate="NO"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNfeelhand" name="YNfeelhand" value="n">
+        <div class="col col-8 col-align-center" translate="NO"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="rmove" name="rmove" value="n">
+          <label for="kernsymp"></label>
+        </div>
+      </div>
+      <div class="row padding row-top-border" style="height:8vh">
+        <div class="col col-70 col-align-center" style:"height:100%" translate="Q3COREL"></div>
+        <div class="col col-8 col-align-center" translate="YES"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="lfeel" name="lfeel" value="y">
+          <label for="kernsymp"></label>
+        </div>
+        <div class="col col-8 col-align-center" translate="NO"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="lfeel" name="lfeel" value="n">
+          <label for="kernsymp"></label>
+        </div>
+      </div>
+      <div class="row padding row-top-border" style="height:8vh">
+        <div class="col col-70 col-align-center" style:"height:100%" translate="Q3CORER"></div>
+        <div class="col col-8 col-align-center" translate="YES"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="rfeel" name="rfeel" value="y">
+          <label for="kernsymp"></label>
+        </div>
+        <div class="col col-8 col-align-center" translate="NO"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="rfeel" name="rfeel" value="n">
           <label for="kernsymp"></label>
         </div>
       </div>
 
-        <div class="row row-top-border" style="height:6vh">
-          <div class="col col-70 col-align-center" style:"height:100%" translate="Q4CORE"></div>
+
+      <div class="row padding-top row-top-border" style="height:8vh">
+        <div class="col col-60 col-align-center" style:"height:100%" translate="Q4CORE"></div>
+        <div class="col col-8">
+          <img src="img/emotes_face_sad.png" class="left" height="100%"></img>
         </div>
-        <div class="row" style="height:6vh">
-          <div class="col col-70" style:"height:100%">
-            <div class="range">
-              <input type="range" min="1" max="10" value="user.value" step="1" snaps="true" ng-model="user1.value">
-              {{user1.value}}
-              /{{user1.max}}
-            </div>
-          </div>
+        <div class="col col-8">
+          <img src="img/emotes_face_uncertain.png" class="left" height="100%"></img>
         </div>
-        <div class="row" style="height:6vh">
-          <div class="col col-offset-3" translate="1 = sehr schlecht"></div>
-          <div class="col col-20" translate="10 = sehr gut"></div>
+        <div class="col col-8">
+          <img src="img/emotes_face_plain.png" class="left" height="100%"></img>
+        </div>
+        <div class="col col-8">
+          <img src="img/emotes_face_smile.png" class="left" height="100%"></img>
+        </div>
+        <div class="col col-8">
+          <img src="img/emotes_face_smile_big.png" class="left" height="100%"></img>
         </div>
 
-
-        <div class="row row-top-border" style="height:6vh">
-          <div class="col col-70 col-align-center" style:"height:100%" translate="Q5CORE"></div>
-        </div>
-        <div class="row" style="height:6vh">
-          <div class="col col-70" style:"height:100%">
-            <div class="range">
-              <input type="range" min="1" max="4" value="user.value" step="1" snaps="true" ng-model="user2.value">
-              {{user2.value}}
-              /{{user2.max}}
-            </div>
-          </div>
-        </div>
-        <div class="row" style="height:6vh">
-          <div class="col col-align-center col-offset-3" translate="1 = sehr schlecht"></div>
-          <div class="col col-20" translate="4 = sehr gut"></div>
+      </div>
+      <div class="row" style="height:8vh">
+        <div class="col col-60"></div>
+        <div class="col col-7"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="1">
+          <label for="core_smile"></label>
         </div>
 
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="2">
+          <label for="core_smile"></label>
+        </div>
+
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="3">
+          <label for="core_smile"></label>
+        </div>
+
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="4">
+          <label for="core_smile"></label>
+        </div>
+
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="5">
+          <label for="core_smile"></label>
+        </div>
+      </div>
+      <div class="row padding-top row-top-border" style="height:8vh">
+        <div class="col col-60 col-align-center" style:"height:100%" translate="Q5CORE"></div>
+        <div class="col col-8">
+          <img src="img/emotes_face_sad.png" class="left" height="100%"></img>
+        </div>
+        <div class="col col-8">
+          <img src="img/emotes_face_uncertain.png" class="left" height="100%"></img>
+        </div>
+        <div class="col col-8">
+          <img src="img/emotes_face_plain.png" class="left" height="100%"></img>
+        </div>
+        <div class="col col-8">
+          <img src="img/emotes_face_smile.png" class="left" height="100%"></img>
+        </div>
+        <div class="col col-8">
+          <img src="img/emotes_face_smile_big.png" class="left" height="100%"></img>
+        </div>
+      </div>
+      <div class="row" style="height:8vh">
+        <div class="col col-60"></div>
+        <div class="col col-7"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="1">
+          <label for="core_smile"></label>
+        </div>
+
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="2">
+          <label for="core_smile"></label>
+        </div>
+
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="3">
+          <label for="core_smile"></label>
+        </div>
+
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="4">
+          <label for="core_smile"></label>
+        </div>
+
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="5">
+          <label for="core_smile"></label>
+        </div>
+      </div>
       <div class="row padding row-top-border" style="height:8vh">
         <div class="col col-70 col-align-center" style:"height:100%" translate="Q6CORE"></div>
-        <div class="col col-6 col-align-center" translate="YES"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNthrust" name="YNthrust" value="y">
+        <div class="col col-8 col-align-center" translate="YES"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="YNthrust" name="YNthrust" value="y">
           <label for="kernsymp"></label>
         </div>
-        <div class="col col-6 col-align-center" translate="NO"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNthrust" name="YNthrust" value="n">
+        <div class="col col-8 col-align-center" translate="NO"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="YNthrust" name="YNthrust" value="n">
           <label for="kernsymp"></label>
         </div>
       </div>
 
       <div class="row padding row-top-border" style="height:8vh">
         <div class="col col-70 col-align-center" style:"height:100%" translate="Q7CORE"></div>
-        <div class="col col-6 col-align-center" translate="YES"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNsymp" name="YNsymp" value="y">
+        <div class="col col-8 col-align-center" translate="YES"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="YNsymp" name="YNsymp" value="y">
         </div>
-        <div class="col col-6 col-align-center" translate="NO"></div>
-        <div class="col col-6"><input type="radio" id="kernsymp" ng-model="YNsymp" name="YNsymp" value="n">
+        <div class="col col-8 col-align-center" translate="NO"></div>
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="YNsymp" name="YNsymp" value="n" ng-change="setValue('n')">
         </div>
       </div>
       <div class="row padding row-top-border" style="height:8vh">
