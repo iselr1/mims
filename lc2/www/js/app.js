@@ -30,7 +30,9 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     });
   })
 
-.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+.config(function($stateProvider, $urlRouterProvider, $translateProvider, $sceDelegateProvider) {
+  //To play to video
+  $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
   // path to laod the language files
   $translateProvider.useStaticFilesLoader({
     prefix: 'js/locale-',
@@ -141,6 +143,11 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       templateUrl: 'templates/msis5.html',
       controller: 'Msis5Ctrl'
     })
+    .state('fatigue', {
+      url: '/fatigue',
+      templateUrl: 'templates/fatigue.html',
+      controller: 'FatigueCtrl'
+    })
 
   .state('route_anl', {
     url: '/route_anl',
@@ -172,6 +179,6 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     controller: 'RouteVideoCtrl'
   })
 
-  $urlRouterProvider.otherwise('/home')
+  $urlRouterProvider.otherwise('/kernsymptome')
 
 });

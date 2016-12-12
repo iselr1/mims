@@ -109,6 +109,9 @@ angular.module('starter.controllers', [])
   $scope.goMsis = function() {
     $state.go('msis');
   };
+  $scope.goFSS = function() {
+    $state.go('fatigue');
+  };
 
 })
 

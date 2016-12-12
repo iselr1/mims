@@ -41,23 +41,23 @@
     }, {
       "id": "false",
       "label": "Nein"
-      }],
-      "ASMILE": [{
-        "id": "1",
-        "imgSrc": "img/emotes_face_sad.png"
-      },{
-        "id": "2",
-        "imgSrc": "img/emotes_face_uncertain.png"
-      },{
-        "id": "3",
-        "imgSrc": "img/emotes_face_plain.png"
-      },{
-        "id": "4",
-        "imgSrc": "img/emotes_face_smile.png"
-      },{
-        "id": "5",
-        "imgSrc": "img/emotes_face_smile_big.png"
-      }]
+    }],
+    "ASMILE": [{
+      "id": "1",
+      "imgSrc": "img/emotes_face_sad.png"
+    }, {
+      "id": "2",
+      "imgSrc": "img/emotes_face_uncertain.png"
+    }, {
+      "id": "3",
+      "imgSrc": "img/emotes_face_plain.png"
+    }, {
+      "id": "4",
+      "imgSrc": "img/emotes_face_smile.png"
+    }, {
+      "id": "5",
+      "imgSrc": "img/emotes_face_smile_big.png"
+    }]
 
   },
   "Q1CORE": "Sie sind...",
@@ -204,5 +204,61 @@
   "PAGE1OF4": "Seite 1 von 4",
   "PAGE2OF4": "Seite 2 von 4",
   "PAGE3OF4": "Seite 3 von 4",
-  "PAGE4OF4": "Seite 4 von 4"
+  "PAGE4OF4": "Seite 4 von 4",
+  "FatigueSS": "Fatigue Severity Scale",
+  "FSS_Q":"Ich finde, dass während der vergangenen Woche folgedes zutraf:",
+  "AGREE_COMPLETELY": "Stimme vollkommen zu = 7",
+  "AGRRE_NOT": "Stimme gar nicht zu = 1",
+  "FSS": {
+    "RADIOS": [{
+      "id": "1",
+      "label": "1"
+    }, {
+      "id": "2",
+      "label": "2"
+    }, {
+      "id": "3",
+      "label": "3"
+    }, {
+      "id": "4",
+      "label": "4"
+    }, {
+      "id": "5",
+      "label": "5"
+    }, {
+      "id": "6",
+      "label": "6"
+    }, {
+      "id": "7",
+      "label": "7"
+    }],
+    "QUESTIONS": [{
+      "id": "1",
+      "text": "1. Ich bin weniger motiviert, wenn ich müde bin."
+    }, {
+      "id": "2",
+      "text": "2. Körperliche Bewegung macht mich müde."
+    }, {
+      "id": "3",
+      "text": "3. Ich ermüde rasch."
+    }, {
+      "id": "4",
+      "text": "4. Meine Müdigkeit beeinträchtigt meine körperliche Leistungsfähigkeit"
+    }, {
+      "id": "5",
+      "text": "5. Meine Müdigkeit bereitet mir oft Probleme."
+    }, {
+      "id": "6",
+      "text": "6. Meine Müdigkeit verhindert längerdauernde körperliche Tätigkeiten."
+    }, {
+      "id": "7",
+      "text": "7. Meine Müdigkeit beeinträchtigt mich, gewisse Pflichten und Verantwortungen zu erfüllen."
+    }, {
+      "id": "8",
+      "text": "8. Meine Müdigkeit gehört zu den drei Beschwerden, die mich am meisten behindern."
+    }, {
+      "id": "9",
+      "text": "9. Meine Müdigkeit beeinträchtigt meine Arbeit, meine Familie oder mein soziales Leben."
+    }]
+  }
 }

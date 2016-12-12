@@ -1,32 +1,51 @@
 angular.module('starter.controllersRea', [])
 
+.controller('FatigueCtrl', function($scope, $stateParams, $state, $timeout, jsonService, QuestionnaireService) {
+    // to initialize the buttons
+    $timeout(function() {
+      $scope.data = jsonService.getJson();
+    }, 10);
 
-.controller('MsisCtrl', function($scope, $stateParams, $state, $timeout, jsonService, $translate, $ionicPopup, QuestionnaireService) {
-  // to initialize the buttons
-  $timeout(function() {
-    $scope.data = jsonService.getJson();
-  }, 10);
+    //$scope.MSISQS1 = {};
+    /* Checks if all Questions are answered
+    if not, a popup informs the user about it
+    if it's the case, we navigate to the next view */
+    $scope.goHome = function() {
+      /*first variable has to be the name of the view we want to navigate to
+      scond is the name of the ng-modal under which we save the answers with localStorage*/
+      QuestionnaireService.checkAndStore('home', 'FSS');
 
-  //$scope.MSISQS1 = {};
-  /* Checks if all Questions are answered
-  if not, a popup informs the user about it
-  if it's the case, we navigate to the next view */
-  $scope.goMsis2 = function() {
-    /*first variable has to be the name of the view we want to navigate to
-    scond is the name of the ng-modal under which we save the answers with localStorage*/
-    QuestionnaireService.checkAndStore('msis2', 'MSISQS1');
-  };
+    };
 
-  $scope.setValue = function(value, questionid) {
-    QuestionnaireService.setValue(value, questionid, '7');
-  };
-})
+    $scope.setValue = function(value, questionid) {
+      QuestionnaireService.setValue(value, questionid, '9');
+    };
+  })
+  .controller('MsisCtrl', function($scope, $stateParams, $state, $timeout, jsonService, $translate, $ionicPopup, QuestionnaireService) {
+    // to initialize the buttons
+    $timeout(function() {
+      $scope.data = jsonService.getJson();
+    }, 10);
+
+    //$scope.MSISQS1 = {};
+    /* Checks if all Questions are answered
+    if not, a popup informs the user about it
+    if it's the case, we navigate to the next view */
+    $scope.goMsis2 = function() {
+      /*first variable has to be the name of the view we want to navigate to
+      scond is the name of the ng-modal under which we save the answers with localStorage*/
+      QuestionnaireService.checkAndStore('msis2', 'MSISQS1');
+    };
+
+    $scope.setValue = function(value, questionid) {
+      QuestionnaireService.setValue(value, questionid, '7');
+    };
+  })
 
 .controller('Msis2Ctrl', function($scope, $stateParams, $state, jsonService, QuestionnaireService, $timeout) {
     $timeout(function() {
       $scope.data = jsonService.getJson();
     }, 10);
-    QuestionnaireService.reset();
 
     /* Checks if all Questions are answered
     if not, a popup informs the user about it
@@ -50,7 +69,7 @@ angular.module('starter.controllersRea', [])
     $timeout(function() {
       $scope.data = jsonService.getJson();
     }, 10);
-    QuestionnaireService.reset();
+
 
     /* Checks if all Questions are answered
     if not, a popup informs the user about it
@@ -75,7 +94,7 @@ angular.module('starter.controllersRea', [])
       $scope.data = jsonService.getJson();
     }, 10);
 
-    QuestionnaireService.reset();
+
 
     /* Checks if all Questions are answered
     if not, a popup informs the user about it

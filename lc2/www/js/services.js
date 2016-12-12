@@ -73,13 +73,17 @@ angular.module('starter.services', [])
       console.log(allAnswers);
     }
   };
-
+  /*first variable has to be the name of the view we want to navigate to
+  scond is the name of the ng-modal under which we save the answers with localStorage*/
   QuestionnaireService.checkAndStore = function(goTo, msisModal) {
     if (allAnswers) {
       $state.go(goTo);
       localStorage.setItem(msisModal, JSON.stringify(answers));
       var storedAnswers = JSON.parse(localStorage.getItem(msisModal));
       console.log(storedAnswers);
+      //reset the function
+      allAnswers = false;
+      answers = [];
     } else {
       var popTitle = $translate.instant('Info');
       var popTemplate = $translate.instant('Bitte wählen Sie eine Antwort für jede Aussage');
