@@ -6,28 +6,30 @@
     <button class="button icon-left ion-home" ng-click="goHome()" translate="OVERVIEW"></button>
   </ion-nav-buttons>
   <ion-content class="padding">
-    <h4>Wie funktioniert die Übung?</h4>
-    <p>Jedes Zeichen ist genau einer Zahl zugeordnet.</p>
+    <div class="row">
+      <div class="col" translate="ZS-INSTRUCTION_TEXT_1"></div>
+    </div>
+    <div class="row">
+      <div class="col" translate="ZS-INSTRUCTION_TEXT_2"></div>
+    </div>
+    <div class="row" ng-repeat="img in images track by $index">
+      <div class="col col-80" translate="{{img.text}}"></div>
+      <div class="col">
+        <img ng-src="{{img.src}}" ng-click="showImages($index)" class="image-list-thumb"/>
+      </div>
+    </div>
 
-    <p>In der obersten Tabelle, der Referenztabelle, sehen sie welche
-      <b>Zahl</b>
-      welchem
-      <b>Zeichen</b>
-      zugeordnet ist.</p>
+    <div class="row">
+      <div class="col col-80" translate="ZS-INSTRUCTION_TEXT_6"></div>
 
-    <p>In der mittleren Tabelle, der Lösungstabelle, sind nur Zahlen eingetragen.</p>
-    <p>
-      In der untersten Tabelle, der Zeichentabelle, sehen sie die Zeichen, welche Sie anklicken können. Klicken Sie jeweils das Zeichen an, welches zur Zahl oberhalb des grünen Feldes gehört. Welches Zeichen das es ist, finden Sie anhand der
-      Referenztabelle heraus.</p>
+    </div>
+    <div class="row padding">
+      <div class="col"></div>
+    </div>
+    <div class="row padding">
+      <div class="col col-100 col-text-align-center" translate="ZS-INSTRUCTION_TEXT_7"></div>
+    </div>
 
-    <p>
-      Durch klicken auf
-      <b>Weiter</b>
-      beginnen Sie die Vorbereitung. Dort haben Sie dreimal die Möglichkeit eine Reihe auszufüllen. Sobald Sie eine komplette Reihe korrekt ausgefüllt haben, beginnt die eigentliche Übung.</p>
-
-    <p>
-      <b>Wichtig</b>: Sie sollten bei diesem Test ungestört sein!
-    </p>
     <div class="row">
       <div class="col col-offset-10">
         <button class="button button-positive button-block" ng-click="playVideo()" translate="Videoanleitung"></div>

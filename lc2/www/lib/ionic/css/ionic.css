@@ -10833,7 +10833,15 @@ a.button .icon:before, a.button.icon:before, a.button.icon-left:before, a.button
   flex: 0 0 66.6666%;
   max-width: 66.6666%;
 }
-
+.col-70 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 70%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 70%;
+  -ms-flex: 0 0 70%;
+  flex: 0 0 70%;
+  max-width: 70%;
+}
 .col-75 {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 75%;
