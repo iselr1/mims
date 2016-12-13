@@ -30,9 +30,8 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
     });
   })
 
-.config(function($stateProvider, $urlRouterProvider, $translateProvider, $sceDelegateProvider) {
-  //To play to video
-  $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
+.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+
   // path to laod the language files
   $translateProvider.useStaticFilesLoader({
     prefix: 'js/locale-',
