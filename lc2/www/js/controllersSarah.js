@@ -122,7 +122,7 @@ angular.module('starter.controllersSarah', [])
   var clickOK = false;
 
   // Coordinates for the points of the Labyrinth - Center (Standard 1024x768)
-  var point1 = [51, 682];
+  var point1 = [51, 682];//start
   var point2 = [160, 415.5];
   var point3 = [109, 237.5];
   var point4 = [160, 142.5];
@@ -143,26 +143,26 @@ angular.module('starter.controllersSarah', [])
   var point19 = [928, 402.5];
   var point20 = [889.5, 263];
   var point21 = [877, 91.5];
-  var point22 = [953.5, 669.5];
+  var point22 = [953.5, 669.5];//end
 
-  // how many times the function showWay was executed - initial 0 - counter for the point to draw
+  // how many times the function showWay was executed - initial 0 - counter for the point to draw and the line to draw
   var countway = 0;
   var countwaylines = 0;
 
-  // counter for the point, that needs to be drawn white again (after green)
+  // counter for the point, that needs to be drawn white again (after green) / the line, that needs to be black again
   var whiteone = 0;
-  var whitelines = 0;
+  var blackline = 0;
 
   // Arrays with all the points and all the lines from the labyrinth
   // 2 Dimensional Array
   // The first square bracket references the desired element in the outer array (actualLab).
   // The second square bracket references the desired element in the inner array (Point or Line Array).
   // (JavaScript array indexes start at zero.)
-  var actualLab = [point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12, point13, point14, point15, point16, point17, point18, point19, point20, point21];
+  var actualLab = [point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12, point13, point14, point15, point16, point17, point18, point19, point20, point21, point22];
   var actualLabLines = [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10, line11, line12, line13, line14, line15, line16, line17, line18, line19, line20, line21, line22, line23, line24, line25, line26, line27, line28, line29, line30, line31, line32, line33, line34, line35, line36];
 
-  // Array with all the points to show the first time
-  var firstWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
+  // Array with all the points and all the lines to show the first time
+  var firstWay = [point1, point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17, point22];
   var firstWayLines = [line1, line8, line10, line23, line22, line13, line36, line17, line16, line31, line29, line30, line27, line26, line25, line35];
 
   // Array with all the points to show the second time - 2 Dimensional Array
@@ -195,81 +195,68 @@ angular.module('starter.controllersSarah', [])
   //how many joints of the user were actually right
   var rightlines = 0;
 
-  // Function to test if the User hit a circle
+  // -- Function to test if the User hit a circle --//
   // x,y is the point to test
   // cx, cy is circle center, and radius is circle radius
   pointInCircle = function (x, y, cx, cy, radius) {
-  /*  console.log(x);
-    console.log(y);
-    console.log(cx);
-    console.log(cy);
-    console.log(radius);*/
     var distancesquared = (x - cx) * (x - cx) + (y - cy) * (y - cy);
     return distancesquared <= radius * radius;
   };
 
-  // Function to draw a line
+  // -- Function to draw a line --//
   drawLine = function(xvaluefrom, yvaluefrom, xvalueto, yvalueto, linecolor) {
     ctx.beginPath();
-
     // line from
     ctx.moveTo(xvaluefrom * xfactor, yvaluefrom * yfactor);
-
     // line to
     ctx.lineTo(xvalueto * xfactor, yvalueto * yfactor);
-    ctx.closePath();
-
     // line thickness
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 5;
     ctx.strokeStyle = linecolor;
     ctx.stroke();
   };
 
-  // Function to draw a point
+  // -- Function to draw a point --//
   drawPoint = function(xvalue, yvalue, pointcolor) {
     ctx.beginPath();
-
     // x and y are center / factor depends on screensize / radius is 18
     ctx.arc(xvalue * xfactor, yvalue * yfactor, 18, 0, 2 * Math.PI);
-
     //  color of the circles filling
     ctx.fillStyle = pointcolor;
     ctx.fill();
     ctx.closePath();
-
     // thickness of the circle line and color
     ctx.lineWidth = 5;
-    ctx.fillStyle = "black";
+    ctx.strokeStyle = "black";
     ctx.stroke();
   };
 
-  // Function show the Way in the Labyrinth
+  // -- Function show the Way in the Labyrinth --//
   // 2 Dimensional Arrays
   // The first square bracket references the desired element in the outer array (firstWay).
   // The second square bracket references the desired element in the inner array (Point Array).
   // (JavaScript array indexes start at zero.)
   showWay = function() {
     if (countway == 0) {
-
       // draw the first point in green --> coordinates
       drawPoint(firstWay[countway][0], firstWay[countway][1], "lime");
-    } else if (countway == 15) {
-
-      // make the last point white again
-      // whiteone = 14
+    } else if (countway == (firstWay.length)) {
+      // make the last point black again
       whiteone = countway - 1;
-      drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
+      drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "black");
     } else {
-
       // draw the point in green
       drawPoint(firstWay[countway][0], firstWay[countway][1], "lime");
-
       // draw the point before the one, which is drawn in green, white again
       whiteone = countway - 1;
-      drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
+      if(whiteone != 0){
+        drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "white");
+      }
+      else{
+        drawPoint(firstWay[whiteone][0], firstWay[whiteone][1], "black");
+      }
     }
-
-    // counter which point
+    // counter of point
     countway = countway + 1;
   };
 
@@ -280,47 +267,66 @@ angular.module('starter.controllersSarah', [])
   // (JavaScript array indexes start at zero.)
   showWayLines = function() {
     if (countwaylines == 0) {
-
-      // draw the first point in green --> coordinates
+      // draw the first line in green --> coordinates
       drawLine(firstWayLines[countwaylines][0], firstWayLines[countwaylines][1], firstWayLines[countwaylines][2], firstWayLines[countwaylines][3], "lime");
-    } else if (countwaylines == 15) {
-
-      // make the last point white again
-      // whiteone = 14
-      whiteline = countwaylines - 1;
-      drawLine(firstWayLines[whiteline][0], firstWayLines[whiteline][1],firstWayLines[whiteline][2], firstWayLines[whiteline][3], "black");
+      // make startpoint lime again
+      drawPoint(firstWay[countwaylines][0], firstWay[countwaylines][1], "lime");
+      // fill following point white again
+      drawPoint(firstWay[countwaylines+1][0], firstWay[countwaylines+1][1], "white");
+    } else if (countwaylines == (firstWayLines.length)) {
+      // make the last line black again
+      blackline = countwaylines - 1;
+      drawLine(firstWayLines[blackline][0], firstWayLines[blackline][1],firstWayLines[blackline][2], firstWayLines[blackline][3], "black");
+      drawPoint(firstWay[blackline][0], firstWay[blackline][1], "white");
+      drawPoint(firstWay[countwaylines][0], firstWay[countwaylines][1], "lime");
     } else {
-
-      // draw the point in green
+      // draw the line in green
       drawLine(firstWayLines[countwaylines][0], firstWayLines[countwaylines][1],firstWayLines[countwaylines][2], firstWayLines[countwaylines][3], "lime");
-
-      // draw the point before the one, which is drawn in green, white again
-      whiteline = countwaylines - 1;
-      drawLine(firstWayLines[whiteline][0], firstWayLines[whiteline][1],firstWayLines[whiteline][2], firstWayLines[whiteline][3], "black");
+      if(countwaylines == (firstWayLines.length-1)){
+        // fill the following point black again
+        drawPoint(firstWay[countwaylines+1][0], firstWay[countwaylines+1][1], "black");
+      }
+      else{
+        // fill the following point white again
+        drawPoint(firstWay[countwaylines+1][0], firstWay[countwaylines+1][1], "white");
+      }
+      // draw the line before the one, which is drawn in green, black again
+      blackline = countwaylines - 1;
+      drawLine(firstWayLines[blackline][0], firstWayLines[blackline][1],firstWayLines[blackline][2], firstWayLines[blackline][3], "black");
+      // fill the point after the black line lime again
+      drawPoint(firstWay[countwaylines][0], firstWay[countwaylines][1], "lime");
+      if(blackline != 0){
+        // fill the point before the black line white again
+        drawPoint(firstWay[blackline][0], firstWay[blackline][1], "white");
+      }
+      else{
+        // fill the point before the black line black again --> if its the first
+        drawPoint(firstWay[blackline][0], firstWay[blackline][1], "black");
+      }
     }
-
-    // counter which point
+    // counter of lines
     countwaylines = countwaylines + 1;
   };
 
-  // Function Draw the Lab initially
-  $scope.drawLab = function() {
 
+  // -- Function Draw the Lab initially --//
+  $scope.drawLab = function() {
+    console.info("im drawLab");
     // Draw all the Lines
     for(var i=0;i<actualLabLines.length;i++){
           drawLine(actualLabLines[i][0], actualLabLines[i][1], actualLabLines[i][2], actualLabLines[i][3], "black");
     }
-
-    // Draw all the Points
-    // Draw Start Point
-    drawPoint(point1[0], point1[1], "black");
-    // Draw the Points of the Lab
+    // Draw all the Points of the Lab
     for(var i=0;i<actualLab.length;i++){
+      if(i==0 || i==(actualLab.length-1)){
+          // draw the first and the last point black
+          drawPoint(actualLab[i][0], actualLab[i][1], "black");
+      }
+      else{
+          // draw all the others white
           drawPoint(actualLab[i][0], actualLab[i][1], "white");
+      }
     }
-    // Draw End Point
-    drawPoint(point22[0], point22[1], "black");
-
     // Name Start and End
     // where to write START
     var xstart = parseInt(point1[0] * xfactor + 50);
@@ -335,36 +341,34 @@ angular.module('starter.controllersSarah', [])
     ctx.fillStyle = "black";
     ctx.fillText('Start', xstart, ystart);
     ctx.fillText('End', xend, yend);
-    ctx.font = '14pt Arial';
+    ctx.font = 'bold 18pt Arial';
     ctx.fillStyle = "green";
-    ctx.fillText('Bitte merken Sie sich den Weg', ctx.canvas.width/2, 15);
+    ctx.fillText('!! Bitte merken Sie sich den Weg !!', ctx.canvas.width/2, 15);
   };
 
   nowDoIt = function() {
   // write the letters in Arial, 16 pt in white
-  ctx.clearRect((ctx.canvas.width/2)-250,5,500,30);
-  ctx.font = '14pt Arial';
+  ctx.clearRect((ctx.canvas.width/2)-250,3,500,35);
+  ctx.font = 'bold 18pt Arial';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillStyle = "mediumblue";
-  ctx.fillText('Bitte versuchen die den vorgezeigten Weg nachzumachen', ctx.canvas.width/2, 15);
-};
+  ctx.fillText('!! Bitte versuchen die den vorgezeigten Weg nachzumachen !!', ctx.canvas.width/2, 15);
+  };
 
-// BESCHREIBUNG
-$scope.showPopup = function() {
-  var alertPopup = $ionicPopup.alert({
+  // BESCHREIBUNG
+  $scope.showPopup = function() {
+    var alertPopup = $ionicPopup.alert({
     title:'Variablen für MIDATA',
     template: "Anzahl Clicks: " + clicks + "</br></br>" + "Anz. Punkt des Labs angeklickt: " + rightclicks + "</br></br>" + "Anz. richtige Verbindungen: " + rightlines,
-  });
-  alertPopup.then(function() {
+    });
+    alertPopup.then(function() {
     $state.go('geschafft');
-  });
-};
-
+    });
+  };
 
   // Function Click: Draw a blue point when click, wherever you are
   $scope.doClick = function(event) {
-
     // Only if canvas is clickable
     if (clickOK == true) {
       xclient = event.clientX;
@@ -388,7 +392,6 @@ $scope.showPopup = function() {
         // the user clicked in a circle which was not the end
         clicks = clicks + 1;
         console.log(clicks);
-
         //search in the whole labyrinth
         for(var i=0;i<actualLab.length;i++){
             // check if user clicked in a circle
@@ -404,7 +407,6 @@ $scope.showPopup = function() {
           }
         }
       } else {
-
         //search in the whole labyrinth
         for(var i=0;i<userway.length;i++){
           if(i!=0){
@@ -440,15 +442,15 @@ $scope.showPopup = function() {
   // Draw The Labyrinth
   $scope.drawLab();
 
-  // Click is Only possible when way through Labyrinth was shown
+  // Show the Way through the Labyrinth - Points
   setTimeout(function() {
-    $interval(showWayLines, 2000, 16);
+    console.log("firstWay Length: "+firstWay.length);
+    $interval(showWay, 2000, firstWay.length+1);
   }, 2000);
 
-  // Show the Way through the Labyrinth
-  // Function showWay is executed every 2 seconds - 16 times (because 16 points to show)
+  // Show the Way through the Labyrinth - Lines
   setTimeout(function() {
-    $interval(showWay, 2000, 16);
+    $interval(showWayLines, 2000, firstWayLines.length+1);
   }, 3000);
 
   // Click is Only possible when way through Labyrinth was shown
@@ -456,7 +458,7 @@ $scope.showPopup = function() {
     $scope.drawLab();
     clickOK = true;
     nowDoIt();
-  }, 34000);
+  }, 40000);
 
 
 
