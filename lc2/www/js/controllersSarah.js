@@ -40,6 +40,27 @@ angular.module('starter.controllersSarah', [])
     $state.go('route');
   };
 
+  // Images with the according instruction text
+  $scope.images = [{
+    "text": "ROUTE-INSTRUCTION_TEXT_3",
+    "src": "img/lab1.png"
+  }, {
+    "text": "ROUTE-INSTRUCTION_TEXT_4",
+    "src": "img/lab2.png"
+  },{
+    "text": "ROUTE-INSTRUCTION_TEXT_5",
+    "src": "img/lab3.png"
+  },{
+    "text": "ROUTE-INSTRUCTION_TEXT_6",
+    "src": "img/lab4.png"
+  }];
+
+  // To show the Modal - a view with the images fullscreen
+  $scope.showImages = function(index) {
+    $scope.activeSlide = index;
+    $scope.showModal('templates/image-popover.html');
+  }
+
   // Show the Modal - the view with the video
   $scope.showModal = function(templateUrl) {
       $ionicModal.fromTemplateUrl(templateUrl, {
@@ -77,18 +98,18 @@ angular.module('starter.controllersSarah', [])
   var yvalueto = 0;
 
   // Coordinates for the lines of the Labyrinth (Standard 1024x768)
-  var line1 = [51, 682, 160, 415];
-  var line2 = [160, 415, 109, 238];
-  var line3 = [109, 238, 160, 142];
-  var line4 = [160, 142, 294.5, 104];
+  var line1 = [51, 682, 160, 415.5];
+  var line2 = [160, 415.5, 109, 237.5];
+  var line3 = [109, 237.5, 160, 142.5];
+  var line4 = [160, 142.5, 294.5, 104];
   var line5 = [294.5, 104, 326.5, 396.5];
-  var line6 = [109, 238, 326.5, 396.5];
-  var line7 = [160, 416, 326.5, 396.5];
-  var line8 = [160, 416, 224, 606];
+  var line6 = [109, 237.5, 326.5, 396.5];
+  var line7 = [160, 415.5, 326.5, 396.5];
+  var line8 = [160, 415.5, 224, 606];
   var line9 = [51, 682, 224, 606];
   var line10 = [224, 606, 371, 628];
-  var line11 = [371, 628, 326, 396];
-  var line12 = [326, 396, 512, 472.5];
+  var line11 = [371, 628, 326.5, 396.5];
+  var line12 = [326.5, 396.5, 512, 472.5];
   var line13 = [512, 472.5, 422.5, 320];
   var line14 = [422.5, 320, 441.5, 180.5];
   var line15 = [441.5, 180.5, 294.5, 104];
@@ -96,8 +117,8 @@ angular.module('starter.controllersSarah', [])
   var line17 = [441.5, 180.5, 544, 275.5];
   var line18 = [544, 275.5, 761.5, 339];
   var line19 = [761.5, 339, 627, 110.5];
-  var line20 = [761.5, 339, 710.4, 472.5];
-  var line21 = [710.4, 472.5, 512, 472.5];
+  var line20 = [761.5, 339, 710.5, 472.5];
+  var line21 = [710.5, 472.5, 512, 472.5];
   var line22 = [512, 472.5, 678.5, 663]
   var line23 = [678.5, 663, 371, 628];
   var line24 = [678.5, 663, 806.5, 606];
@@ -144,6 +165,9 @@ angular.module('starter.controllersSarah', [])
   var point20 = [889.5, 263];
   var point21 = [877, 91.5];
   var point22 = [953.5, 669.5];//end
+
+  // the last point the user clicked
+  var lastpoint = [0, 0];
 
   // how many times the function showWay was executed - initial 0 - counter for the point to draw and the line to draw
   var countway = 0;
@@ -398,30 +422,66 @@ angular.module('starter.controllersSarah', [])
             clickedinacircle = pointInCircle(xrealclient, yrealclient, actualLab[i][0]*xfactor, actualLab[i][1]*yfactor, 18);
             // if yes --> make it blue an get a rightclick (means he clicked a circle of the whole lab)
             if (clickedinacircle){
-              userway.push([actualLab[i][0],actualLab[i][1]]);
+              // count how many real circles the user clicked
               rightclicks = rightclicks +1;
-              drawPoint(actualLab[i][0], actualLab[i][1], "mediumblue");
-              console.log(userway);
+              // draw the line blue if a circle was clicked before
+              if (lastpoint[0] != 0){
+                console.info("IM LASTPOINT");
+                // draw Line
+                drawLine(lastpoint[0], lastpoint[1], actualLab[i][0], actualLab[i][1],"mediumblue");
+                // put the clicked line in the array of the way the user did
+                userway.push([lastpoint[0], lastpoint[1], actualLab[i][0], actualLab[i][1]]);
+                console.log(userway);
+                // draw Point
+                drawPoint(actualLab[i][0], actualLab[i][1], "mediumblue");
+                lastpoint = [actualLab[i][0],actualLab[i][1]];
+              }
+              // else draw just the point blue
+              else{
+                console.info("IM LASTPOINT ELSE");
+                drawPoint(actualLab[i][0], actualLab[i][1], "mediumblue");
+                lastpoint = [actualLab[i][0],actualLab[i][1]];
+              }
+
+              /*console.log(userway);
               console.log(clickedinacircle);
-              console.log(rightclicks);
+              console.log(rightclicks);*/
           }
         }
       } else {
+
+        clicks = clicks + 1;
+        rightclicks = rightclicks +1;
+        drawLine(lastpoint[0], lastpoint[1], point22[0], point22[1],"mediumblue");
+        // put the clicked line in the array of the way the user did
+        userway.push([lastpoint[0], lastpoint[1], point22[0], point22[1]]);
+        console.log(userway);
+        // draw Point
+        drawPoint(point22[0], point22[1], "mediumblue");
         //search in the whole labyrinth
+        console.log("USERWAY: "+ userway);
+        console.log("REALWAY: "+ firstWayLines);
         for(var i=0;i<userway.length;i++){
-          if(i!=0){
-            /* here to do: iterate the array with the actual points of the labyrinth
-                check if he clicked a point in the lab
-                if yes --> make a counter for that / save the point into an array
-                if this is done compare the two arrays (reihenfolge der punkte) --> when clicked on endcircle*/
-          }
-          else{
-            if((userway[i][0] == firstWay[i][0]) && (userway[i][1] == firstWay[i][1])){
+          for(var j=0;j<firstWayLines.length;j++){
+            /*console.log("userway 1: "+ userway[i][0] + "   realway1: "+ firstWayLines[j][0]);
+            console.log("userway 2: "+ userway[i][1] + "   realway2: "+ firstWayLines[j][1]);
+            console.log("userway 3: "+ userway[i][2] + "   realway3: "+ firstWayLines[j][2]);
+            console.log("userway 4: "+ userway[i][3] + "   realway4: "+ firstWayLines[j][3]);*/
+            if(
+              ((userway[i][0] == firstWayLines[j][0] && userway[i][1] == firstWayLines[j][1]) || (userway[i][0] == firstWayLines[j][2] && userway[i][1] == firstWayLines[j][3]))
+              &&
+              ((userway[i][2] == firstWayLines[j][0] && userway[i][3] == firstWayLines[j][1]) || (userway[i][2] == firstWayLines[j][2] && userway[i][3] == firstWayLines[j][3]))
+            ){
               rightlines = rightlines + 1;
             }
+
+
+            /*if(userway[i][0] == firstWayLines[j][0] && userway[i][1] == firstWayLines[j][1] && userway[i][2] == firstWayLines[j][2] && userway[i][3] == firstWayLines[j][3]){
+              rightlines = rightlines + 1;
+            }*/
           }
-          console.log("rightlines: "+rightlines);
         }
+        console.log("rightlines: "+rightlines);
         $state.go('geschafft');
         $scope.showPopup();
       }
@@ -445,12 +505,12 @@ angular.module('starter.controllersSarah', [])
   // Show the Way through the Labyrinth - Points
   setTimeout(function() {
     console.log("firstWay Length: "+firstWay.length);
-    $interval(showWay, 2000, firstWay.length+1);
+    $interval(showWay, 2000, firstWay.length+1); //2000
   }, 2000);
 
   // Show the Way through the Labyrinth - Lines
   setTimeout(function() {
-    $interval(showWayLines, 2000, firstWayLines.length+1);
+    $interval(showWayLines, 2000, firstWayLines.length+1);//2000
   }, 3000);
 
   // Click is Only possible when way through Labyrinth was shown
@@ -458,7 +518,7 @@ angular.module('starter.controllersSarah', [])
     $scope.drawLab();
     clickOK = true;
     nowDoIt();
-  }, 40000);
+  }, 40000);//40000
 
 
 
