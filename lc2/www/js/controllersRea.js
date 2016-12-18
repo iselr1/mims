@@ -203,13 +203,13 @@ angular.module('starter.controllersRea', [])
       var correct = SymDigService.getCorrect();
       var incorrect = SymDigService.getIncorrect();
       var clickFrequency = SymDigService.getClickFrequency();
-      var alertPopup = $ionicPopup.alert({
+      /*var alertPopup = $ionicPopup.alert({
         title: "Variablen für MIDATA",
         template: "Korrekte Felder:" + correct + "</br></br>" + "Inkorrekte Felder:" + incorrect + "</br></br>" + "Klickfrequenz(pro Min):" + clickFrequency,
       });
       alertPopup.then(function() {
         $state.go('geschafft');
-      })
+      })*/
     }, SymDigService.getTimeExcersise());
 
     // Fill the keyTable with the images in a random way and the numbers ordered from 1 to 9

@@ -156,7 +156,8 @@ angular.module('starter.services', [])
   //var time = 120000:
   // Für Kundenworkshop
   // Zeitdauer, welche für die Übung zur Verfügung steht
-  var timeExcersise = 120000;
+  //var timeExcersise = 120000;
+  var timeExcersise = 90000;
   // Zeit beim Start der Übung
   //var timeWhenExcersiseStart = 0;
   //Klickfrequenz (Zeit /(Anzahl Korrekte + Inkorrekte Zuordnungen))
