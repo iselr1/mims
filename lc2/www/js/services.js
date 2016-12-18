@@ -117,6 +117,9 @@ angular.module('starter.services', [])
   jsonService.loadJson = function(key) {
     $http.get(prefix + key + suffix)
       .success(function(data) {
+        //Array leeren
+        jsonService.data.json = {};
+        //Array mit neuen Werten befüllen
         jsonService.data.json = data;
         console.log('Json data is loaded');
       });

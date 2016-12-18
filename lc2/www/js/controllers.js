@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('NavCtrl', function($scope, $state, I4MIMidataService) {
+.controller('NavCtrl', function($scope, $state, I4MIMidataService, jsonService) {
 
   $scope.goHome = function() {
     $state.go('home');
@@ -84,8 +84,19 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ImpCtrl', function($scope, $stateParams, $state) {
-
+.controller('ImpCtrl', function($scope, $stateParams, $state, $ionicPopup, jsonService) {
+  var jsonData = jsonService.getJson();
+  var title = jsonData.DATAPROTECTION;
+  var template = jsonData.DATATEXT;
+  $scope.showDATATEXT = function() {
+    console.log("hier");
+    var alertPopup = $ionicPopup.alert({
+      title: title,
+      template: template,
+      okType: 'button-assertive',
+      okText: 'Verstanden'
+    });
+  }
 })
 
 .controller('A_UebCtrl', function($scope, $stateParams, $state) {
