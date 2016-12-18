@@ -190,7 +190,8 @@ angular.module('starter.controllersSarah', [])
   var firstWayLines = [line1, line8, line10, line23, line22, line13, line36, line17, line16, line31, line29, line30, line27, line26, line25, line35];
 
   // Array with all the points to show the second time - 2 Dimensional Array
-  var secondWay = [point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17];
+  var secondWay = [point4, point3, point6, point2, point7, point8, point9, point10, point16, point17, point18, point19, point15, point13, point12, point14, point21];
+  var secondWayLines = [line3, line6, line7, line8, line10, line23, line22, line21, line25, line33, line32, line27, line18, line17, line16, line31];
 
   // The way the user did
   var userway=[];
@@ -219,25 +220,87 @@ angular.module('starter.controllersSarah', [])
   //how many joints of the user were actually right
   var rightlines = 0;
 
-  // -- Function to test if the User hit a circle --//
-  // x,y is the point to test
-  // cx, cy is circle center, and radius is circle radius
-  pointInCircle = function (x, y, cx, cy, radius) {
-    var distancesquared = (x - cx) * (x - cx) + (y - cy) * (y - cy);
-    return distancesquared <= radius * radius;
+  // how many times the user did the whole lab right
+  var rightlab = 0;
+
+  // Make the first Way
+  doFirst = function() {
+    clickOk = false;
+    actualLab = [point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12, point13, point14, point15, point16, point17, point18, point19, point20, point21, point22];
+    // Draw The Labyrinth
+    $scope.drawLab();
+    // Show the Way through the Labyrinth - Points
+    setTimeout(function() {
+      $interval(showWay, 2000, firstWay.length+1); //2000
+    }, 2000);
+    // Show the Way through the Labyrinth - Lines
+    setTimeout(function() {
+      $interval(showWayLines, 2000, firstWayLines.length+1);//2000
+    }, 3000);
+    // Click is Only possible when way through Labyrinth was shown
+    setTimeout(function() {
+      $scope.drawLab();
+      clickOK = true;
+      nowDoIt();
+    }, 40000);//40000
   };
 
-  // -- Function to draw a line --//
-  drawLine = function(xvaluefrom, yvaluefrom, xvalueto, yvalueto, linecolor) {
-    ctx.beginPath();
-    // line from
-    ctx.moveTo(xvaluefrom * xfactor, yvaluefrom * yfactor);
-    // line to
-    ctx.lineTo(xvalueto * xfactor, yvalueto * yfactor);
-    // line thickness
-    ctx.lineWidth = 5;
-    ctx.strokeStyle = linecolor;
-    ctx.stroke();
+  // Make the first Way
+  doSecond = function() {
+    clickOK = false;
+    actualLab = [point4, point2, point3, point1, point5, point6, point7, point8, point9, point10, point11, point12, point13, point14, point15, point16, point17, point18, point19, point20, point22, point21];
+    // Draw The Labyrinth
+    $scope.drawLab();
+    // Show the Way through the Labyrinth - Points
+    setTimeout(function() {
+      $interval(showWay, 2000, secondWay.length+1); //2000
+    }, 2000);
+    // Show the Way through the Labyrinth - Lines
+    setTimeout(function() {
+      $interval(showWayLines, 2000, secondWayLines.length+1);//2000
+    }, 3000);
+    // Click is Only possible when way through Labyrinth was shown
+    setTimeout(function() {
+      $scope.drawLab();
+      clickOK = true;
+      nowDoIt();
+    }, 40000);//40000
+  };
+
+  // -- Function Draw the Lab initially --//
+  $scope.drawLab = function() {
+    // Draw all the Lines
+    for(var i=0;i<actualLabLines.length;i++){
+          drawLine(actualLabLines[i][0], actualLabLines[i][1], actualLabLines[i][2], actualLabLines[i][3], "black");
+    }
+    // Draw all the Points of the Lab
+    for(var i=0;i<actualLab.length;i++){
+      if(i==0 || i==(actualLab.length-1)){
+          // draw the first and the last point black
+          drawPoint(actualLab[i][0], actualLab[i][1], "black");
+      }
+      else{
+          // draw all the others white
+          drawPoint(actualLab[i][0], actualLab[i][1], "white");
+      }
+    }
+    // Name Start and End
+    // where to write START
+    var xstart = parseInt(point1[0] * xfactor + 50);
+    var ystart = parseInt(point1[1] * yfactor + 10);
+    // where to write END
+    var xend = parseInt(point22[0] * xfactor - 50);
+    var yend = parseInt(point22[1] * yfactor + 10);
+    // write the letters in Arial, 20 pt in black
+    ctx.font = 'bold 20pt Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = "black";
+    ctx.fillText('Start', xstart, ystart);
+    ctx.fillText('End', xend, yend);
+    ctx.font = 'bold 18pt Arial';
+    ctx.fillStyle = "green";
+    ctx.fillText('!! Bitte merken Sie sich den Weg !!', ctx.canvas.width/2, 15);
   };
 
   // -- Function to draw a point --//
@@ -252,6 +315,19 @@ angular.module('starter.controllersSarah', [])
     // thickness of the circle line and color
     ctx.lineWidth = 5;
     ctx.strokeStyle = "black";
+    ctx.stroke();
+  };
+
+  // -- Function to draw a line --//
+  drawLine = function(xvaluefrom, yvaluefrom, xvalueto, yvalueto, linecolor) {
+    ctx.beginPath();
+    // line from
+    ctx.moveTo(xvaluefrom * xfactor, yvaluefrom * yfactor);
+    // line to
+    ctx.lineTo(xvalueto * xfactor, yvalueto * yfactor);
+    // line thickness
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = linecolor;
     ctx.stroke();
   };
 
@@ -332,44 +408,7 @@ angular.module('starter.controllersSarah', [])
     countwaylines = countwaylines + 1;
   };
 
-
-  // -- Function Draw the Lab initially --//
-  $scope.drawLab = function() {
-    console.info("im drawLab");
-    // Draw all the Lines
-    for(var i=0;i<actualLabLines.length;i++){
-          drawLine(actualLabLines[i][0], actualLabLines[i][1], actualLabLines[i][2], actualLabLines[i][3], "black");
-    }
-    // Draw all the Points of the Lab
-    for(var i=0;i<actualLab.length;i++){
-      if(i==0 || i==(actualLab.length-1)){
-          // draw the first and the last point black
-          drawPoint(actualLab[i][0], actualLab[i][1], "black");
-      }
-      else{
-          // draw all the others white
-          drawPoint(actualLab[i][0], actualLab[i][1], "white");
-      }
-    }
-    // Name Start and End
-    // where to write START
-    var xstart = parseInt(point1[0] * xfactor + 50);
-    var ystart = parseInt(point1[1] * yfactor + 10);
-    // where to write END
-    var xend = parseInt(point22[0] * xfactor - 50);
-    var yend = parseInt(point22[1] * yfactor + 10);
-    // write the letters in Arial, 20 pt in black
-    ctx.font = 'bold 20pt Arial';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillStyle = "black";
-    ctx.fillText('Start', xstart, ystart);
-    ctx.fillText('End', xend, yend);
-    ctx.font = 'bold 18pt Arial';
-    ctx.fillStyle = "green";
-    ctx.fillText('!! Bitte merken Sie sich den Weg !!', ctx.canvas.width/2, 15);
-  };
-
+  /* -- Now its Your Turn to draw -- */
   nowDoIt = function() {
   // write the letters in Arial, 16 pt in white
   ctx.clearRect((ctx.canvas.width/2)-250,3,500,35);
@@ -378,17 +417,6 @@ angular.module('starter.controllersSarah', [])
   ctx.textBaseline = 'middle';
   ctx.fillStyle = "mediumblue";
   ctx.fillText('!! Bitte versuchen die den vorgezeigten Weg nachzumachen !!', ctx.canvas.width/2, 15);
-  };
-
-  // BESCHREIBUNG
-  $scope.showPopup = function() {
-    var alertPopup = $ionicPopup.alert({
-    title:'Variablen für MIDATA',
-    template: "Anzahl Clicks: " + clicks + "</br></br>" + "Anz. Punkt des Labs angeklickt: " + rightclicks + "</br></br>" + "Anz. richtige Verbindungen: " + rightlines,
-    });
-    alertPopup.then(function() {
-    $state.go('geschafft');
-    });
   };
 
   // Function Click: Draw a blue point when click, wherever you are
@@ -406,8 +434,7 @@ angular.module('starter.controllersSarah', [])
       yrealclient = yclient - offsetY;
 
       // true if the user clicks into the endcircle
-      endcircle = pointInCircle(xrealclient, yrealclient, point22[0]*xfactor, point22[1]*yfactor, 18);
-      console.log(endcircle);
+      endcircle = pointInCircle(xrealclient, yrealclient, point22[0]*xfactor, point22[1]*yfactor, 30);
 
       // gets true if the user clicks into a point in the labyrinth
       var clickedinacircle = false;
@@ -415,47 +442,37 @@ angular.module('starter.controllersSarah', [])
       if (!endcircle){
         // the user clicked in a circle which was not the end
         clicks = clicks + 1;
-        console.log(clicks);
         //search in the whole labyrinth
         for(var i=0;i<actualLab.length;i++){
             // check if user clicked in a circle
-            clickedinacircle = pointInCircle(xrealclient, yrealclient, actualLab[i][0]*xfactor, actualLab[i][1]*yfactor, 18);
+            clickedinacircle = pointInCircle(xrealclient, yrealclient, actualLab[i][0]*xfactor, actualLab[i][1]*yfactor, 30);
             // if yes --> make it blue an get a rightclick (means he clicked a circle of the whole lab)
             if (clickedinacircle){
               // count how many real circles the user clicked
               rightclicks = rightclicks +1;
               // draw the line blue if a circle was clicked before
               if (lastpoint[0] != 0){
-                console.info("IM LASTPOINT");
                 // draw Line
                 drawLine(lastpoint[0], lastpoint[1], actualLab[i][0], actualLab[i][1],"mediumblue");
                 // put the clicked line in the array of the way the user did
                 userway.push([lastpoint[0], lastpoint[1], actualLab[i][0], actualLab[i][1]]);
-                console.log(userway);
                 // draw Point
                 drawPoint(actualLab[i][0], actualLab[i][1], "mediumblue");
                 lastpoint = [actualLab[i][0],actualLab[i][1]];
               }
               // else draw just the point blue
               else{
-                console.info("IM LASTPOINT ELSE");
                 drawPoint(actualLab[i][0], actualLab[i][1], "mediumblue");
                 lastpoint = [actualLab[i][0],actualLab[i][1]];
               }
-
-              /*console.log(userway);
-              console.log(clickedinacircle);
-              console.log(rightclicks);*/
           }
         }
       } else {
-
         clicks = clicks + 1;
         rightclicks = rightclicks +1;
         drawLine(lastpoint[0], lastpoint[1], point22[0], point22[1],"mediumblue");
         // put the clicked line in the array of the way the user did
         userway.push([lastpoint[0], lastpoint[1], point22[0], point22[1]]);
-        console.log(userway);
         // draw Point
         drawPoint(point22[0], point22[1], "mediumblue");
         //search in the whole labyrinth
@@ -463,10 +480,6 @@ angular.module('starter.controllersSarah', [])
         console.log("REALWAY: "+ firstWayLines);
         for(var i=0;i<userway.length;i++){
           for(var j=0;j<firstWayLines.length;j++){
-            /*console.log("userway 1: "+ userway[i][0] + "   realway1: "+ firstWayLines[j][0]);
-            console.log("userway 2: "+ userway[i][1] + "   realway2: "+ firstWayLines[j][1]);
-            console.log("userway 3: "+ userway[i][2] + "   realway3: "+ firstWayLines[j][2]);
-            console.log("userway 4: "+ userway[i][3] + "   realway4: "+ firstWayLines[j][3]);*/
             if(
               ((userway[i][0] == firstWayLines[j][0] && userway[i][1] == firstWayLines[j][1]) || (userway[i][0] == firstWayLines[j][2] && userway[i][1] == firstWayLines[j][3]))
               &&
@@ -474,20 +487,48 @@ angular.module('starter.controllersSarah', [])
             ){
               rightlines = rightlines + 1;
             }
-
-
-            /*if(userway[i][0] == firstWayLines[j][0] && userway[i][1] == firstWayLines[j][1] && userway[i][2] == firstWayLines[j][2] && userway[i][3] == firstWayLines[j][3]){
-              rightlines = rightlines + 1;
-            }*/
           }
         }
-        console.log("rightlines: "+rightlines);
-        $state.go('geschafft');
-        $scope.showPopup();
+        // checken ob der ganze weg richtig gemacht wurde
+        if (userway.length == rightlines){
+          rightlab = rightlab + 1;
+        }
+
+        if (rightlab > 1){
+          // 2 mal richtig --> Übung beendet
+          $state.go('geschafft');
+          //$scope.showPopup();
+        }
+        else{
+          // mache den weg nochmal
+          $state.go('geschafft');
+          //doFirst();
+        }
       }
+    // Klicken noch nicht erlaubt
     } else {
       console.info("nopes");
     }
+  };
+
+
+  // -- Function to test if the User hit a circle --//
+  // x,y is the point to test
+  // cx, cy is circle center, and radius is circle radius
+  pointInCircle = function (x, y, cx, cy, radius) {
+    var distancesquared = (x - cx) * (x - cx) + (y - cy) * (y - cy);
+    return distancesquared <= radius * radius;
+  };
+
+  // Popup mit den Variablen für Midata
+  $scope.showPopup = function() {
+    var alertPopup = $ionicPopup.alert({
+    title:'Variablen für MIDATA',
+    template: "Anzahl Clicks: " + clicks + "</br></br>" + "Anz. Punkt des Labs angeklickt: " + rightclicks + "</br></br>" + "Anz. richtige Verbindungen: " + rightlines,
+    });
+    alertPopup.then(function() {
+    $state.go('geschafft');
+    });
   };
 
   // Labyrinth is defined for width="1024" height="768"
@@ -499,28 +540,6 @@ angular.module('starter.controllersSarah', [])
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
 
-  // Draw The Labyrinth
-  $scope.drawLab();
-
-  // Show the Way through the Labyrinth - Points
-  setTimeout(function() {
-    console.log("firstWay Length: "+firstWay.length);
-    $interval(showWay, 2000, firstWay.length+1); //2000
-  }, 2000);
-
-  // Show the Way through the Labyrinth - Lines
-  setTimeout(function() {
-    $interval(showWayLines, 2000, firstWayLines.length+1);//2000
-  }, 3000);
-
-  // Click is Only possible when way through Labyrinth was shown
-  setTimeout(function() {
-    $scope.drawLab();
-    clickOK = true;
-    nowDoIt();
-  }, 40000);//40000
-
-
-
+  doFirst();
 
 });
