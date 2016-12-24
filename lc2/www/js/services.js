@@ -1,49 +1,27 @@
 angular.module('starter.services', [])
-  /*
-  .factory('QuestionService', function() {
-      var QuestionService = {};
-      var questionsStartType1 = [];
-      var questionsStartType2 = [];
 
-      QuestionService.getQuestionsStartType1 = function() {
-        return questionsStartType1;
-      }
-      QuestionService.getQuestionsStartType2 = function() {
-        return questionsStartType2;
-      }
 
-      //Funktion to generate array to load questions dynamically
-      QuestionService.genQuestions = function(numberOfTotalQuestions) {
-        questionsStartType1 = [];
-        questionsStartType2 = [];
-        for (var i = 1; i <= numberOfTotalQuestions; i++) {
-          var question = {};
-          if (i <= 3) {
-            question.name = "MSISQE" + i;
-            questionsStartType1.push(question);
-            console.log(question);
-            console.log(questionsStartType1);
-          } else {
-            question.name = "MSISQE" + i;
-            questionsStartType2.push(question);
-          }
-        }
-      }
-      return QuestionService;
-    })*/
-
+//--------------------------------------------------------//
+//---------------Service for Questionnaires-----------------------//
+//--------------------------------------------------------//
 .factory('QuestionnaireService', function($state, $ionicPopup, $translate) {
   var QuestionnaireService = {};
-
+  // boolean that indicates if all questions were answered
   var allAnswers = false;
+  // Array with the answers of the questions
   var answers = [];
+
+  /* function to set the boolean allAnswers back to false and clear the answers array */
   QuestionnaireService.reset = function() {
     allAnswers = false;
     answers = [];
   };
 
-  QuestionnaireService.setValue = function(value, questionid, numberofAnswers) {
-
+  /*function to save the answers of the questions,
+  value, is the value of the radiobutton,
+  questionid, is the id of the question
+  numberofQuestions, is the number of questions on this page - to check afterwards the number of answered questions against this number to check if all questions were answered */
+  QuestionnaireService.setValue = function(value, questionid, numberofQuestions) {
     console.log(answers.length);
     if (answers.length == 0) {
       var answer = {};
@@ -66,25 +44,29 @@ angular.module('starter.services', [])
           answers.push(answer);
         }
       }
-      if (answers.length == numberofAnswers) {
+      if (answers.length == numberofQuestions) {
         allAnswers = true;
       }
       console.log(answers);
       console.log(allAnswers);
     }
   };
-  /*first variable has to be the name of the view we want to navigate to
-  scond is the name of the ng-modal under which we save the answers with localStorage*/
-  QuestionnaireService.checkAndStore = function(goTo, msisModal) {
+
+  /* function to check if the allAnswers boolean is true - which means that all answers were answered, then save the answers to the localStorage and navigate to the view defined as goTo.
+  goTo, has to be the name of the view we want to navigate to
+  modal, is the name of the ng-modal under which we save the answers with localStorage*/
+  QuestionnaireService.checkAndStore = function(goTo, modal) {
+    // if allAnswers true navigate to goTo and store the answers, in the end we set allAnswers back to false and clear the answers array
     if (allAnswers) {
       $state.go(goTo);
-      localStorage.setItem(msisModal, JSON.stringify(answers));
-      var storedAnswers = JSON.parse(localStorage.getItem(msisModal));
+      localStorage.setItem(modal, JSON.stringify(answers));
+      var storedAnswers = JSON.parse(localStorage.getItem(modal));
       console.log(storedAnswers);
       //reset the function
-      allAnswers = false;
-      answers = [];
-    } else {
+      QuestionnaireService.reset();
+    }
+    // if allAnswers false inform the user that he has to answer all the answers before he can save
+    else {
       var popTitle = $translate.instant('Info');
       var popTemplate = $translate.instant('Bitte wählen Sie eine Antwort für jede Aussage');
 
@@ -98,11 +80,17 @@ angular.module('starter.services', [])
   return QuestionnaireService;
 })
 
+//--------------------------------------------------------//
+//---------------Service for JSON language file-----------------------//
+//--------------------------------------------------------//
 .factory('jsonService', function($rootScope, $http, $translate) {
   var jsonService = {};
+  // variable with the first part of the path to the language file
   var prefix = 'js/locale-';
+  // variable with the file ending of the language file
   var suffix = '.json';
 
+  // Array to store the language variables with their translation
   jsonService.data = {};
 
   // initialize the json file with the currentLanguage
@@ -131,6 +119,9 @@ angular.module('starter.services', [])
   return jsonService;
 })
 
+//--------------------------------------------------------//
+//---------------Service for Symbol Digit excercise-----------------------//
+//--------------------------------------------------------//
 .factory('SymDigService', function($rootScope) {
   var SymDigService = {};
   // Array für die Schlüsseltabelle
@@ -221,98 +212,107 @@ angular.module('starter.services', [])
       console.log(solveImages);
       return solveImages;
     }
-    /*SymDigService.setNext_symbol = function(index) {
-      if (next_symbol < 9) {
-        next_symbol++;
-      } else if (next_symbol == 9) {
-        next_symbol = 0;
-      } else {
-        console.log("Der Index des nächsten Elements ist ausserhalb des definierten Bereichs"):
-      }
-      console.log("Index" + );
-    }*/
+    /**************** Getters *****************/
+    // Get number of incorrect assigned symbols
   SymDigService.getIncorrect = function() {
-    return n_incorrect;
-  }
+      return n_incorrect;
+    }
+    // Get number of correct assigned symbols
   SymDigService.getCorrect = function() {
-    return n_correct;
-  }
+      return n_correct;
+    }
+    // Get number of incorrect assigned symbols in the preparation
   SymDigService.getIncorrectPrep = function() {
-    return n_incorrectPrep;
-  }
-  SymDigService.setIncorrectPrep = function(number) {
-    n_incorrectPrep = number;
-  }
-  SymDigService.setCorrectPrep = function(number) {
-    n_correctPrep = number;
-  }
+      return n_incorrectPrep;
+    }
+    // Get number of correct assigned symbols in the preparation
   SymDigService.getCorrectPrep = function() {
-    return n_correctPrep;
-  }
+      return n_correctPrep;
+    }
+    // Get number of trys(solved lines)
   SymDigService.getTrys = function() {
-    return n_trys;
-  }
+      return n_trys;
+    }
+    // Get the time that is allowed for the excercise
   SymDigService.getTimeExcersise = function() {
       return timeExcersise;
     }
     /*SymDigService.getTimeWhenExcersiseStart = function() {
       return timeWhenExcersiseStart;
     }*/
+    // Calculate the clicks ( number of correct and incorrect assignments) divised trough the time for the excercise and return it
   SymDigService.getClickFrequency = function() {
-    var temp = (n_incorrect + n_correct) / (timeExcersise / 60000);
+      var temp = (n_incorrect + n_correct) / (timeExcersise / 60000);
 
-    clickfrequency = temp;
-    return clickfrequency;
-  }
+      clickfrequency = temp;
+      return clickfrequency;
+    }
+    // Calculate and return the longest latencency - longest time between to clicks
   SymDigService.getLongestLatency = function() {
 
     }
     /*SymDigService.setTimeWhenExcersiseStart = function(time) {
       timeWhenExcersiseStart = time;
     }*/
+    /******************Setters *****************/
+    // Set the number of incorrect assigned symbols in the preparation to the *number*
+  SymDigService.setIncorrectPrep = function(number) {
+      n_incorrectPrep = number;
+    }
+    // Set the number of correct assigned symbols in the preparation to the *number*
+  SymDigService.setCorrectPrep = function(number) {
+      n_correctPrep = number;
+    }
+    // Add one to the number of correct assignments
   SymDigService.addCorrect = function() {
-    n_correct++;
-    console.log("Correct:" + n_correct);
-  }
+      n_correct++;
+      console.log("Correct:" + n_correct);
+    }
+    // Add one to the number of incorrect assignments
   SymDigService.addIncorrect = function() {
-    n_incorrect++;
-    console.log("Incorrect:" + n_incorrect);
-  }
+      n_incorrect++;
+      console.log("Incorrect:" + n_incorrect);
+    }
+    // Add one to the number of correct assignments in the preparation
   SymDigService.addCorrectPrep = function() {
-    n_correctPrep++;
-    console.log("Correct:" + n_correctPrep);
-  }
+      n_correctPrep++;
+      console.log("Correct:" + n_correctPrep);
+    }
+    // Add one to the number of incorrect assignments in the preparation
   SymDigService.addIncorrectPrep = function() {
-    n_incorrectPrep++;
-    console.log("Incorrect:" + n_incorrectPrep);
-  }
+      n_incorrectPrep++;
+      console.log("Incorrect:" + n_incorrectPrep);
+    }
+    // Add one to the number of trys(solved lines)
   SymDigService.addTry = function() {
-    n_trys++;
-    console.log("Trys:" + n_trys);
-  }
+      n_trys++;
+      console.log("Trys:" + n_trys);
+    }
+    // Set the number of trys to the defined *number*
   SymDigService.setTry = function(number) {
     n_trys = number;
   }
 
-  //Function to random assign Symbols to numbers
+  /*Function to shuffle an given *array* of numbers and return it*/
   SymDigService.doShuffle = function(array) {
-      var i = array.length,
-        j = 0,
-        temp;
+    var i = array.length,
+      j = 0,
+      temp;
 
-      while (i--) {
+    while (i--) {
 
-        j = Math.floor(Math.random() * (i + 1));
+      j = Math.floor(Math.random() * (i + 1));
 
-        // swap randomly chosen element with current element
-        temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+      // swap randomly chosen element with current element
+      temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
 
-      }
-      return array;
     }
-    // Function to random generate 10 numbers according to the specifications for the middle block
+    return array;
+  }
+
+  /* Function to random generate numbers according to the specifications for the middle block*/
   SymDigService.genNums = function(array) {
 
     var arrayPosition = (array.length - 1),

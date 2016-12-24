@@ -28,6 +28,10 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'ionic-timepicker', 'for
       }
       //alert("Current orientation" + window.screen.orienation);
     });
+    //Disable backbutton
+    $ionicPlatform.registerBackButtonAction(function(event) {
+      event.preventDefault();
+    }, 100);
   })
 
 .config(function($stateProvider, $urlRouterProvider, $translateProvider) {

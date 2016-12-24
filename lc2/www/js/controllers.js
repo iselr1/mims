@@ -1,5 +1,8 @@
 angular.module('starter.controllers', [])
 
+//--------------------------------------------------------//
+//---------------CONTROLLER Navigation-----------------------//
+//--------------------------------------------------------//
 .controller('NavCtrl', function($scope, $state, I4MIMidataService, jsonService) {
 
   $scope.goHome = function() {
@@ -14,6 +17,9 @@ angular.module('starter.controllers', [])
 
 })
 
+//--------------------------------------------------------//
+//---------------CONTROLLER Login-----------------------//
+//--------------------------------------------------------//
 .controller('LoginCtrl', function($scope, $translate, I4MIMidataService, jsonService, $timeout, $http, $state, $ionicLoading) {
   // Values for login
   $scope.login = {};
@@ -66,6 +72,9 @@ angular.module('starter.controllers', [])
   };
 })
 
+//--------------------------------------------------------//
+//---------------CONTROLLER Home-----------------------//
+//--------------------------------------------------------//
 .controller('HomeCtrl', function($scope, $stateParams, $state) {
   $scope.goKSym_Erf = function() {
     $state.go('kernsymptome');
@@ -84,6 +93,9 @@ angular.module('starter.controllers', [])
   };
 })
 
+//--------------------------------------------------------//
+//---------------CONTROLLER Impressum-----------------------//
+//--------------------------------------------------------//
 .controller('ImpCtrl', function($scope, $stateParams, $state, $ionicPopup, jsonService) {
   var jsonData = jsonService.getJson();
   var title = jsonData.DATAPROTECTION;
@@ -99,6 +111,9 @@ angular.module('starter.controllers', [])
   }
 })
 
+//--------------------------------------------------------//
+//---------------CONTROLLER Excersis overview-----------------------//
+//--------------------------------------------------------//
 .controller('A_UebCtrl', function($scope, $stateParams, $state) {
 
 
@@ -116,6 +131,9 @@ angular.module('starter.controllers', [])
 
 })
 
+//--------------------------------------------------------//
+//---------------CONTROLLER Question overview-----------------------//
+//--------------------------------------------------------//
 .controller('A_FragCtrl', function($scope, $stateParams, $state) {
   $scope.goMsis = function() {
     $state.go('msis');
@@ -126,10 +144,16 @@ angular.module('starter.controllers', [])
 
 })
 
+//--------------------------------------------------------//
+//---------------CONTROLLER Motrik-----------------------//
+//--------------------------------------------------------//
 .controller('MotorikCtrl', function($scope, $stateParams, $state) {
 
 })
 
+//--------------------------------------------------------//
+//---------------CONTROLLER Done-----------------------//
+//--------------------------------------------------------//
 .controller('GeschafftCtrl', function($scope, $stateParams, $state) {
   $scope.comment = {};
 
