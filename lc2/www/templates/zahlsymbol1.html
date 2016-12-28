@@ -1,7 +1,4 @@
 <ion-view view-title="{{'SD_PREPARATION' | translate}}" cache-view="false">
-  <ion-nav-buttons side="left">
-    <button class="button icon-left ion-home" ng-click="goHome()" translate="OVERVIEW"></button>
-  </ion-nav-buttons>
   <ion-content class="padding">
     <div class="row">
       <div class="col padding" style="text-align:center" translate="REFERENCETABLE"></div>
@@ -12,7 +9,7 @@
         <h4 align="center" translate="SYMBOL"></h4>
       </div>
       <div class="col col-9 zs-col" ng-repeat="symbol in keyTable">
-        <img ng-src="{{symbol.imgSrc}}" width="80%"/>
+        <img ng-src="{{symbol.imgSrc}}" width="70%"/>
       </div>
       <div class="col col-9"></div>
     </div>
@@ -23,7 +20,7 @@
       </div>
 
       <div class="col col-9 zs-col" ng-repeat="digit in keyTable">
-        <img ng-src="{{digit.numSrc}}" width="70%"/>
+        <img ng-src="{{digit.numSrc}}" width="60%"/>
       </div>
       <div class="col col-9"></div>
     </div>
@@ -64,12 +61,10 @@
       <div class="col"></div>
     </div>
     <div class"row">
-      <div class="col padding"></div>
       <div class="col padding" style="text-align:center" translate="DIGITTABLE"></div>
     </div>
 
     <div class="row">
-      <div class="col"></div>
       <div class="col col-11" ng-repeat="digit in solveImages">
         <img ng-src="{{digit.imgSrc}}" width="100%" ng-click="setValueImage(digit)"/>
       </div>

@@ -20,7 +20,7 @@ angular.module('starter.controllers', [])
 //--------------------------------------------------------//
 //---------------CONTROLLER Login-----------------------//
 //--------------------------------------------------------//
-.controller('LoginCtrl', function($scope, $translate, I4MIMidataService, jsonService, $timeout, $http, $state, $ionicLoading) {
+.controller('LoginCtrl', function($scope, $translate, I4MIMidataService, jsonService, $timeout, $http, $state, $ionicLoading, $ionicPopup) {
   // Values for login
   $scope.login = {};
   $scope.login.email = '';
@@ -56,6 +56,14 @@ angular.module('starter.controllers', [])
       $state.go('kernsymptome');
     } else {
       I4MIMidataService.logout();
+      //Inform the user that he's not logged in
+      var jsonData = jsonService.getJson();
+      var title = jsonData.LOGININFO;
+      var template = jsonData.LOGINERRORTEXT;
+      var alertPopup = $ionicPopup.alert({
+        title: title,
+        template: template,
+      });
     }
   }
 
