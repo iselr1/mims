@@ -453,16 +453,16 @@ angular.module('starter.controllersSarah', [])
               // draw the line blue if a circle was clicked before
               if (lastpoint[0] != 0){
                 // draw Line
-                drawLine(lastpoint[0], lastpoint[1], actualLab[i][0], actualLab[i][1],"mediumblue");
+                drawLine(lastpoint[0], lastpoint[1], actualLab[i][0], actualLab[i][1],"cyan");
                 // put the clicked line in the array of the way the user did
                 userway.push([lastpoint[0], lastpoint[1], actualLab[i][0], actualLab[i][1]]);
                 // draw Point
-                drawPoint(actualLab[i][0], actualLab[i][1], "mediumblue");
+                drawPoint(actualLab[i][0], actualLab[i][1], "cyan");
                 lastpoint = [actualLab[i][0],actualLab[i][1]];
               }
               // else draw just the point blue
               else{
-                drawPoint(actualLab[i][0], actualLab[i][1], "mediumblue");
+                drawPoint(actualLab[i][0], actualLab[i][1], "cyan");
                 lastpoint = [actualLab[i][0],actualLab[i][1]];
               }
           }
@@ -470,11 +470,11 @@ angular.module('starter.controllersSarah', [])
       } else {
         clicks = clicks + 1;
         rightclicks = rightclicks +1;
-        drawLine(lastpoint[0], lastpoint[1], point22[0], point22[1],"mediumblue");
+        drawLine(lastpoint[0], lastpoint[1], point22[0], point22[1],"cyan");
         // put the clicked line in the array of the way the user did
         userway.push([lastpoint[0], lastpoint[1], point22[0], point22[1]]);
         // draw Point
-        drawPoint(point22[0], point22[1], "mediumblue");
+        drawPoint(point22[0], point22[1], "cyan");
         //search in the whole labyrinth
         console.log("USERWAY: "+ userway);
         console.log("REALWAY: "+ firstWayLines);
