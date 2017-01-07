@@ -10432,22 +10432,62 @@ a.button .icon:before, a.button.icon:before, a.button.icon-left:before, a.button
  * available width, and the height of each .col with take
  * up the height of the tallest .col in the same .row.
  */
- /**Spezial heights for MitrendS
- 3
- 5
- 8*/
- .row-3 {
-   height: 3vh;
- }
- .row-5 {
-   height: 5vh;
- }
- .row-8 {
-  height: 8vh;
- }
- .row-19 {
-  height: 19vh;
- }
+ /**Spezial heights for MitrendS*/
+
+.row-3 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 3%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 3%;
+  -ms-flex: 0 0 3%;
+  flex: 0 0 3%;
+  height: 3%;
+  max-height: 3%;
+}
+
+.row-5 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 5%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 5%;
+  -ms-flex: 0 0 5%;
+  flex: 0 0 5%;
+  height: 5%;
+  max-height: 5%;
+}
+
+.row-8 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 8%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 8%;
+  -ms-flex: 0 0 8%;
+  flex: 0 0 8%;
+  height: 8%;
+  max-height: 8%;
+}
+
+.row-19 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 19%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 19%;
+  -ms-flex: 0 0 19%;
+  flex: 0 0 19%;
+  height: 19%;
+  max-height: 19%;
+}
+
+.row-33 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 33%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 33%;
+  -ms-flex: 0 0 33%;
+  flex: 0 0 33%;
+  height: 33%;
+  max-height: 33%;
+}
  /* Row Offsets */
  .row-offset-top-3 {
    margin-top: 5%;

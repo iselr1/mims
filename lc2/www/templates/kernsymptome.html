@@ -7,15 +7,15 @@
       <div class="row padding-horizontal padding-bottom" style="height:8vh">
         <div class="col col-38 col-align-center" style:"height:100%" translate="Q1CORE"></div>
         <div class="col col-14 col-align-center" translate="RIGHTHANDED"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp_one" ng-model="handed" name="handed" value="right" ng-change="setValue(right)">
+        <div class="col col-8"><input type="radio" id="kernsymp_one" ng-model="COREQ1" name="handed" value="right" ng-change="setValue('COREQ1', COREQ1)">
           <label for="kernsymp_one"></label>
         </div>
         <div class="col col-13 col-align-center" translate="LEFTHANDED"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp_one" ng-model="handed" name="handed" value="left">
+        <div class="col col-8"><input type="radio" id="kernsymp_one" ng-model="COREQ1" name="handed" value="left" ng-change="setValue('COREQ1', COREQ1)">
           <label for="kernsymp_one"></label>
         </div>
         <div class="col col-13 col-align-center" translate="BOTHHANDED"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp_one" ng-model="handed" name="handed" value="both">
+        <div class="col col-8"><input type="radio" id="kernsymp_one" ng-model="COREQ1" name="handed" value="both" ng-change="setValue('COREQ1', COREQ1)">
           <label for="kernsymp_one"></label>
         </div>
       </div>
@@ -23,44 +23,44 @@
       <div class="row padding row-top-border" style="height:8vh">
         <div class="col col-70 col-align-center" style:"height:100%" translate="Q2COREL"></div>
         <div class="col col-8 col-align-center" translate="YES"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="lmove" name="lmove" value="y">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ2" name="lmove" value="y" ng-change="setValue('COREQ2', COREQ2)">
           <label for="kernsymp"></label>
         </div>
         <div class="col col-8 col-align-center" translate="NO"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="lmove" name="lmove" value="n">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ2" name="lmove" value="n" ng-change="setValue('COREQ2', COREQ2)">
           <label for="kernsymp"></label>
         </div>
       </div>
       <div class="row padding row-top-border" style="height:8vh">
         <div class="col col-70 col-align-center" style:"height:100%" translate="Q2CORER"></div>
         <div class="col col-8 col-align-center" translate="YES"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="rmove" name="rmove" value="y">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ3" name="rmove" value="y" ng-change="setValue('COREQ3', COREQ3)">
           <label for="kernsymp"></label>
         </div>
         <div class="col col-8 col-align-center" translate="NO"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="rmove" name="rmove" value="n">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ3" name="rmove" value="n" ng-change="setValue('COREQ3', COREQ3)">
           <label for="kernsymp"></label>
         </div>
       </div>
       <div class="row padding row-top-border" style="height:8vh">
         <div class="col col-70 col-align-center" style:"height:100%" translate="Q3COREL"></div>
         <div class="col col-8 col-align-center" translate="YES"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="lfeel" name="lfeel" value="y">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ4" name="lfeel" value="y" ng-change="setValue('COREQ4', COREQ4)">
           <label for="kernsymp"></label>
         </div>
         <div class="col col-8 col-align-center" translate="NO"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="lfeel" name="lfeel" value="n">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ4" name="lfeel" value="n" ng-change="setValue('COREQ4', COREQ4)">
           <label for="kernsymp"></label>
         </div>
       </div>
       <div class="row padding row-top-border" style="height:8vh">
         <div class="col col-70 col-align-center" style:"height:100%" translate="Q3CORER"></div>
         <div class="col col-8 col-align-center" translate="YES"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="rfeel" name="rfeel" value="y">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ5" name="rfeel" value="y" ng-change="setValue('COREQ5', COREQ5)">
           <label for="kernsymp"></label>
         </div>
         <div class="col col-8 col-align-center" translate="NO"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="rfeel" name="rfeel" value="n">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ5" name="rfeel" value="n" ng-change="setValue('COREQ5', COREQ5)">
           <label for="kernsymp"></label>
         </div>
       </div>
@@ -87,23 +87,23 @@
       </div>
       <div class="row" style="height:8vh">
         <div class="col col-62"></div>
-        <div class="col col-7"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="1">
+        <div class="col col-7"><input type="radio" id="core_smile" ng-model="COREQ6" name="feelToday" value="1" ng-change="setValue('COREQ6', COREQ6)">
           <label for="core_smile"></label>
         </div>
 
-        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="2">
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="COREQ6" name="feelToday" value="2" ng-change="setValue('COREQ6', COREQ6)">
           <label for="core_smile"></label>
         </div>
 
-        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="3">
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="COREQ6" name="feelToday" value="3" ng-change="setValue('COREQ6', COREQ6)">
           <label for="core_smile"></label>
         </div>
 
-        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="4">
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="COREQ6" name="feelToday" value="4" ng-change="setValue('COREQ6', COREQ6)">
           <label for="core_smile"></label>
         </div>
 
-        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="feelToday" name="feelToday" value="5">
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="COREQ6" name="feelToday" value="5" ng-change="setValue('COREQ6', COREQ6)">
           <label for="core_smile"></label>
         </div>
       </div>
@@ -127,34 +127,34 @@
       </div>
       <div class="row" style="height:8vh">
         <div class="col col-62"></div>
-        <div class="col col-7"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="1">
+        <div class="col col-7"><input type="radio" id="core_smile" ng-model="COREQ7" name="concentration" value="1" ng-change="setValue('COREQ7', COREQ7)">
           <label for="core_smile"></label>
         </div>
 
-        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="2">
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="COREQ7" name="concentration" value="2" ng-change="setValue('COREQ7', COREQ7)">
           <label for="core_smile"></label>
         </div>
 
-        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="3">
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="COREQ7" name="concentration" value="3" ng-change="setValue('COREQ7', COREQ7)">
           <label for="core_smile"></label>
         </div>
 
-        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="4">
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="COREQ7" name="concentration" value="4" ng-change="setValue('COREQ7', COREQ7)">
           <label for="core_smile"></label>
         </div>
 
-        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="concentration" name="concentration" value="5">
+        <div class="col col-7 col-offset-1"><input type="radio" id="core_smile" ng-model="COREQ7" name="concentration" value="5" ng-change="setValue('COREQ7', COREQ7)">
           <label for="core_smile"></label>
         </div>
       </div>
       <div class="row padding row-top-border" style="height:8vh">
         <div class="col col-70 col-align-center" style:"height:100%" translate="Q6CORE"></div>
         <div class="col col-8 col-align-center" translate="YES"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="YNthrust" name="YNthrust" value="y">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ8" name="YNthrust" value="y" ng-change="setValue('COREQ8', COREQ8)">
           <label for="kernsymp"></label>
         </div>
         <div class="col col-8 col-align-center" translate="NO"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="YNthrust" name="YNthrust" value="n">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ8" name="YNthrust" value="n" ng-change="setValue('COREQ8', COREQ8)">
           <label for="kernsymp"></label>
         </div>
       </div>
@@ -162,10 +162,10 @@
       <div class="row padding row-top-border" style="height:8vh">
         <div class="col col-70 col-align-center" style:"height:100%" translate="Q7CORE"></div>
         <div class="col col-8 col-align-center" translate="YES"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="YNsymp" name="YNsymp" value="y">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ9" name="YNsymp" value="y" ng-change="setValue('COREQ9', COREQ9)">
         </div>
         <div class="col col-8 col-align-center" translate="NO"></div>
-        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="YNsymp" name="YNsymp" value="n" ng-change="setValue('n')">
+        <div class="col col-8"><input type="radio" id="kernsymp" ng-model="COREQ9" name="YNsymp" value="n" ng-change="setValue('COREQ9', COREQ9)">
         </div>
       </div>
       <div class="row padding row-top-border" style="height:8vh">

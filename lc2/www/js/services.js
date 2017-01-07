@@ -58,7 +58,16 @@ angular.module('starter.services', [])
   QuestionnaireService.checkAndStore = function(goTo, modal) {
     // if allAnswers true navigate to goTo and store the answers, in the end we set allAnswers back to false and clear the answers array
     if (allAnswers) {
+      //Code zu Testzwecken für Kundenworkshop
+      /*var alertPopup = $ionicPopup.alert({
+        title: "Variablen für MIDATA",
+        template: JSON.stringify(answers),
+      });
+      alertPopup.then(function() {
+          $state.go(goTo);
+        })*/
       $state.go(goTo);
+      //Save the answers to localStorage
       localStorage.setItem(modal, JSON.stringify(answers));
       var storedAnswers = JSON.parse(localStorage.getItem(modal));
       console.log(storedAnswers);

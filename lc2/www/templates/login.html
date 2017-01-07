@@ -6,32 +6,28 @@
   </ion-nav-buttons>
   <ion-content class="padding">
 
-      <div class="row" style="height:33vh">
-        <img src="img/MitrendS.png" class="center" height="100%">
+    <div class="row" style="height:33vh">
+      <img src="img/MitrendS.png" class="center" height="100%"></img>
+    </div>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input ng-model="login.email" type="text" placeholder="Email">
+      </label>
+      <label class="item item-input">
+        <input ng-model="login.password" type="password" placeholder="Password">
+      </label>
+    </div>
+    <button type="submit" class="button button-full button-positive" ng-click="doLogin()">Login</button>
+
+    <div class="row" style="height:33vh">
+      <div class="col col-50" style="width:100%">
+        <img src="img/usz.png" class="center" width="100%"></img>
       </div>
-
-
-      <!-- Login -->
-      <!--<i4mi-midata-login user="user" controller-name="I4MIMidataLoginController"></i4mi-midata-login>-->
-
-      <div class="list list-inset">
-        <label class="item item-input">
-          <input ng-model="login.email" type="text" placeholder="Email">
-        </label>
-        <label class="item item-input">
-          <input ng-model="login.password" type="password" placeholder="Password">
-        </label>
+      <!--<div class="col"></div>-->
+      <div class="col col-50" style="width:100%">
+        <img src="img/bfh.png" class="center" width="50%"></img>
       </div>
-      <button type="submit" class="button button-full button-positive" ng-click="doLogin()">Login</button>
-
-      <div class="row" style="height:33vh">
-        <div class="col col-50" style="width:100%">
-          <img src="img/usz.png" class ="center"width="100%">
-        </div>
-        <!--<div class="col"></div>-->
-        <div class="col col-50" style="width:100%">
-          <img src="img/bfh.png" class="center" width="50%">
-        </div>
-      </div>
+    </div>
   </ion-content>
 </ion-view>
