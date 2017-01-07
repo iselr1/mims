@@ -246,8 +246,8 @@ angular.module('starter.controllersRea', [])
 
 
   // Generate Tables with 18 random ordered images
-  $scope.solveTable = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9])), false);
-  $scope.solveTable2 = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9])), false);
+  $scope.solveTable = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9], 18)), false);
+  $scope.solveTable2 = SymDigService.fillSolveTable((SymDigService.genNums([1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9], 18)), false);
   $scope.solveTable2[0].next = false;
   //*****************************************************************************************
   var solveImgs = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -325,8 +325,8 @@ angular.module('starter.controllersRea', [])
           SymDigService.addTry();
         } else if (SymDigService.getTrys() == 2) {
           //function to reload the lines with new values
-          $scope.solveTable = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9])), false);
-          $scope.solveTable2 = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9])), false);
+          $scope.solveTable = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9], 18)), false);
+          $scope.solveTable2 = SymDigService.fillSolveTable((SymDigService.genNums([1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9], 18)), false);
           $scope.solveTable2[0].next = false;
           solveTableOneComplete = false;
           SymDigService.setTry(0);
@@ -344,7 +344,7 @@ angular.module('starter.controllersRea', [])
 })
 
 //--------------------------------------------------------//
-//---------------CONTROLLER Zahlsymbol-----------------------//
+//---------------CONTROLLER Zahlsymbol Vorbereitung-----------------------//
 //--------------------------------------------------------//
 .controller('ZS1Ctrl', function($scope, $stateParams, $ionicPopup, $translate, $state, SymDigService) {
   // Fill the keyTable with the images in a random way and the numbers ordered from 1 to 9
@@ -353,8 +353,8 @@ angular.module('starter.controllersRea', [])
   $scope.keyTable = SymDigService.fillKeyTable(ranNums);
 
 
-  $scope.solveTable = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9])), true);
-  $scope.solveTable2 = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9])), false);
+  $scope.solveTable = SymDigService.fillSolveTable((SymDigService.genNums([1, 2, 2, 3, 4, 5, 6, 7, 8, 9], 10)), true);
+  $scope.solveTable2 = SymDigService.fillSolveTable((SymDigService.genNums([1, 2, 3, 3, 4, 5, 6, 7, 8, 9, ], 10)), false);
   $scope.solveTable2[0].next = false;
   //*****************************************************************************************
   var solveImgs = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -439,8 +439,8 @@ angular.module('starter.controllersRea', [])
             SymDigService.setCorrectPrep(0);
             //++++++++++++++++++++++++++++++++++++++++++++++ Ab hier weiter korrigieren
             //function to reload the line with new values
-            $scope.solveTable = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9])), true);
-            $scope.solveTable2 = SymDigService.fillSolveTable((SymDigService.genNums([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9])), false);
+            $scope.solveTable = SymDigService.fillSolveTable((SymDigService.genNums([1, 2, 3, 4, 4, 5, 6, 7, 8, 9], 10)), true);
+            $scope.solveTable2 = SymDigService.fillSolveTable((SymDigService.genNums([1, 2, 3, 4, 5, 5, 6, 7, 8, 9], 10)), false);
             $scope.solveTable2[0].next = false;
             solveTableOneComplete = false;
           } else {

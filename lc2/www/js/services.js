@@ -143,8 +143,8 @@ angular.module('starter.services', [])
   var solveImages = [];
   // Anzahl der Objekte der Schlüsseltabelle
   var numberObjectsKeyTable = 9;
-  // Anzahl der Objekte der lösungstabelle
-  var numberObjectsSolveTable = 18;
+  // Anzahl der Objekte in der lösungstabelle
+  var numberObjectsSolveTable = '';
   //Anzahl der falschen Zuordnungen bei der Vorbereitung
   var n_incorrectPrep = 0;
   //Anzahl der korrekten Zuordnungen bei der Vorbereitung
@@ -322,12 +322,12 @@ angular.module('starter.services', [])
   }
 
   /* Function to random generate numbers according to the specifications for the middle block*/
-  SymDigService.genNums = function(array) {
-
+  SymDigService.genNums = function(array, numberObjects) {
+    numberObjectsSolveTable = numberObjects;
     var arrayPosition = (array.length - 1),
       randomPosition = 0,
       minPosition = 0,
-      maxPosition = 17,
+      maxPosition = numberObjects,
       temp = [],
       alength = array.length;
 
@@ -360,7 +360,7 @@ angular.module('starter.services', [])
           console.log(temp);
           array[i] = array[alength - 1];
           array[alength - 1] = temp;
-          i--;
+          i = i - 2;
         }
       }
     }
