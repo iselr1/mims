@@ -106,15 +106,14 @@ angular.module('starter.controllers', [])
 //--------------------------------------------------------//
 .controller('ImpCtrl', function($scope, $stateParams, $state, $ionicPopup, jsonService) {
   var jsonData = jsonService.getJson();
-  var title = jsonData.DATAPROTECTION;
-  var template = jsonData.DATATEXT;
+
   $scope.showDATATEXT = function() {
     console.log("hier");
     var alertPopup = $ionicPopup.alert({
-      title: title,
-      template: template,
-      okType: 'button-assertive',
-      okText: 'Verstanden'
+      title: jsonData.DATAPROTECTION,
+      template: jsonData.DATATEXT,
+      okType: 'button-positive',
+      okText: jsonData.UNDERSTOOD
     });
   }
 })

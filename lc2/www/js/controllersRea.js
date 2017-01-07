@@ -140,17 +140,24 @@ angular.module('starter.controllersRea', [])
   //--------------------------------------------------------//
   //---------------CONTROLLER ZahlSymbol Anleitung-----------------------//
   //--------------------------------------------------------//
-  .controller('ZahlsymbolAnlCtrl', function($scope, $state, $ionicLoading, $ionicModal) {
+  .controller('ZahlsymbolAnlCtrl', function($scope, $state, $ionicPopup, $ionicModal, jsonService) {
+    var jsonData = jsonService.getJson();
+    // Before go to ZahlSymbol Vorbereitung show popup to inform thats just the preparation and not yet the excersise
     $scope.goSD_Preparation = function() {
-      $ionicLoading.show({
-        template: '<p>Loading...</p><ion-spinner></ion-spinner>'
+
+      var alertPopup = $ionicPopup.alert({
+        title: jsonData.TITLEPOPUP_NEXTPREPZS,
+        template: jsonData.TEMPLATEPOPUP_NEXTPREPZS,
+        okText: jsonData.UNDERSTOOD
       });
+      alertPopup.then(function() {
+        $state.go('zahlsymbol1');
+      })
 
       setTimeout(function() {
+        alertPopup.close();
         $state.go('zahlsymbol1');
-        // Verstecke Loading Spinner
-        $ionicLoading.hide();
-      }, 1000);
+      }, 6000);
     };
     // Images with the according instruction text
     $scope.images = [{
