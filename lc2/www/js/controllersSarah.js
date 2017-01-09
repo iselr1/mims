@@ -35,16 +35,20 @@ angular.module('starter.controllersSarah', [])
   // Images with the according instruction text
   $scope.images = [{
     "text": "ROUTE-INSTRUCTION_TEXT_3",
-    "src": "img/lab_anl_1.png"
+    "src": "img/lab_anl_1.png",
+    "src_glass": "img/lab_anl_1_lupe.png"
   }, {
     "text": "ROUTE-INSTRUCTION_TEXT_4",
-    "src": "img/lab_anl_2.png"
+    "src": "img/lab_anl_2.png",
+    "src_glass": "img/lab_anl_2_lupe.png"
   }, {
     "text": "ROUTE-INSTRUCTION_TEXT_5",
-    "src": "img/lab_anl_3.png"
+    "src": "img/lab_anl_3.png",
+    "src_glass": "img/lab_anl_3_lupe.png"
   }, {
     "text": "ROUTE-INSTRUCTION_TEXT_6",
-    "src": "img/lab_anl_4.png"
+    "src": "img/lab_anl_4.png",
+    "src_glass": "img/lab_anl_4_lupe.png"
   }];
 
   // To show the Modal - a view with the images fullscreen
