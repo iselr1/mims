@@ -162,13 +162,16 @@ angular.module('starter.controllersRea', [])
     // Images with the according instruction text
     $scope.images = [{
       "text": "ZS-INSTRUCTION_TEXT_3",
-      "src": "img/Referenztabelle.png"
+      "src": "img/Referenztabelle.png",
+      "src_glass": "img/ReferenztabelleLupe.png",
     }, {
       "text": "ZS-INSTRUCTION_TEXT_4",
-      "src": "img/Lösungstabelle.png"
+      "src": "img/Lösungstabelle.png",
+      "src_glass": "img/LösungstabelleLupe.png"
     }, {
       "text": "ZS-INSTRUCTION_TEXT_5",
-      "src": "img/Zahlentabelle.png"
+      "src": "img/Zahlentabelle.png",
+      "src_glass": "img/ZahlentabelleLupe.png"
     }];
 
     // To show the Modal - a view with the images fullscreen
