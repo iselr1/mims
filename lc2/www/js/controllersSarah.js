@@ -35,16 +35,16 @@ angular.module('starter.controllersSarah', [])
   // Images with the according instruction text
   $scope.images = [{
     "text": "ROUTE-INSTRUCTION_TEXT_3",
-    "src": "img/lab1.png"
+    "src": "img/lab_anl_1.png"
   }, {
     "text": "ROUTE-INSTRUCTION_TEXT_4",
-    "src": "img/lab2.png"
+    "src": "img/lab_anl_2.png"
   }, {
     "text": "ROUTE-INSTRUCTION_TEXT_5",
-    "src": "img/lab3.png"
+    "src": "img/lab_anl_3.png"
   }, {
     "text": "ROUTE-INSTRUCTION_TEXT_6",
-    "src": "img/lab4.png"
+    "src": "img/lab_anl_4.png"
   }];
 
   // To show the Modal - a view with the images fullscreen
@@ -178,8 +178,10 @@ angular.module('starter.controllersSarah', [])
   var actualLabLines = [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10, line11, line12, line13, line14, line15, line16, line17, line18, line19, line20, line21, line22, line23, line24, line25, line26, line27, line28, line29, line30, line31, line32, line33, line34, line35, line36];
 
   // Array with all the points and all the lines to show the first time
-  var firstWay = [point1, point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17, point22];
-  var firstWayLines = [line1, line8, line10, line23, line22, line13, line36, line17, line16, line31, line29, line30, line27, line26, line25, line35];
+  //var firstWay = [point1, point2, point7, point8, point9, point10, point11, point13, point12, point14, point21, point20, point15, point19, point16, point17, point22];
+  //var firstWayLines = [line1, line8, line10, line23, line22, line13, line36, line17, line16, line31, line29, line30, line27, line26, line25, line35];
+  var firstWay = [point1, point7, point2, point3, point4, point5, point12, point11, point13, point15, point19, point16, point10, point9, point17, point18, point22];
+  var firstWayLines = [line9, line8, line2, line3, line4, line15, line14, line36, line18, line27, line26, line21, line22, line24, line33, line34];
 
   // Array with all the points to show the second time - 2 Dimensional Array
   var secondWay = [point4, point3, point6, point2, point7, point8, point9, point10, point16, point17, point18, point19, point15, point13, point12, point14, point21];
