@@ -163,7 +163,7 @@ angular.module('starter.controllersRea', [])
     $scope.images = [{
       "text": "ZS-INSTRUCTION_TEXT_3",
       "src": "img/Referenztabelle.png",
-      "src_glass": "img/ReferenztabelleLupe.png",
+      "src_glass": "img/ReferenztabelleLupe.png"
     }, {
       "text": "ZS-INSTRUCTION_TEXT_4",
       "src": "img/Lösungstabelle.png",
