@@ -110,114 +110,114 @@
     "QUESTIONS": {
       "QS1": [{
         "id": "1",
-        "text": "1. körperlich anstrengende Dinge zu tun?"
+        "text": "1. ... körperlich anstrengende Dinge zu tun?"
       }, {
         "id": "2",
-        "text": "2. Dinge fest anzufassen (z.B. Hahn aufdrehen)?"
+        "text": "2. ... Dinge fest anzufassen (z.B. Hahn aufdrehen)?"
       }, {
         "id": "3",
-        "text": "3. Dinge zu tragen?"
+        "text": "3. ... Dinge zu tragen?"
       }],
       "QS2_1": [{
         "id": "4",
-        "text": "4. Probleme mit dem Gleichgewicht?"
+        "text": "4. ... Probleme mit dem Gleichgewicht?"
       }, {
         "id": "5",
-        "text": "5. Schwierigkeiten, sich in der Wohnung zu bewegen?"
+        "text": "5. ... Schwierigkeiten, sich in der Wohnung zu bewegen?"
       }, {
         "id": "6",
-        "text": "6. ungeschickt zu sein?"
+        "text": "6. ... ungeschickt zu sein?"
       }, {
         "id": "7",
-        "text": "7. steif zu sein"
+        "text": "7. ... steif zu sein"
       }],
       "QS2_2": [{
         "id": "8",
-        "text": "8. schwere Arme und/oder Beine zu haben?"
+        "text": "8. ... schwere Arme und/oder Beine zu haben?"
       }, {
         "id": "9",
-        "text": "9. Zittern der Arme oder Beine zu haben?"
+        "text": "9. ... Zittern der Arme oder Beine zu haben?"
       }, {
         "id": "10",
-        "text": "10. Krämpfe der Extremitäten zu haben?"
+        "text": "10. ... Krämpfe der Extremitäten zu haben?"
       }, {
         "id": "11",
-        "text": "11. dass ihr Körper nicht tat, was sie wollten?"
+        "text": "11. ... dass ihr Körper nicht tat, was Sie wollten?"
       }, {
         "id": "12",
-        "text": "12. dass sie davon abhingen, dass Andere Dinge für sie erledigten?"
+        "text": "12. ... dass Sie davon abhingen, dass andere Dinge für Sie erledigten?"
       }, {
         "id": "13",
-        "text": "13. Beeinträchtigung im sozialen und Freizeitleben zu Hause?"
+        "text": "13. ... Beeinträchtigung im sozialen und Freizeitleben zu Hause?"
       }, {
         "id": "14",
-        "text": "14. gezwungen zu sein, zu Hause zu bleiben?"
+        "text": "14. ... gezwungen zu sein, zu Hause zu bleiben?"
       }, {
         "id": "15",
-        "text": "15. Probleme der Hände bei Alltagstätigkeiten?"
+        "text": "15. ... Probleme der Hände bei Alltagstätigkeiten?"
       }],
       "QS2_3": [{
         "id": "16",
-        "text": "16. die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?"
+        "text": "16. ... die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?"
       }, {
         "id": "17",
-        "text": "17. Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?"
+        "text": "17. ... Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?"
       }, {
         "id": "18",
-        "text": "18. länger für Dinge zu brauchen?"
+        "text": "18. ... länger für Dinge zu brauchen?"
       }, {
         "id": "19",
-        "text": "19. Schwierigkeiten, Dinge spontan zu machen?"
+        "text": "19. ... Schwierigkeiten, Dinge spontan zu machen?"
       }, {
         "id": "20",
-        "text": "20. ganz schnell zur Toilette zu müssen?"
+        "text": "20. ... ganz schnell zur Toilette zu müssen?"
       }, {
         "id": "21",
-        "text": "21. sich allgemein unwohl zu fühlen?"
+        "text": "21. ... sich allgemein unwohl zu fühlen?"
       }, {
         "id": "22",
-        "text": "22. Schlafprobleme zu haben?"
+        "text": "22. ... Schlafprobleme zu haben?"
       }, {
         "id": "23",
-        "text": "23. sich geistig/mental müde zu fühlen?"
+        "text": "23. ... sich geistig/mental müde zu fühlen?"
       }],
       "QS2_4": [{
         "id": "24",
-        "text": "24. Sorgen bezogen auf MS zu haben?"
+        "text": "24. ... Sorgen bezogen auf MS zu haben?"
       }, {
         "id": "25",
-        "text": "25. sich angespannt und ängstlich zu fühlen?"
+        "text": "25. ... sich angespannt und ängstlich zu fühlen?"
       }, {
         "id": "26",
-        "text": "26. sich störbar, ungeduldig und aufbrausend zu fühlen?"
+        "text": "26. ... sich störbar, ungeduldig und aufbrausend zu fühlen?"
       }, {
         "id": "27",
-        "text": "27. Konzentrationsprobleme zu haben?"
+        "text": "27. ... Konzentrationsprobleme zu haben?"
       }, {
         "id": "28",
-        "text": "28. keine Zuversicht zu haben?"
+        "text": "28. ... keine Zuversicht zu haben?"
       }, {
         "id": "29",
-        "text": "29. sich traurig/depressiv zu fühlen?"
+        "text": "29. ... sich traurig/depressiv zu fühlen?"
       }]
     }
   },
-  "MSISQS1": "Wie sehr waren sie in den letzen 2 Wochen eingeschränkt…",
-  "MSISQS2": "Wie sehr waren sie in den letzen 2 Wochen beeinträchtigt durch...",
+  "MSISQS1": "Wie sehr waren Sie in den letzen 2 Wochen eingeschränkt…",
+  "MSISQS2": "Wie sehr waren Sie in den letzen 2 Wochen beeinträchtigt durch...",
   "ZS-INSTRUCTION": "Wählen Sie anhand der Referenztabelle aus der Zahlentabelle die passende Zahl zum Symbol oberhalb der grünen Fläche.",
   "REFERENCETABLE": "Referenztabelle",
   "DIGITTABLE": "Zahlentabelle",
   "ZS-INSTRUCTION_TEXT_1": "<b>Wie funktioniert die Übung?</b>",
   "ZS-INSTRUCTION_TEXT_2": "Jedes Symbol ist genau einer Zahl zugeordnet.",
-  "ZS-INSTRUCTION_TEXT_3": "In der obersten Tabelle, der Referenztabelle, sehen sie welche Zahl welchem Symbol zugeordnet ist.",
+  "ZS-INSTRUCTION_TEXT_3": "In der obersten Tabelle, der Referenztabelle, sehen Sie welche Zahl welchem Symbol zugeordnet ist.",
   "ZS-INSTRUCTION_TEXT_4": "In der mittleren Tabelle, der Lösungstabelle, sind nur Symbole eingetragen, die passenden Zahlen fehlen.",
-  "ZS-INSTRUCTION_TEXT_5": "In der untersten Tabelle, der Zahlentabelle, sehen sie die Zahlen, welche Sie anklicken können. Klicken Sie jeweils die Zahl an, welche zum Symbol passt, das sich in der Lösungstabelle oberhalb des leeren Feldes befindet. Welche Zahl das es ist, finden Sie anhand der Referenztabelle heraus.",
+  "ZS-INSTRUCTION_TEXT_5": "In der untersten Tabelle, der Zahlentabelle, sehen Sie die Zahlen, welche Sie anklicken können. Klicken Sie jeweils die Zahl an, welche zum Symbol passt, das sich in der Lösungstabelle oberhalb des leeren Feldes befindet. Die passende Zahl finden Sie anhand der Referenztabelle heraus.",
   "ZS-INSTRUCTION_TEXT_6": "Durch klicken auf <b>Weiter</b>, beginnen Sie die Vorbereitung. Dort haben Sie dreimal die Möglichkeit eine Reihe auszufüllen. Sobald Sie eine komplette Reihe korrekt ausgefüllt haben, beginnt die eigentliche Übung.",
   "ZS-INSTRUCTION_TEXT_7": "<b>Wichtig</b>: Sie sollten bei dieser Übung ungestört sein!",
   "ROUTE-INSTRUCTION_TEXT_2": "Der Computer gibt Ihnen einen Weg durch das Labyrinth vor.<br><br>",
   "ROUTE-INSTRUCTION_TEXT_3": "Der Weg wird Ihnen <b>einmal</b> gezeigt. <br> Sobald der Weg vom Computer bei ENDE angelangt ist, sind Sie dran.",
   "ROUTE-INSTRUCTION_TEXT_4": "Beginnen Sie bei START (auf Start tippen). ",
-  "ROUTE-INSTRUCTION_TEXT_5": "Versuchen Sie danach die Punkte des Weges in der gleichen Reihenfolge <b>anzutippen</b>, wie sie der Computer vorgezeigt hat.",
+  "ROUTE-INSTRUCTION_TEXT_5": "Versuchen Sie danach die Punkte des Weges in der gleichen Reihenfolge <b>anzutippen</b>, wie Sie der Computer vorgezeigt hat.",
   "ROUTE-INSTRUCTION_TEXT_6": "Die Übung ist beendet, wenn Sie beim Ende angelangt sind (auf Ende tippen).",
   "PAGE1OF4": "Seite 1 von 4",
   "PAGE2OF4": "Seite 2 von 4",
