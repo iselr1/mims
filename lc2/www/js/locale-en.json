@@ -3,27 +3,27 @@
   "LANG_EN": "EN",
   "LANG_FR": "FR",
   "HOME": "Home",
-  "DATAPROTECTION": "Datenschutzerklärung",
-  "DATATEXT": "Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich behandelt und weder an Dritte verkauft noch weiter gegeben.",
+  "DATAPROTECTION": "Dataprotection",
+  "DATATEXT": "Based on article 13 of the federal constitution of switzerland and the federal dataprotection assignments (Datenschutzgesetz, DSG) every person has a right for the protection of her privacy, aswell as the protction of misuse of her personal data. We keep those assignments. Personal data is handled strictly confidential and isn't sold to third parties or passed further away.",
   "LOGIN": "Login",
-  "LOGINERRORTEXT": "User oder Passwort falsch",
-  "LOGININFO": "Info",
+  "LOGINERRORTEXT": "Wrong user or password",
+  "LOGININFO": "Information",
   "LOGOUT": "Logout",
   "IMPRESSUM": "Imprint",
-  "UNDERSTOOD": "Verstanden",
+  "UNDERSTOOD": "Understood",
   "IMP_TEXT": "This App was developped of the health informatics department of the University of Applied Sciences of Bern for the neurology department of the University of Zurich.",
   "IMP_CONTACT": "Contact in case of questions:<br>mitrends@app.ch",
   "OVERVIEW": "Home",
-  "EXCERCISES": "Excercises",
+  "EXCERCISES": "Exercises",
   "CONGRATULATIONS": "Congratulations",
   "CONGRATULATIONS_TEXT": "This was awsome!",
   "QUESTIONNAIRES": "Questionnaires",
   "MAINSYMPTOMS": "Main symptoms",
   "MAINSYMPTOMS_CAPTURE": "Catch main symtoms",
-  "EXCERCISES_RUNTROUGH": "Make excercises",
-  "DO_MORE_EXCERCISES": "Do more excercises",
-  "ROUTE": "Route",
-  "ROUTE_INSTRUCTION": "Route excercise instruction",
+  "EXCERCISES_RUNTROUGH": "Make exercise",
+  "DO_MORE_EXCERCISES": "Do more exercise",
+  "ROUTE": "Labyrinth",
+  "ROUTE_INSTRUCTION": "Labyrinth exercise instruction",
   "SYMBOL_DIGIT": "Symbol-Digit",
   "SD_PREPARATION": "Symbol-Digit preparation",
   "SD_INSTRUCTION": "Symbol-Digit exercise instruction",
@@ -66,12 +66,12 @@
   "Q1CORE": "Are you...",
   "Q2COREL": "Do you have movementrestrictions in your left hand?",
   "Q2CORER": "Do you have movementrestrictions in your right hand?",
-  "Q3COREL": "Haben Sie eine Gefühlsstörung in der linken Hand?",
-  "Q3CORER": "Haben Sie eine Gefühlsstörung in der rechten Hand?",
-  "Q4CORE": "Wie fühlen Sie sich heute?",
-  "Q5CORE": "Wie beurteilen Sie ihre momentane Konzentrationsfähigkeit?",
-  "Q6CORE": "Hatten Sie seit der letzen Übung einen Schub?",
-  "Q7CORE": "Haben Ihre MS Symptome seit der letzten Übung zugenommen?",
+  "Q3COREL": "Do you have sensory disturbances in your left hand?",
+  "Q3CORER": "Do you have sensory disturbances in your right hand?",
+  "Q4CORE": "How are you today?",
+  "Q5CORE": "How do you judge your current concentration abilities?",
+  "Q6CORE": "Had you a MS relapse since the last exercise session?",
+  "Q7CORE": "Did your MS Symptome increase since the last exercise session?",
   "RIGHTHANDED": "right-handed",
   "LEFTHANDED": "left-handed",
   "BOTHHANDED": "both-handed",
@@ -80,13 +80,13 @@
   "SAVE": "Save",
   "BACK": "Back",
   "NEXT": "Next",
-  "COMMENT": "Kommentare/Rückmeldung zur Übung:",
+  "COMMENT": "Comments concerning the exercise:",
   "DIGIT": "Digit",
   "SYMBOL": "Symbol",
   "TITLEPOPUP_NEXTPREPZS": "Info",
-  "TEMPLATEPOPUP_NEXTPREPZS": "Nun startet die VORBEREITUNG, die eigentliche Übung mit begrenzter Zeitdauer beginnt danach.",
+  "TEMPLATEPOPUP_NEXTPREPZS": "Now the prepartion starts, the actual exercise with a defined amount of time, will start after this preparation.",
   "SDTITLE_POPUP": "Information",
-  "SDTEMPLATE_POPUP": "The preparation is over. As soon as you click OK, the actucal excercise starts.",
+  "SDTEMPLATE_POPUP": "The preparation is over. As soon as you click OK, the actual exercise starts.",
   "MSIS-29": "MSIS-29",
   "MSIS": {
     "RADIOS": [{
@@ -108,123 +108,123 @@
     "QUESTIONS": {
       "QS1": [{
         "id": "1",
-        "text": "1. ... körperlich anstrengende Dinge zu tun?"
+        "text": "1. ... Do physically demanding tasks? "
       }, {
         "id": "2",
-        "text": "2. ... Dinge fest anzufassen (z.B. Hahn aufdrehen)?"
+        "text": "2. ... Grip things tightly (e.g. turning on taps)?"
       }, {
         "id": "3",
-        "text": "3. ... Dinge zu tragen?"
+        "text": "3. ... Carry things?"
       }],
       "QS2_1": [{
         "id": "4",
-        "text": "4. ... Probleme mit dem Gleichgewicht?"
+        "text": "4. ... Problems with your balance?"
       }, {
         "id": "5",
-        "text": "5. ... Schwierigkeiten, sich in der Wohnung zu bewegen?"
+        "text": "5. ... Difficulties moving about indoors?"
       }, {
         "id": "6",
-        "text": "6. ... ungeschickt zu sein?"
+        "text": "6. ... Being clumsy?"
       }, {
         "id": "7",
-        "text": "7. ... steif zu sein"
+        "text": "7. ... Stiffness?"
       }],
       "QS2_2": [{
         "id": "8",
-        "text": "8. ... schwere Arme und/oder Beine zu haben?"
+        "text": "8. ... Heavy arms and/or legs?"
       }, {
         "id": "9",
-        "text": "9. ... Zittern der Arme oder Beine zu haben?"
+        "text": "9. ... Tremor of your arms or legs?"
       }, {
         "id": "10",
-        "text": "10. ... Krämpfe der Extremitäten zu haben?"
+        "text": "10. ... Spasms in your limbs?"
       }, {
         "id": "11",
-        "text": "11. ... dass ihr Körper nicht tat, was Sie wollten?"
+        "text": "11. ... Your body not doing what you want it to do?"
       }, {
         "id": "12",
-        "text": "12. ... dass Sie davon abhingen, dass andere Dinge für Sie erledigten?"
+        "text": "12. ... Having to depend on others to do things for you?"
       }, {
         "id": "13",
-        "text": "13. ... Beeinträchtigung im sozialen und Freizeitleben zu Hause?"
+        "text": "13. ... Limitations in your social and leisure activities at home?"
       }, {
         "id": "14",
-        "text": "14. ... gezwungen zu sein, zu Hause zu bleiben?"
+        "text": "14. ... Being stuck at home more than you would like to be?"
       }, {
         "id": "15",
-        "text": "15. ... Probleme der Hände bei Alltagstätigkeiten?"
+        "text": "15. ... Difficulties using your hands in everyday tasks?"
       }],
       "QS2_3": [{
         "id": "16",
-        "text": "16. ... die Zeit für Arbeit oder Alltagsaktivitäten einzuschränken?"
+        "text": "16. ... Having to cut down the amount of time you spent on work or other daily activities?"
       }, {
         "id": "17",
-        "text": "17. ... Probleme sich fortzubewegen (Auto, Bus, Taxis,Zug)?"
+        "text": "17. ... Problems using transport (e.g. car, bus, train, taxi, etc.)?"
       }, {
         "id": "18",
-        "text": "18. ... länger für Dinge zu brauchen?"
+        "text": "18. ... Taking longer to do things?"
       }, {
         "id": "19",
-        "text": "19. ... Schwierigkeiten, Dinge spontan zu machen?"
+        "text": "19. ... Difficulty doing things spontaneously (e.g. going out on the spur of the moment)?"
       }, {
         "id": "20",
-        "text": "20. ... ganz schnell zur Toilette zu müssen?"
+        "text": "20. ... Needing to go to the toilet urgently?"
       }, {
         "id": "21",
-        "text": "21. ... sich allgemein unwohl zu fühlen?"
+        "text": "21. ... Feeling unwell?"
       }, {
         "id": "22",
-        "text": "22. ... Schlafprobleme zu haben?"
+        "text": "22. ... Problems sleeping?"
       }, {
         "id": "23",
-        "text": "23. ... sich geistig/mental müde zu fühlen?"
+        "text": "23. ... Feeling mentally fatigued?"
       }],
       "QS2_4": [{
         "id": "24",
-        "text": "24. ... Sorgen bezogen auf MS zu haben?"
+        "text": "24. ... Worries related to your MS?"
       }, {
         "id": "25",
-        "text": "25. ... sich angespannt und ängstlich zu fühlen?"
+        "text": "25. ... Feeling anxious or tense?"
       }, {
         "id": "26",
-        "text": "26. ... sich störbar, ungeduldig und aufbrausend zu fühlen?"
+        "text": "26. ... Feeling irritable, impatient, or short tempered?"
       }, {
         "id": "27",
-        "text": "27. ... Konzentrationsprobleme zu haben?"
+        "text": "27. ... Problems concentrating?"
       }, {
         "id": "28",
-        "text": "28. ... keine Zuversicht zu haben?"
+        "text": "28. ... Lack of confidence?"
       }, {
         "id": "29",
-        "text": "29. ... sich traurig/depressiv zu fühlen?"
+        "text": "29. ... Feeling depressed?"
       }]
     }
   },
-  "MSISQS1": "Wie sehr waren Sie in den letzen 2 Wochen eingeschränkt…",
-  "MSISQS2": "Wie sehr waren Sie in den letzen 2 Wochen beeinträchtigt durch...",
-  "ZS-INSTRUCTION": "Wählen Sie anhand der Referenztabelle aus der Zahlentabelle die passende Zahl zum Symbol oberhalb der grünen Fläche.",
-  "REFERENCETABLE": "Referenztabelle",
-  "DIGITTABLE": "Zahlentabelle",
-  "ZS-INSTRUCTION_TEXT_1": "<b>Wie funktioniert die Übung?</b>",
-  "ZS-INSTRUCTION_TEXT_2": "Jedes Symbol ist genau einer Zahl zugeordnet.",
-  "ZS-INSTRUCTION_TEXT_3": "In der obersten Tabelle, der Referenztabelle, sehen Sie welche Zahl welchem Symbol zugeordnet ist.",
-  "ZS-INSTRUCTION_TEXT_4": "In der mittleren Tabelle, der Lösungstabelle, sind nur Symbole eingetragen, die passenden Zahlen fehlen.",
-  "ZS-INSTRUCTION_TEXT_5": "In der untersten Tabelle, der Zahlentabelle, sehen Sie die Zahlen, welche Sie anklicken können. Klicken Sie jeweils die Zahl an, welche zum Symbol passt, das sich in der Lösungstabelle oberhalb des leeren Feldes befindet. Die passende Zahl finden Sie anhand der Referenztabelle heraus.",
-  "ZS-INSTRUCTION_TEXT_6": "Durch klicken auf <b>Weiter</b>, beginnen Sie die Vorbereitung. Dort haben Sie dreimal die Möglichkeit eine Reihe auszufüllen. Sobald Sie eine komplette Reihe korrekt ausgefüllt haben, beginnt die eigentliche Übung.",
-  "ZS-INSTRUCTION_TEXT_7": "<b>Wichtig</b>: Sie sollten bei dieser Übung ungestört sein!",
-  "ROUTE-INSTRUCTION_TEXT_2": "Der Computer gibt Ihnen einen Weg durch das Labyrinth vor.<br><br>",
-  "ROUTE-INSTRUCTION_TEXT_3": "Der Weg wird Ihnen <b>einmal</b> gezeigt. <br> Sobald der Weg vom Computer bei ENDE angelangt ist, sind Sie dran.",
-  "ROUTE-INSTRUCTION_TEXT_4": "Beginnen Sie bei START (auf Start tippen). ",
-  "ROUTE-INSTRUCTION_TEXT_5": "Versuchen Sie danach die Punkte des Weges in der gleichen Reihenfolge <b>anzutippen</b>, wie Sie der Computer vorgezeigt hat.",
-  "ROUTE-INSTRUCTION_TEXT_6": "Die Übung ist beendet, wenn Sie beim Ende angelangt sind (auf Ende tippen).",
-  "PAGE1OF4": "Seite 1 von 4",
-  "PAGE2OF4": "Seite 2 von 4",
-  "PAGE3OF4": "Seite 3 von 4",
-  "PAGE4OF4": "Seite 4 von 4",
+  "MSISQS1": "In the past two weeks, how much has your MS limited your ability to...",
+  "MSISQS2": "In the past two weeks, how much have you been bothered by...",
+  "ZS-INSTRUCTION": "Choose according to the referencetable, the appropriate digit of the digittable to the symbol above the green space.",
+  "REFERENCETABLE": "Referencetable",
+  "DIGITTABLE": "Digittable",
+  "ZS-INSTRUCTION_TEXT_1": "<b>How does the excersise work?</b>",
+  "ZS-INSTRUCTION_TEXT_2": "Each symbol is matches excatly to one digit.",
+  "ZS-INSTRUCTION_TEXT_3": "In the uppermost table, the referencetable, you see which digit matches which symbol.",
+  "ZS-INSTRUCTION_TEXT_4": "In the intermediate table, the solutiontable, only the symols are set, the appropriate digits are missing.",
+  "ZS-INSTRUCTION_TEXT_5": "In the bottommost table, the digittable, you see the digits, which you can tap. Tap allways on the digit that matches the symbol above the empty space in the solutiontable. You can look for the appropriate digit according to the definition in the referencetable.",
+  "ZS-INSTRUCTION_TEXT_6": "If you tap on <b>Next</b>, you start the prepartion. There you have 3 times the possibility to complete one row. As soon as you have completed one row correctly, the actual exercise begins.",
+  "ZS-INSTRUCTION_TEXT_7": "<b>Important</b>: During the exercise you should not be disturbed!",
+  "ROUTE-INSTRUCTION_TEXT_2": "The computer shows you a way through the labyrinth.<br><br>",
+  "ROUTE-INSTRUCTION_TEXT_3": "The way is shown you only <b>once</b>. <br> As soon as the demonstrated way of the computer reaches the end, it's your turn.",
+  "ROUTE-INSTRUCTION_TEXT_4": "Start at the Start (by tapping on start).",
+  "ROUTE-INSTRUCTION_TEXT_5": "Try afterwards to <b>tap</b> the points of the way in the same order as the computer has demonstrated it.",
+  "ROUTE-INSTRUCTION_TEXT_6": "The exercise is over, if you reach the end(by tapping on end).",
+  "PAGE1OF4": "Page 1 of 4",
+  "PAGE2OF4": "Page 2 of 4",
+  "PAGE3OF4": "Page 3 of 4",
+  "PAGE4OF4": "Page 4 of 4",
   "FATIGUE_SS": "Fatigue Severity Scale",
-  "FSS_Q": "Ich finde, dass während der vergangenen Woche folgedes zutraf:",
-  "AGREE_COMPLETELY": "Stimme vollkommen zu = 7",
-  "AGRRE_NOT": "Stimme gar nicht zu = 1",
+  "FSS_Q": "During the past week, I have found that:",
+  "AGREE_COMPLETELY": "Strongly Agree = 7",
+  "AGRRE_NOT": "Strongly Disagree = 1",
   "FSS": {
     "RADIOS": [{
       "id": "1",
@@ -250,31 +250,31 @@
     }],
     "QUESTIONS": [{
       "id": "1",
-      "text": "1. Ich bin weniger motiviert, wenn ich müde bin."
+      "text": "1. My motivation is lower when I am fatigued."
     }, {
       "id": "2",
-      "text": "2. Körperliche Bewegung macht mich müde."
+      "text": "2. Exercise brings on my fatigue."
     }, {
       "id": "3",
-      "text": "3. Ich ermüde rasch."
+      "text": "3.  I am easily fatigued."
     }, {
       "id": "4",
-      "text": "4. Meine Müdigkeit beeinträchtigt meine körperliche Leistungsfähigkeit"
+      "text": "4. Fatigue interferes with my physical functioning."
     }, {
       "id": "5",
-      "text": "5. Meine Müdigkeit bereitet mir oft Probleme."
+      "text": "5. Fatigue causes frequent problems for me."
     }, {
       "id": "6",
-      "text": "6. Meine Müdigkeit verhindert längerdauernde körperliche Tätigkeiten."
+      "text": "6. My fatigue prevents sustained physical functioning."
     }, {
       "id": "7",
-      "text": "7. Meine Müdigkeit beeinträchtigt mich, gewisse Pflichten und Verantwortungen zu erfüllen."
+      "text": "7. Fatigue interferes with carrying out certain duties and responsibilities."
     }, {
       "id": "8",
-      "text": "8. Meine Müdigkeit gehört zu den drei Beschwerden, die mich am meisten behindern."
+      "text": "8. Fatigue is among my most disabling symptoms."
     }, {
       "id": "9",
-      "text": "9. Meine Müdigkeit beeinträchtigt meine Arbeit, meine Familie oder mein soziales Leben."
+      "text": "9. Fatigue interferes with my work, family, or social life."
     }]
   }
 }
